@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>CodeGun</title>
-<meta name="description" content="An amazing website.">
+<meta name="description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://localhost:4000/">
 
 
-  <meta property="og:description" content="An amazing website.">
+  <meta property="og:description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
 
 
 
@@ -51,7 +51,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Gunnu LEE",
+      "name": "Gunnu Lee",
       "url": "http://localhost:4000/"
     
   }
@@ -79,6 +79,10 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- darkmode css
+ -->
+
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
@@ -87,9 +91,55 @@
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
-
 <!-- end custom head snippets -->
 
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <!-- NanumGothic -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    
+    <!-- NanumGothicCoding -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
+    
+    <!-- Gowun Dodum -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <!-- Ubuntu Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style> 
+      ::-webkit-scrollbar{
+        width: 13px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color:#dededee2;
+        border-radius: 16px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color:#bababad5;
+        border-radius: 16px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c42f95d9;
+      }
+      ::-webkit-scrollbar-button:start:decrement,
+      ::-webkit-scrollbar-button:end:increment 
+      {
+          width:12px;
+          height:12px;
+          background:transparent;
+      }
+      /* 사이드바 스크롤바 없애기 */
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+    </style>
   </head>
 
   <body class="layout--home">
@@ -100,6 +150,10 @@
     <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
   </ul>
 </nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
 
     
 
@@ -115,11 +169,14 @@
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/index.html">Home</a>
             </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Category</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
             </li></ul>
         
+        <!--  -->
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -158,7 +215,8 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p>Back-end개발자를 위해 공부하고 기록 하는 공간</p>
+        <p>Back-End개발을 공부하고 
+기록하는 공간🧑🏻‍💻</p>
 
       </div>
     
@@ -167,10 +225,7 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">팔로우</button>
     <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic Of Korea</span>
-        </li>
+
       
 
       
@@ -180,7 +235,7 @@
           
         
           
-            <li><a href="https://github.com/gunnu3226" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+            <li><a href="https://github.com/gunnu3226" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
           
         
           
@@ -245,8 +300,61 @@
     </ul>
   </div>
 </div>
+  
 
   
+  
+
+<nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">토글 메뉴</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <!--전체 글 수-->
+        <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span
+                    style="font-family:'Coming Soon';">1</style> <span
+                        style="font-family:'Cafe24Oneprettynight';">개</style>
+        </li>
+        <li>
+            <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+            <span class="nav__sub-title">TIL</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                
+                
+                <li><a href="/categories/til" class="">TIL (1)</a></li>
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">Java</span>
+            <ul>
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">CS</span>
+            <ul>
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">ETC</span>
+            <ul>
+                
+                
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
   </div>
 
 
@@ -273,14 +381,30 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/spring/first/" rel="permalink">Github blog 시작합니다 :)
+        <a href="/til/TIL/" rel="permalink">[2023-12-22 TIL]
 </a>
       
     </h2>
     
 
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-22T00:00:00+09:00">December 22, 2023</time>
+      </span>
+    
 
-    <p class="archive__item-excerpt" itemprop="description">첫번째 포스팅
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">23.12.22 TIL
 </p>
   </article>
 </div>
@@ -332,7 +456,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Gunnu LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Gunnu Lee. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -348,6 +472,14 @@
 
 
 
+
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+      diameter: 56,
+      backgroundColor: 'rgb(186, 6, 130)',
+      textColor: '#fff'
+    })</script>
 
   </body>
 </html>
