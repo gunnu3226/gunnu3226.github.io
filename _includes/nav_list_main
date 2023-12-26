@@ -41,8 +41,8 @@
             <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}
-                {% if category[0] == "자료구조" %}
-                <li><a href="/categories/etc" class="">etc ({{category[1].size}})</a></li>
+                {% if category[0] == "Datastructure" %}
+                <li><a href="/categories/datastructure" class="">자료구조 ({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -64,8 +64,8 @@
             <span class="nav__sub-title">ETC</span>
             <ul>
                 {% for category in site.categories %}
-                {% if category[0] == "etc" %}
-                <li><a href="/categories/etc" class="">etc ({{category[1].size}})</a></li>
+                {% if category[0] == "Github Blog" %}
+                <li><a href="/categories/githubblog" class="">Github Blog({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>

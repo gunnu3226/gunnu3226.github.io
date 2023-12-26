@@ -5,9 +5,107 @@
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Dec 2023 22:21:52 +0900</pubDate>
-    <lastBuildDate>Tue, 26 Dec 2023 22:21:52 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2023 02:22:42 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Dec 2023 02:22:42 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>[자료구조] 큐(Queue)의 정의와 java에서 사용법</title>
+        <description>&lt;h2 id=&quot;자료구조queue&quot;&gt;[자료구조]Queue&lt;/h2&gt;
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/datastructure/Queue/</link>
+        <guid isPermaLink="true">http://localhost:4000/datastructure/Queue/</guid>
+        
+        <category>자료구조</category>
+        
+        <category>CS</category>
+        
+        <category>Java</category>
+        
+        
+        <category>Datastructure</category>
+        
+      </item>
+    
+      <item>
+        <title>[2023-12-27]Github Blog 설정 방법</title>
+        <description>&lt;h2 id=&quot;카테고리-설정&quot;&gt;카테고리 설정&lt;/h2&gt;
+
+&lt;h3 id=&quot;_pagescategoreis-내부-파일&quot;&gt;_pages&amp;gt;categoreis 내부 파일&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;458&quot; alt=&quot;스크린샷 2023-12-27 오전 2 06 19&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/6360c2e2-64c8-4962-a0fc-1d15b925bd45&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드에서 10번줄 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.categories.TIL&lt;/code&gt;이 부분의 마지막 부분(TIL)이 글을 작성할 때 카테고리에 들어갈 카테고리 이름이 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;nav_list_mian&quot;&gt;nav_list_mian&lt;/h3&gt;
+&lt;p&gt;이 부분은 왼쪽 네비게이션의 카테고리를 관리하는 부분이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;796&quot; alt=&quot;스크린샷 2023-12-27 오전 2 08 28&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/8d553e0a-8e70-4ee9-bee8-fa13766e4967&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 부분에선 44번줄의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if category[0] == &quot;Datastructure&quot;&lt;/code&gt; 이 부분에 글작성에서 썼던 카테고리 명이 들어가면 된다. 그리고 a태그의 링크는 카테고리 정의 페이지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink: categories/datastructure&lt;/code&gt;가 들어가고 자료구조라고 쓰여있는 부분이 블로그에 노출되는 이름이 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;글씨-크기-설정&quot;&gt;글씨 크기 설정&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt; 폴더의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistake&lt;/code&gt; 폴더 내의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_reset.scss&lt;/code&gt;파일에 들어가서 아래 부분을 수정하면 된다. 사이트 크기에 따라 조절할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;430&quot; alt=&quot;스크린샷 2023-12-27 오전 2 17 56&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/f4445cc0-6937-484a-81d6-23fbc037e0ae&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</link>
+        <guid isPermaLink="true">http://localhost:4000/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</guid>
+        
+        <category>Blog</category>
+        
+        <category>Github</category>
+        
+        
+        <category>Github Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>[2023-12-27]TIL</title>
+        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;프로그래머스 문제풀이
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/118666?language=java&quot;&gt;성격유형검사하기&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;새로-공부한-내용&quot;&gt;새로 공부한 내용&lt;/h2&gt;
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/TIL3/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/TIL3/</guid>
+        
+        <category>TIL</category>
+        
+        <category>Java</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[2023-12-27]test</title>
+        <description>
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/new/test/</link>
+        <guid isPermaLink="true">http://localhost:4000/new/test/</guid>
+        
+        <category>TIL</category>
+        
+        <category>Java</category>
+        
+        
+        <category>New</category>
+        
+      </item>
     
       <item>
         <title>[2023-12-26]TIL</title>
@@ -25,6 +123,7 @@
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=java&quot;&gt;체육복&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/140108&quot;&gt;문자열나누기&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/160586&quot;&gt;대충만든자판&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/155652&quot;&gt;둘만의암호&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

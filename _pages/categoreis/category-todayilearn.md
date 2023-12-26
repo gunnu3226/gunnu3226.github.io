@@ -1,11 +1,11 @@
 ---
-title: "회고"
+title: "TIL"
 layout: archive
-permalink: categories/retrospect
+permalink: categories/til
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.Retrospect %}
+{% assign posts = site.categories.TIL %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
