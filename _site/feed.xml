@@ -5,8 +5,8 @@
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Dec 2023 18:31:36 +0900</pubDate>
-    <lastBuildDate>Tue, 26 Dec 2023 18:31:36 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Dec 2023 22:21:52 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Dec 2023 22:21:52 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -23,6 +23,8 @@
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/136798&quot;&gt;기사단원의무기&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/131128&quot;&gt;숫자짝꿍&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=java&quot;&gt;체육복&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/140108&quot;&gt;문자열나누기&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/160586&quot;&gt;대충만든자판&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -75,8 +77,8 @@
 
 </description>
         <pubDate>Tue, 26 Dec 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL/</guid>
+        <link>http://localhost:4000/til/TIL2/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/TIL2/</guid>
         
         <category>TIL</category>
         
@@ -111,8 +113,8 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 22 Dec 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL/</guid>
+        <link>http://localhost:4000/til/TIL1/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/TIL1/</guid>
         
         <category>TIL</category>
         
