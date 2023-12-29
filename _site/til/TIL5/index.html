@@ -9,30 +9,36 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>CodeGun</title>
-<meta name="description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
+<!-- begin _includes/seo.html --><title>[2023-12-29]TIL - CodeGun</title>
+<meta name="description" content="23.12.29 TIL">
 
 
   <meta name="author" content="Gunnu LEE">
   
+  <meta property="article:author" content="Gunnu LEE">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="CodeGun">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="[2023-12-29]TIL">
+<meta property="og:url" content="http://localhost:4000/til/TIL5/">
 
 
-  <meta property="og:description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
-
-
-
+  <meta property="og:description" content="23.12.29 TIL">
 
 
 
 
 
+
+
+  <meta property="article:published_time" content="2023-12-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-12-29T00:00:00+09:00">
 
 
 
@@ -41,11 +47,9 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/til/TIL5/">
 
 
-
-  <link rel="next" href="http://localhost:4000/page2/">
 
 
 <script type="application/ld+json">
@@ -144,7 +148,7 @@
     </style>
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -449,24 +453,184 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[2023-12-29]TIL">
+    <meta itemprop="description" content="23.12.29 TIL">
+    <meta itemprop="datePublished" content="2023-12-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-12-29T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/TIL5/" class="u-url" itemprop="url">[2023-12-29]TIL
+</a>
+          </h1>
+          <!-- 업로드 날짜 -->
+          
+
+  <p class="page__meta">
     
-      <h1 id="page-title" class="page__title"></h1>
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
+      </span>
     
+
     
 
-<h3 class="archive__subtitle">Recent Post</h3>
+    
+  </p>
 
 
-
-
-<div class="entries-list">
+          <!-- 카테고리,테그 -->
+          
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#오늘의-학습">오늘의 학습</a></li><li><a href="#새로-공부한-내용">새로 공부한 내용</a><ul><li><a href="#mapkeyset-사용할-때-주의점">map.keySet() 사용할 때 주의점</a></li><li><a href="#treemap의-사용">TreeMap의 사용</a></li><li><a href="#소수구하기">소수구하기</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="오늘의-학습">오늘의 학습</h2>
+<ol>
+  <li>프로그래머스 문제풀이
+    <ul>
+      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92341">주차 요금 계산</a>(문제발생, 풀이 90분, 문제해결 90분)</li>
+      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92335">k진수에서 소수 개수 구하기</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="새로-공부한-내용">새로 공부한 내용</h2>
+<h3 id="mapkeyset-사용할-때-주의점">map.keySet() 사용할 때 주의점</h3>
+<p>map.keySet() 을 사용해서 key를 추출하고  해당 키를 사용해 로직을 수행한 후 .remove(key)를 진행하려 했다. 하지만 .keySet()을 사용하고 있는데 동시에 키를 삭제해서 동시성 오류가 발생한거 같다. 정확한 답변은 튜터님께 질문 해야겠다.
+-<a href="https://school.programmers.co.kr/questions/26732?question=26732">문제해결 참고</a></p>
+
+<h3 id="treemap의-사용">TreeMap의 사용</h3>
+<p>자세한건 포스팅을 하면서 공부해야겠지만 간단하게 적자면 key값을 기준으로 오름차순 정렬을 해서 map에 들어가는 자료구조이다.</p>
+
+<h3 id="소수구하기"><a href="">소수구하기</a></h3>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2023-12-29">December 29, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B2023-12-29%5DTIL%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL5%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL5%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL5%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a id="kakao-link-btn" href="javascript:sendLink()" class="btn btn--comment">
+    <i class="fa-fw fas fa-comment" aria-hidden="true"></i>
+    <span>KakaoTalk</span>
+  </a>
+</section>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script>
+      Kakao.init("e5171e42a3efb8f8a8f6271c7c84e62c"); 
+      function sendLink() {
+        Kakao.Link.sendCustom({
+          templateId: 67195,   // 복사해둔 템플릿 ID
+          templateArgs: {
+            title: "[2023-12-29]TIL",
+            description: "23.12.29 TIL",
+            url : "/til/TIL5/",
+          },
+        });
+      }
+  </script>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/TIL4/" class="pagination--pager" title="[2023-12-28]TIL
+">이전</a>
+    
+    
+      <a href="/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/" class="pagination--pager" title="[알고리즘]소수 판별, 구하기
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -499,50 +663,12 @@
   </article>
 </div>
 
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL5/" rel="permalink">[2023-12-29]TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
         
-        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">23.12.29 TIL
-</p>
-  </article>
-</div>
-
-  
-    
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -575,12 +701,12 @@
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -613,12 +739,12 @@
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -651,49 +777,11 @@
   </article>
 </div>
 
+        
+      </div>
+    </div>
   
-</div>
-
-
-<nav class="pagination">
   
-  <ul>
-    
-    
-    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="/page2/">2</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">다음</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
 </div>
     </div>
 
@@ -746,6 +834,31 @@
 
 
 
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'gunnu3226/gunnu3226.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('label', '✨comment✨');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
 
 
 

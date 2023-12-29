@@ -4,6 +4,54 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/</loc>
+        
+        <lastmod>2023-12-29T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/til/TIL5/</loc>
+        
+        <lastmod>2023-12-29T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/til/TIL4/</loc>
+        
+        <lastmod>2023-12-28T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/datastructure/Queue/</loc>
         
         <lastmod>2023-12-27T00:00:00+09:00</lastmod>
@@ -52,7 +100,7 @@
     </url>
     
     <url>
-        <loc>http://localhost:4000/new/test/</loc>
+        <loc>http://localhost:4000/java/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/</loc>
         
         <lastmod>2023-12-27T00:00:00+09:00</lastmod>
         

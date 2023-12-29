@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[2023-12-27]TIL - CodeGun</title>
-<meta name="description" content="23.12.27 TIL">
+<!-- begin _includes/seo.html --><title>[알고리즘]소수 판별, 구하기 - CodeGun</title>
+<meta name="description" content="소수판별법">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="[2023-12-27]TIL">
-<meta property="og:url" content="http://localhost:4000/til/TIL3/">
+<meta property="og:title" content="[알고리즘]소수 판별, 구하기">
+<meta property="og:url" content="http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/">
 
 
-  <meta property="og:description" content="23.12.27 TIL">
-
-
-
+  <meta property="og:description" content="소수판별법">
 
 
 
 
-  <meta property="article:published_time" content="2023-12-27T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-12-27T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-12-29T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-12-29T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/til/TIL3/">
+
+<link rel="canonical" href="http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/">
 
 
 
@@ -454,16 +454,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[2023-12-27]TIL">
-    <meta itemprop="description" content="23.12.27 TIL">
-    <meta itemprop="datePublished" content="2023-12-27T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-12-27T00:00:00+09:00">
+    <meta itemprop="headline" content="[알고리즘]소수 판별, 구하기">
+    <meta itemprop="description" content="소수판별법">
+    <meta itemprop="datePublished" content="2023-12-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-12-29T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/TIL3/" class="u-url" itemprop="url">[2023-12-27]TIL
+            <a href="http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/" class="u-url" itemprop="url">[알고리즘]소수 판별, 구하기
 </a>
           </h1>
           <!-- 업로드 날짜 -->
@@ -476,7 +476,7 @@
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         Publish:
         
-        <time datetime="2023-12-27T00:00:00+09:00">December 27, 2023</time>
+        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
       </span>
     
 
@@ -497,9 +497,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
-    
-      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+      <a href="/tags/#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="page__taxonomy-item p-category" rel="tag">알고리즘</a>
     
     </span>
   </p>
@@ -516,7 +514,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
     
     </span>
   </p>
@@ -530,51 +528,135 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오늘의-학습">오늘의 학습</a></li><li><a href="#새로-공부한-내용">새로 공부한 내용</a><ul><li><a href="#문자열을-이진문자열로-바꾸는-메소드">문자열을 이진문자열로 바꾸는 메소드</a></li><li><a href="#나머지-연산의-성질">나머지 연산의 성질</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#소수-판별">소수 판별</a></li><li><a href="#n이하-수-나누기on--">N이하 수 나누기(O(n)) -</a></li><li><a href="#sqrt-n-이하-수-나누기osqrt-n">$\sqrt N$ 이하 수 나누기(O($\sqrt n$))</a></li><li><a href="#에라토스테네스의-체">에라토스테네스의 체</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="오늘의-학습">오늘의 학습</h2>
+        <h2 id="소수-판별">소수 판별</h2>
+<p>소수를 판별하는 알고리즘은 크게 3가지로 구현할 수 있다. 포스팅의 순서대로 마지막이 시간복잡도 기준에서 유리한 알고리즘이다.</p>
+
 <ol>
-  <li>프로그래머스 문제풀이
-    <ul>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/118666?language=java">성격유형검사하기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/161990">바탕화면정리</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/150370">개인정보수집유효기간</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/178871">달리기경주</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92334">신고결과 받기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12951">JadenCase 문자열만들기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/70129">이진변환 반복하기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12945">피보나치수</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42842">카펫</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12985">예상대진표</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12953">N개의 최소공배수</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12914">멀리뛰기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/138476">귤 고르기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/76502">괄호 회전하기</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131701">연속 부분 수열 합의 개수</a></li>
-    </ul>
-  </li>
+  <li>N이하 수 나누기 - O(n)</li>
+  <li>$\sqrt N$ 이하 수 나누기 - O($\sqrt n$)</li>
 </ol>
 
-<h2 id="새로-공부한-내용">새로 공부한 내용</h2>
-<h3 id="문자열을-이진문자열로-바꾸는-메소드">문자열을 이진문자열로 바꾸는 메소드</h3>
-<p><code class="language-plaintext highlighter-rouge">binary = Integer.toBinaryString(str)</code></p>
+<p>그리고 n까지의 수 중 소수를 구하고 싶을 때는 에라토스테네스의 체를 사용할 수 있다.</p>
+<h2 id="n이하-수-나누기on--">N이하 수 나누기(O(n)) -</h2>
+<p>소수인지 판별할 때 2부터 n-1까지 모든 수를 나누어 보고 나누어 지지 않으면 소수로 판별할 수 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 
-<h3 id="나머지-연산의-성질">나머지 연산의 성질</h3>
-<p>피보나치 문제를 풀면서 알게된 사실이다.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>(a + b) % m = ((a % m) + (b % m)) % m
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
-<p>두 수를 더한 합을 m으로 나눈 나머지는 a를 m으로 나눈 나머지 + b를 m으로 나눈 나머지를 m으로 나눈 나머지와 같다.</p>
+<p>하지만 시간 복잡도O(n)이므로 n이 큰수라고 가정하면 처리 시간이 기하급수적으로 커진다.</p>
 
-<p>이를 피보나치에 적용하면 아래와 같다.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>F(n) % m = ((F(n-1) % m) + (F(n-2) % m)) % m
+<h2 id="sqrt-n-이하-수-나누기osqrt-n">$\sqrt N$ 이하 수 나누기(O($\sqrt n$))</h2>
+<p>n의 약수를 보면 $\sqrt n$을 기준으로 양쪽에 대칭하여 존재하게 된다. 그렇기 때문에 2부터 $\sqrt n$까지만 나누어 확인해 본다면 소수를 판별할 수 있게된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
-<p>피보나치 수는 급격히 커지기 때문에 자료형의 범위가 넘어가는 경우가 많다. 나머지를 활용하는 피보니치 문제는 위 성질을 이용해야 한다.</p>
 
+<h2 id="에라토스테네스의-체">에라토스테네스의 체</h2>
+<p>에라토스테네스의 체는 소수를 구하는 대표적 방법 중 하나이다.</p>
+
+<blockquote>
+  <p>“소수가 되는 수의 배수를 지우면 남는 건 소수가 된다.”</p>
+</blockquote>
+
+<ol>
+  <li>2부터 소수를 구하고자 하는 구간의 모든 수를 나열한다.</li>
+  <li>2의 배수를 지운다.</li>
+  <li>남는 수 중 가장 작은 수(3)는 소수이다.</li>
+  <li>3의 배수를 지운다.<br />
+…</li>
+  <li>위 과정을 $\sqrt n$까지 반복한다.</li>
+</ol>
+
+<p><img src="https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/7c5967aa-facf-4d6d-a13e-9ac0bb6b80c8" alt="Sieve_of_Eratosthenes_animation" /></p>
+
+<p>이 과정이 끝나게 되면 n까지의 수 중 소수를 구해낼 수 있다.
+코드로 구현하면 아래와 같다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Prime</span> <span class="o">{</span>
+
+    <span class="kd">static</span> <span class="kt">boolean</span><span class="o">[]</span> <span class="n">prime</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">prime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>  <span class="c1">//n까지 만들기 위해 n+1개 생성</span>
+
+        <span class="c1">//소수는 false</span>
+        <span class="n">prime</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">prime</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="c1">//prime[i]가 소수인 경우</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">prime</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+                <span class="c1">//해당 수의 배수 지우기</span>
+                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">prime</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>이렇게 하면 prime[i] = false인 수가 n까지의 수 중 소수가 된다.</p>
+
+<p>이 코드의 시간 복잡도는 $O(nlog(log(n)))$이다.</p>
 
         
         
@@ -587,7 +669,7 @@
         <!-- 업데이트 날짜 -->
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2023-12-27">December 27, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2023-12-29">December 29, 2023</time></p>
 
       </footer>
 
@@ -596,11 +678,11 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B2023-12-27%5DTIL%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%5D%EC%86%8C%EC%88%98+%ED%8C%90%EB%B3%84%2C+%EA%B5%AC%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2586%258C%25EC%2588%2598%25ED%258C%2590%25EB%25B3%2584%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2586%258C%25EC%2588%2598%25ED%258C%2590%25EB%25B3%2584%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2586%258C%25EC%2588%2598%25ED%258C%2590%25EB%25B3%2584%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 
   <a id="kakao-link-btn" href="javascript:sendLink()" class="btn btn--comment">
     <i class="fa-fw fas fa-comment" aria-hidden="true"></i>
@@ -615,9 +697,9 @@
         Kakao.Link.sendCustom({
           templateId: 67195,   // 복사해둔 템플릿 ID
           templateArgs: {
-            title: "[2023-12-27]TIL",
-            description: "23.12.27 TIL",
-            url : "/til/TIL3/",
+            title: "[알고리즘]소수 판별, 구하기",
+            description: "소수판별법",
+            url : "/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/",
           },
         });
       }
@@ -627,12 +709,11 @@
       
   <nav class="pagination">
     
-      <a href="/java/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/" class="pagination--pager" title="[Java] Primitive Type(원시타입)과 Reference Type(참조타입)
+      <a href="/til/TIL5/" class="pagination--pager" title="[2023-12-29]TIL
 ">이전</a>
     
     
-      <a href="/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/" class="pagination--pager" title="[2023-12-27]Github Blog 설정 방법
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -646,44 +727,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/" rel="permalink">[알고리즘]소수 판별, 구하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">소수판별법
-</p>
-  </article>
-</div>
-
         
           
 
@@ -794,6 +837,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">큐(Queue)의 정의와 java에서 사용법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/" rel="permalink">[2023-12-27]Github Blog 설정 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-27T00:00:00+09:00">December 27, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">블로그 설정
 </p>
   </article>
 </div>

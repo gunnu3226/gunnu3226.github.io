@@ -318,7 +318,7 @@
         <!--전체 글 수-->
         <li>
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span
-                    style="font-family:'Coming Soon';">6</style> <span
+                    style="font-family:'Coming Soon';">9</style> <span
                         style="font-family:'Cafe24Oneprettynight';">개</style>
         </li>
         <li>
@@ -330,7 +330,9 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
                 
                 
-                <li><a href="/categories/til" class="">TIL (3)</a></li>
+                <li><a href="/categories/til" class="">TIL (5)</a></li>
+                
+                
                 
                 
                 
@@ -341,6 +343,8 @@
                 
             </ul>
             <ul>
+                
+                
                 
                 
                 
@@ -354,6 +358,10 @@
             <span class="nav__sub-title">Java</span>
             <ul>
                 
+                
+                
+                
+                <li><a href="/categories/java" class="">Java (1)</a></li>
                 
                 
                 
@@ -373,7 +381,24 @@
                 
                 
                 
+                
+                
+                <li><a href="categories/algorithm" class="">알고리즘 (1)</a></li>
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
                 <li><a href="/categories/datastructure" class="">자료구조 (1)</a></li>
+                
+                
                 
                 
             </ul>
@@ -388,8 +413,12 @@
                 
                 
                 
+                
+                
             </ul>
             <ul>
+                
+                
                 
                 
                 
@@ -409,6 +438,8 @@
                 
                 
                 <li><a href="/categories/githubblog" class="">Github Blog(1)</a></li>
+                
+                
                 
                 
                 
@@ -501,12 +532,202 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#자료구조queue">[자료구조]Queue</a></li></ul>
+              <ul class="toc__menu"><li><a href="#큐queue">큐(Queue)?</a><ul><li><a href="#큐queue의-특징">큐(Queue)의 특징</a></li><li><a href="#java에서의-큐queue">Java에서의 큐(Queue)</a><ul><li><a href="#queue선언">Queue선언</a></li><li><a href="#데이터-삽입enqueue">데이터 삽입(Enqueue)</a></li><li><a href="#데이터-삭제dequeue">데이터 삭제(Dequeue)</a></li><li><a href="#추가-메서드">추가 메서드</a><ul><li><a href="#큐-크기-확인">큐 크기 확인</a></li><li><a href="#큐가-비었는지-확인">큐가 비었는지 확인</a></li><li><a href="#삭제-없이-값-확인">삭제 없이 값 확인</a></li><li><a href="#모든-값-삭제">모든 값 삭제</a></li></ul></li></ul></li><li><a href="#우선순위-큐priorityqueue">우선순위 큐(PriorityQueue)?</a><ul><li><a href="#우선순위-큐priorityqueue-특징">우선순위 큐(PriorityQueue) 특징</a></li><li><a href="#우선순위-큐priorityqueue-선언">우선순위 큐(PriorityQueue) 선언</a></li><li><a href="#우선순위-큐-예시">우선순위 큐 예시</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="자료구조queue">[자료구조]Queue</h2>
+        <h1 id="큐queue">큐(Queue)?</h1>
+<p>기본적인 자료구조의 한가지로, 먼저 집어 넣은 데이터가 먼저 나오는 FIFO(First In First Out)구조로 저장하는 자료구조이다.</p>
+
+<p>나중에 넣은 데이터가 먼저 나오는 스택(Stack)과 반대되는 개념이다.</p>
+
+<p><img src="https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/2e34c0f1-f3d9-4c33-b57c-5e448a28c7bf" alt="다운로드 (1)" /></p>
+
+<h2 id="큐queue의-특징">큐(Queue)의 특징</h2>
+<ol>
+  <li>
+    <p>FIFO(First In First Out)선입선출 구조이다.</p>
+  </li>
+  <li>
+    <p>한쪽 끝(rear)에서는 삽입(enQueue)만 이루어지고 한쪽 끝(front)에서는 삭제(deQueue)만 이루어 진다.</p>
+  </li>
+  <li>
+    <p>그래프의 넓이 우선 탐색(BFS)에서 사용된다.</p>
+  </li>
+  <li>
+    <p>컴퓨터 버퍼에서 주로 사용된다. 여러 개가 한꺼번에 입력이 들어올 때, 큐를 만들어 순처적으로 처리한다.</p>
+  </li>
+</ol>
+
+<h2 id="java에서의-큐queue">Java에서의 큐(Queue)</h2>
+
+<h3 id="queue선언">Queue선언</h3>
+<p>Java에서 큐는 LinkedList클래스가 구현하고 있기 때문에 사용할 때 두가지를 import 해주어야 한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>코테를 볼 때 IDE를 사용하면 자동 임포트 해주지만 그렇지 않은경우 아래와 같이 util패키지를 전부 import하는 것이 편하다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="c1">//제네릭 사용시 뒤는 생략 가능</span>
+<span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+<span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">//큐 크기 5</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 코드와 같이 제너릭을 명시하여 선언하도록 권장하고 있다. 제너릭에 대한 학습은 추후에 포스팅으로 하도록 하겠다.</p>
+
+<p>제너릭 사용시 <code class="language-plaintext highlighter-rouge">Primitive Type</code>이 아니라 <code class="language-plaintext highlighter-rouge">Reference Type</code>을 사용해야 한다. 왜냐하면 큐는 객체(Object)를 다루기 때문이다. 즉, 숫자는 <code class="language-plaintext highlighter-rouge">Integer</code>, 문자는 <code class="language-plaintext highlighter-rouge">Character</code>를 사용해야 한다.</p>
+
+<h3 id="데이터-삽입enqueue">데이터 삽입(Enqueue)</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>   <span class="c1">//실패 시 IllegalStateException 발생</span>
+<span class="n">q</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//실패 시 false반환</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>add(1)는 삽입 성공시 <code class="language-plaintext highlighter-rouge">true</code>를 반환, 여유 공간이 없어 삽입에 실패하면 <code class="language-plaintext highlighter-rouge">IllegalStateException</code> 발생.</li>
+  <li>offer(1)는 삽입 성공시 <code class="language-plaintext highlighter-rouge">true</code>를 반환, 여유 공간이 없어 삽입에 실패하면 <code class="language-plaintext highlighter-rouge">false</code> 반환.</li>
+</ul>
+
+<p>즉 값 삽입 실패시 add()메서드는 예외를 발생시키고 offer()메서드는 false를 반환하는 차이가 있다.</p>
+
+<h3 id="데이터-삭제dequeue">데이터 삭제(Dequeue)</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">q</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>   <span class="c1">//비어있을 때 Null exception 발생</span>
+<span class="n">q</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>     <span class="c1">//비어있을 때 Null반환</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">poll</span> <span class="c1">//저장도 가능</span>
+<span class="nc">Integer</span> <span class="n">b</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">poll</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>remove()메서드는 맨 앞 원소를 제거. 큐가 비어있을 때는 <code class="language-plaintext highlighter-rouge">Null exception</code> 발생.</li>
+  <li>poll()메서드는 맨 앞 원소를 반환하고 제거. 큐가 비어있을 때는 <code class="language-plaintext highlighter-rouge">Null</code>을 반환.</li>
+</ul>
+
+<p>remove는 값을 제거만 하고 비어있을 때 예외를 발생시키고, poll()은 제거하는 값을 반환해 주고 큐가 비어 있을 때 Null을 반환해준다.</p>
+
+<h3 id="추가-메서드">추가 메서드</h3>
+<h4 id="큐-크기-확인">큐 크기 확인</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">q</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="큐가-비었는지-확인">큐가 비었는지 확인</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">q</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="c1">//큐가 비었으면 true, 아니면 false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="삭제-없이-값-확인">삭제 없이 값 확인</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span> 
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">element</span><span class="o">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>element()는 큐가 비어있을 때 예외 발생</li>
+  <li>peek()는 큐가 비어있을 때 null 반환</li>
+</ul>
+
+<h4 id="모든-값-삭제">모든 값 삭제</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">q</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="우선순위-큐priorityqueue">우선순위 큐(PriorityQueue)?</h2>
+<p>우선순위 큐(PriorityQueue)란 일반적인 큐 구조를 가지면서, 데이터가 들어온 순서대로 나가는 것이 아닌 <strong>우선순위</strong>를 먼저 결정하고 <strong>우선순위가 높은 데이터가 먼저 나가는</strong> 자료구조이다.</p>
+
+<h3 id="우선순위-큐priorityqueue-특징">우선순위 큐(PriorityQueue) 특징</h3>
+<ul>
+  <li>값을 비교해야 하므로 null을 허용하지 않는다.</li>
+  <li>내부구조는 이진트리 힙으로 구성되어 있다.</li>
+  <li>내부구조가 이진트리로 되어 있어 add() 및 poll()메서드는 O(log(n))의 시간이 걸린다.</li>
+</ul>
+
+<h3 id="우선순위-큐priorityqueue-선언">우선순위 큐(PriorityQueue) 선언</h3>
+<ul>
+  <li>기본형 : 우선순위가 낮은 숫자가 먼저 나온다. 즉 <strong>작은 숫자(사전순 앞 문자)가 먼저</strong> 나온다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.PriorityQueue</span><span class="o">;</span>
+
+<span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+<span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>우선순위가 높은 숫자가 먼저 나오는 우선선위 큐. <strong>큰 숫자(사전순 뒷 문자)가 먼저</strong> 나온다.(Collections.reverseOrder()활용)</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.PriorityQueue</span><span class="o">;</span>
+
+<span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;(</span><span class="nc">Collections</span><span class="o">.</span><span class="na">reverseOrder</span><span class="o">());</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>메서드의 사용은 일반적인 큐와 동일하다.</p>
+
+<h3 id="우선순위-큐-예시">우선순위 큐 예시</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">intpq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+<span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">strpq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">intpq</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">intpq</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">intpq</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+
+<span class="n">intpq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span> <span class="c1">//1 삭제</span>
+<span class="n">intpq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span> <span class="c1">//2 삭제</span>
+<span class="n">intpq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span> <span class="c1">//3 삭제</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>일반적인 큐라면 2 - 3 - 1 순으로 삭제되었겠지만 우선순위 큐는 정렬되어 우선순위에 맞게 삭제가 일어난다.</p>
 
         
         
@@ -563,7 +784,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/til/TIL4/" class="pagination--pager" title="[2023-12-28]TIL
+">다음</a>
     
   </nav>
 
@@ -577,6 +799,120 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/" rel="permalink">[알고리즘]소수 판별, 구하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">소수판별법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL5/" rel="permalink">[2023-12-29]TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">23.12.29 TIL
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL4/" rel="permalink">[2023-12-28]TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2023-12-28T00:00:00+09:00">December 28, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">23.12.28 TIL
+</p>
+  </article>
+</div>
+
         
           
 
@@ -611,120 +947,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">블로그 설정
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL3/" rel="permalink">[2023-12-27]TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-27T00:00:00+09:00">December 27, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">23.12.27 TIL
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/new/test/" rel="permalink">[2023-12-27]test
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-27T00:00:00+09:00">December 27, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">23.12.27 test
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL2/" rel="permalink">[2023-12-26]TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-26T00:00:00+09:00">December 26, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">23.12.26 TIL
 </p>
   </article>
 </div>
