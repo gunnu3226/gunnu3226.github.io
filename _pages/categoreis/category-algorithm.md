@@ -1,11 +1,11 @@
 ---
-title: "About Dev"
+title: "Algorithm"
 layout: archive
-permalink: categories/aboutdev
+permalink: categories/algorithm
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories['About Dev'] %}
+{% assign posts = site.categories.Algorithm %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
