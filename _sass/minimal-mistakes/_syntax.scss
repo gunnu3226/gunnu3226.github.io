@@ -88,6 +88,10 @@ figure.highlight {
     /* Punctuation */
     color: $base05;
   }
+    /* 이 부분을 추가합니다. */
+  pre {
+    color: $base05;
+  }
   .cm {
     /* Comment.Multiline */
     color: $base04;
