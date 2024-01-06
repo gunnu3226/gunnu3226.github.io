@@ -16,6 +16,7 @@ figure.highlight {
   > pre,
   pre.highlight {
     margin: 0;
+    color: #000000;
     padding: 1em;
   }
 }
@@ -86,10 +87,6 @@ figure.highlight {
   }
   .p {
     /* Punctuation */
-    color: $base05;
-  }
-    /* 이 부분을 추가합니다. */
-  pre {
     color: $base05;
   }
   .cm {
