@@ -6,7 +6,7 @@
    figure.highlight {
      position: relative;
      margin-bottom: 1em;
-     background: $base00;
+     background: #1e1e1e;
      color: $base05;
      font-family: $monospace;
      font-size: $type-size-6;
@@ -57,7 +57,7 @@
    }
    
    .highlight .hll {
-     background-color: $base06;
+     background-color: #f78c6c;
    }
    .highlight {
      .c {
@@ -70,23 +70,23 @@
      }
      .k {
        /* Keyword */
-       color: $base0e;
+       color: #f78c6c;
      }
      .l {
        /* Literal */
        color: $base09;
      }
      .n {
-       /* Name */
+       /* Name */ //변수명
        color: $base05;
      }
      .o {
        /* Operator */
-       color: $base0c;
+       color: #ffffff;
      }
      .p {
        /* Punctuation */
-       color: $base05;
+       color: #ffffff;
      }
      .cm {
        /* Comment.Multiline */
@@ -137,11 +137,11 @@
      }
      .kc {
        /* Keyword.Constant */
-       color: $base0e;
+       color: #f78c6c;
      }
      .kd {
        /* Keyword.Declaration */
-       color: $base0e;
+       color: #f78c6c;
      }
      .kn {
        /* Keyword.Namespace */
@@ -149,11 +149,11 @@
      }
      .kp {
        /* Keyword.Pseudo */
-       color: $base0e;
+       color: #f78c6c;
      }
      .kr {
        /* Keyword.Reserved */
-       color: $base0e;
+       color: #f78c6c;
      }
      .kt {
        /* Keyword.Type */
@@ -181,7 +181,7 @@
      }
      .nc {
        /* Name.Class */
-       color: $base0a;
+       color: #ffffff;
      }
      .no {
        /* Name.Constant */
@@ -189,7 +189,7 @@
      }
      .nd {
        /* Name.Decorator */
-       color: $base0c;
+       color: yellow;
      }
      .ni {
        /* Name.Entity */
@@ -201,7 +201,7 @@
      }
      .nf {
        /* Name.Function */
-       color: $base0d;
+       color: #00b7ff;
      }
      .nl {
        /* Name.Label */

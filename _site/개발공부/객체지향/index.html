@@ -1,0 +1,1193 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID - CodeGun</title>
+<meta name="description" content="객체지향 5원칙 SOLID">
+
+
+  <meta name="author" content="Gunnu LEE">
+  
+  <meta property="article:author" content="Gunnu LEE">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodeGun">
+<meta property="og:title" content="[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID">
+<meta property="og:url" content="http://localhost:4000/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/">
+
+
+  <meta property="og:description" content="객체지향 5원칙 SOLID">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-01-06T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Gunnu Lee",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CodeGun Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- darkmode css
+ -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- end custom head snippets -->
+
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <!-- NanumGothic -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    
+    <!-- NanumGothicCoding -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
+    
+    <!-- Gowun Dodum -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <!-- Ubuntu Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style> 
+      ::-webkit-scrollbar{
+        width: 13px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color:#dededee2;
+        border-radius: 16px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color:#bababad5;
+        border-radius: 16px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #676767d9;
+      }
+      ::-webkit-scrollbar-button:start:decrement,
+      ::-webkit-scrollbar-button:end:increment 
+      {
+          width:12px;
+          height:12px;
+          background:transparent;
+      }
+      /* 사이드바 스크롤바 없애기 */
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          CodeGun
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <!--  -->
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.JPG" alt="Gunnu LEE" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Gunnu LEE</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Back-End개발을 공부하고 
+기록하는 공간🧑🏻‍💻</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+
+      
+
+      
+        
+          
+            <li><a href="mailto:lkw3226@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/gunnu3226" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+
+  
+  
+
+<nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">토글 메뉴</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <!--전체 글 수-->
+        <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span
+                    style="font-family:'Coming Soon';">23</style> <span
+                        style="font-family:'Cafe24Oneprettynight';">개</style>
+        </li>
+        <li>
+            <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+            <span class="nav__sub-title">TIL</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                
+                
+                <li><a href="/categories/til" class="">TIL (10)</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">Java</span>
+            <ul>
+                
+                
+                
+                
+                
+                
+                <li><a href="/categories/java" class="">Java (1)</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">프레임워크</span>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="categories/spring" class="">Spring (1)</a></li>
+                
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">CS</span>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="categories/algorithm" class="">알고리즘 (2)</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+                
+                <li><a href="/categories/datastructure" class="">자료구조 (1)</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">코딩테스트</span>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/categories/programmers" class="">프로그래머스 (6)</a></li>
+                
+                
+                
+                
+                
+                
+            </ul>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+            <span class="nav__sub-title">ETC</span>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/categories/githubblog" class="">Github Blog(1)</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID">
+    <meta itemprop="description" content="객체지향 5원칙 SOLID">
+    <meta itemprop="datePublished" content="2024-01-06T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-06T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/" class="u-url" itemprop="url">[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID
+</a>
+          </h1>
+          <!-- 업로드 날짜 -->
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-06T00:00:00+09:00">January 6, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+          <!-- 카테고리,테그 -->
+          
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80" class="page__taxonomy-item p-category" rel="tag">개발공부</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80" class="page__taxonomy-item p-category" rel="tag">개발공부</a>
+    
+    </span>
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#객체-지향-프로그래밍">객체 지향 프로그래밍?</a></li><li><a href="#좋은-객체-지향-설계의-5가지-원칙solid">좋은 객체 지향 설계의 5가지 원칙(SOLID)</a><ul><li><a href="#srp단일-책임-원칙">SRP(단일 책임 원칙)</a></li><li><a href="#ocp개방-폐쇄-원칙">OCP(개방-폐쇄 원칙)</a></li><li><a href="#lsp리스코프-치환-원칙">LSP(리스코프 치환 원칙)</a></li><li><a href="#isp인터페이스-분리-원칙">ISP(인터페이스 분리 원칙)</a></li><li><a href="#dip의존관계-역전-원칙">DIP(의존관계 역전 원칙)</a><ul><li><a href="#참고자료">참고자료</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="객체-지향-프로그래밍">객체 지향 프로그래밍?</h2>
+<ul>
+  <li>컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 여러개의 독립된 단위, 즉 <strong>객체</strong>들의 모임으로 파악하고자 하는것이다.</li>
+  <li>각각의 객체는 메시지를 주고받고, 데이터를 처리할 수 있다.(<strong>협력</strong>)</li>
+  <li>객체 지향 프로그래밍 프로그램은 <strong>유연</strong>하고 <strong>변경이 용이</strong>하게 만들기 때문에 대규모 소프트웨어 개발에 많이 사용된다.</li>
+</ul>
+
+<h2 id="좋은-객체-지향-설계의-5가지-원칙solid">좋은 객체 지향 설계의 5가지 원칙(SOLID)</h2>
+<p>클린코드로 유명한 로버트 마틴이 좋은 객체 지향 설계의 5가지 원칙을 정리했다. 이 원칙들을 지키면 변경이 용이하고, 유지보수와 확장이 쉬운 소프트웨어를 개발하는데 도움이 되는 것으로 알려져있다.</p>
+
+<ul>
+  <li>SRP : 단일 책임 원칙(Single responsibility principle)</li>
+  <li>OCP : 개방-폐쇄 원칙 (Open/closed principle)</li>
+  <li>LSP :리스코프 치환 원칙 (Liskov substitution principle)</li>
+  <li>ISP : 인터페이스 분리 원칙 (Interface segregation principle)</li>
+  <li>DIP : 의존관계 역전 원칙 (Dependency inversion principle)</li>
+</ul>
+
+<h3 id="srp단일-책임-원칙">SRP(단일 책임 원칙)</h3>
+<ul>
+  <li>한 클래스는 하나의 책임만 가져야 한다.</li>
+  <li>문맥과 상황에 따라 다르다.</li>
+  <li><strong>중요한 기준은 변경</strong>이다. 변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따른 것.</li>
+</ul>
+
+<h3 id="ocp개방-폐쇄-원칙">OCP(개방-폐쇄 원칙)</h3>
+<ul>
+  <li>소프트웨어 요소는 <strong>확장에는 열려</strong> 있으나 <strong>변경에는 닫혀</strong> 있어야 한다.</li>
+  <li>확장에 대해 열려 있다 -&gt; 요구사항이 변경될 때 새로운 동작을 추가하여 애플리케이션의 기능을 확장할 수 있다.</li>
+  <li>변경에 대해 닫혀 있다 -&gt; 기존의 코드를 수정하지 않고 애플리케이션의 동작을 추가하거나 변경할 수 있다.</li>
+  <li>개방 폐쇄 원칙을 지키기 위해서는 추상화에 의존해야 한다.</li>
+</ul>
+
+<p>예시를 보고 확인해 본다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SHA256PasswordEncoder</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">encryptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">)</span>  <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">SHA256PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>유저 서비스에서 비밀번호 암호와 알고리즘을 사용하기위해 SHA256PasswordEncoder를 사용한다. 이때 비밀번호 암호화 정책을 수정하거나 바꾸려고 시도하면 UserService를 수정해야한다. 이는 개방-폐쇄 원칙에 위배된 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PasswordEncoder</span> <span class="o">{</span>
+  <span class="nc">String</span> <span class="nf">encrptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">);</span>
+<span class="o">}</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SHA256PasswordEncoder</span> <span class="kd">implements</span> <span class="nc">PasswordEnCoder</span><span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">encryptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">)</span>  <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 코드는 추상화를 사용해 UserService가 구현체에 의존하지 않고 추상화된 PasswordEncoder에 의존하고 있다. 그렇다면 추후 비밀번호 암호와 정책이 변한다 해도 UserService에서는 수정이 필요 없고, 이는 개방-폐쇄 원칙을 충족한다.</p>
+
+<h3 id="lsp리스코프-치환-원칙">LSP(리스코프 치환 원칙)</h3>
+<ul>
+  <li>프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다</li>
+  <li>다형성에서 하위 클래스는 인터페이스 규약을 다 지켜야 한다.</li>
+  <li>다형성을 지원하기 위한 원칙으로, 인터페이스를 구현한 구현체를 믿고 사용하려면, 이 원칙이 필요하다.</li>
+  <li>단순히 컴파일을 성공하는 것이 문제가 아님.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Car</span> <span class="o">{</span>
+
+    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예를 들면 자동차 인터페이스의 엑셀은 앞으로 가라는 기능이다. 이때 어떤 구현체에서 엑셀을 뒤로 가게 구현한다면 LSP 위반이다. 
+<br />
+<br /></p>
+
+<h3 id="isp인터페이스-분리-원칙">ISP(인터페이스 분리 원칙)</h3>
+<ul>
+  <li>목적과 관심이 각기 다른 클라이언트가 있다면 인터페이스를 통해 적적히 분리해 줘야한다.</li>
+  <li>특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.</li>
+  <li>자동차 인터페이스
+    <ul>
+      <li>운전 인터페이스</li>
+      <li>정비 인터페이스</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Car</span> <span class="o">{</span>
+
+    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">repair</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"수리 기능"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 코드에서 Repair로직을 추가한다고 했을 때, 정비사 클라이언트가 repair()에 접근하려면 구현체 클래스인 K3를 주입 받아야 한다. 그러면 필요하지 않은 accelerate에도 접근이 가능해지고 인터페이스 분리원칙을 위배하게 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Drive</span> <span class="o">{</span>
+
+    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Repair</span> <span class="o">{</span>
+
+    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">,</span> <span class="nc">Repair</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">repair</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"수리 기능"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 처럼 분리한다면 운전자 클라이언트와 정비사 클라이언트가 각 필요한 기능의 인터페이스만 주입받아 사용하면 된다. 이렇게 클라이언트에 따라 인터페이스를 분리하여 변경에 의한 영향을 제어할 수 있다. 이것을 인터페이스 분리 원칙이라고 부른다.</p>
+
+<h3 id="dip의존관계-역전-원칙">DIP(의존관계 역전 원칙)</h3>
+<ul>
+  <li>고수준 모듈은 저수준 모듈의 구현에 의존해서는 안되며, 저수준 모듈이 고수준 모듈에 의존해야 한다.
+    <ul>
+      <li>고수준 모듈 : 입력과 출력으로부터 먼 추상화된 모듈</li>
+      <li>저서준 모듈 : 입력과 출력으로부터 가까운 구현 모듈</li>
+    </ul>
+  </li>
+  <li>쉽게 이야기하면 구현클래스에 의존하지 말고, 인터페이스에 의존하라는 뜻이다.</li>
+  <li>의존관계 역전 원칙에서 의존성이 역전되는 시점은 컴파일 시점이다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberService</span> <span class="o">{</span>
+<span class="kd">private</span> <span class="nc">MemberRepository</span> <span class="n">memberRepository</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>MemberService는 코드에서는 MemberRepository라는 인터페이스에 의존하고 이는 DIP를 만족한다. 이 때 자바에서는 객체를 생성하고, 연관 관계를 맺어주는 설정자를 만들어 사용한다.
+<br />
+<br />
+<br />
+<br /></p>
+
+<p>위 원칙들을 SOLID 원칙의 핵심은 추상화와 다형성이다. 스프링은 DI(Dependency Injection)과 컨테이너로 다형성과, OCP, DIP를 가능하게 지원해준다.</p>
+
+<h4 id="참고자료">참고자료</h4>
+<p><a href="https://mangkyu.tistory.com/194">망나니개발자[OOP] 객체지향 프로그래밍의 5가지 설계 원칙, 실무 코드로 살펴보는 SOLID</a></p>
+
+<p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8#">스프링 핵심원리 - 기본편(김영한)</a></p>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-06">January 6, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5D+%EC%A2%8B%EC%9D%80+%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%EC%84%A4%EA%B3%84%EC%9D%98+5%EA%B0%80%EC%A7%80+%EC%9B%90%EC%B9%99%2C+SOLID%20http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259C%25EB%25B0%259C%25EA%25B3%25B5%25EB%25B6%2580%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259C%25EB%25B0%259C%25EA%25B3%25B5%25EB%25B6%2580%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259C%25EB%25B0%259C%25EA%25B3%25B5%25EB%25B6%2580%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a id="kakao-link-btn" href="javascript:sendLink()" class="btn btn--comment">
+    <i class="fa-fw fas fa-comment" aria-hidden="true"></i>
+    <span>KakaoTalk</span>
+  </a>
+</section>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script>
+      Kakao.init("e5171e42a3efb8f8a8f6271c7c84e62c"); 
+      function sendLink() {
+        Kakao.Link.sendCustom({
+          templateId: 67195,   // 복사해둔 템플릿 ID
+          templateArgs: {
+            title: "[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID",
+            description: "객체지향 5원칙 SOLID",
+            url : "/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/",
+          },
+        });
+      }
+  </script>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/programmers/1%EC%B0%A8-%EC%BA%90%EC%8B%9C/" class="pagination--pager" title="[프로그래머스] LV.2 [1차] 캐시 Java
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/1%EC%B0%A8-%EC%BA%90%EC%8B%9C/" rel="permalink">[프로그래머스] LV.2 [1차] 캐시 Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-05T00:00:00+09:00">January 5, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2018 KAKAO BLIND RECRUITMENT
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL10/" rel="permalink">[TIL]2024.01.05 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-05T00:00:00+09:00">January 5, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2024.01.05 TIL
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%BA%90%EC%8B%9C%EA%B5%90%EC%B2%B4%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="permalink">[알고리즘] 캐시 교체 알고리즘
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-05T00:00:00+09:00">January 5, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐시 교체 알고리즘
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9/" rel="permalink">[프로그래머스] LV.2 연속된 부분 수열의 합 Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-04T00:00:00+09:00">January 4, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">연속된 부분 수열의 합
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/gunnu3226" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Gunnu Lee. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'gunnu3226/gunnu3226.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('label', '✨comment✨');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
