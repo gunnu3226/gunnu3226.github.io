@@ -34,10 +34,10 @@ body {
 .search-content {
   flex: 1 0 auto;
 }
-
 .page {
   @include breakpoint($large) {
     float: right;
+    line-height: 2.0;
     width: calc(100% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
   }
@@ -52,6 +52,8 @@ body {
     margin-top: 1em;
     margin-left: 0;
     margin-right: 0;
+    padding-left: 50px;
+    padding-right: 50px;
     width: 100%;
     clear: both;
 
@@ -69,8 +71,11 @@ body {
 }
 
 .page__title {
-  margin-top: 0;
+  margin-top: 50px;
   line-height: 1;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 35px;
 
   a {
     color: $text-color;
@@ -79,6 +84,8 @@ body {
 
   & + .page__meta {
     margin-top: -0.5em;
+    text-align: center;
+    margin-bottom: 80px;
   }
 }
 
@@ -113,7 +120,7 @@ body {
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: .95em;
   }
 
   /* paragraph indents */
@@ -329,6 +336,8 @@ body {
    ========================================================================== */
 
 .page__taxonomy {
+  font-size: 1em;
+
   .sep {
     display: none;
   }
@@ -342,7 +351,7 @@ body {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
-  padding: 5px 10px;
+  padding: 0px 5px;
   text-decoration: none;
   border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
@@ -512,7 +521,7 @@ body {
 
 .comment__date {
   @extend .page__meta;
-  margin: 0;
+  align : 
 
   a {
     text-decoration: none;
