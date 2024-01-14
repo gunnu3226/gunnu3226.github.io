@@ -9,30 +9,36 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>TIL - CodeGun</title>
-<meta name="description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
+<!-- begin _includes/seo.html --><title>[WEB] HTTP와 HTTPS의 개념과 차이점 - CodeGun</title>
+<meta name="description" content="HTTP VS HTTPS">
 
 
   <meta name="author" content="Gunnu LEE">
   
+  <meta property="article:author" content="Gunnu LEE">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="TIL">
-<meta property="og:url" content="http://localhost:4000/categories/til">
+<meta property="og:title" content="[WEB] HTTP와 HTTPS의 개념과 차이점">
+<meta property="og:url" content="http://localhost:4000/network/HTTP/">
 
 
-  <meta property="og:description" content="공부하고 기록하는 블로그 입니다🧑🏻‍💻">
-
-
-
+  <meta property="og:description" content="HTTP VS HTTPS">
 
 
 
 
 
+
+
+  <meta property="article:published_time" content="2024-01-14T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-01-14T00:00:00+09:00">
 
 
 
@@ -41,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/categories/til">
+<link rel="canonical" href="http://localhost:4000/network/HTTP/">
 
 
 
@@ -142,7 +148,7 @@
     </style>
   </head>
 
-  <body class="layout--archive">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -583,13 +589,255 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[WEB] HTTP와 HTTPS의 개념과 차이점">
+    <meta itemprop="description" content="HTTP VS HTTPS">
+    <meta itemprop="datePublished" content="2024-01-14T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-14T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/network/HTTP/" class="u-url" itemprop="url">[WEB] HTTP와 HTTPS의 개념과 차이점
+</a>
+          </h1>
+          <!-- 업로드 날짜 -->
+          
+
+  <p class="page__meta">
     
-      <h1 id="page-title" class="page__title">TIL</h1>
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-14T00:00:00+09:00">January 14, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+          <!-- 카테고리,테그 -->
+          
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80" class="page__taxonomy-item p-category" rel="tag">개발공부</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="page__taxonomy-item p-category" rel="tag">네트워크</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#network" class="page__taxonomy-item p-category" rel="tag">Network</a>
+    
+    </span>
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#http란">HTTP란?</a><ul><li><a href="#http의-특징">HTTP의 특징</a><ul><li><a href="#무상태성stateless">무상태성(Stateless)</a></li></ul></li><li><a href="#http의-구조">HTTP의 구조</a><ul><li><a href="#method">Method</a></li></ul></li><li><a href="#http의-문제점">HTTP의 문제점</a></li></ul></li><li><a href="#https란">HTTPS란?</a><ul><li><a href="#httpshyper-text-transfer-protocol-secure">HTTPS(Hyper Text Transfer Protocol Secure)</a></li><li><a href="#대칭키-암호화와-비대칭키-암호화">대칭키 암호화와 비대칭키 암호화</a></li><li><a href="#https의-동작-과정">HTTPS의 동작 과정</a></li></ul></li><li><a href="#http와-https의-차이점">HTTP와 HTTPS의 차이점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="http란">HTTP란?</h1>
+<p><strong>HTTP(Hyper Text Transfer Protocol)</strong> 란 클라이언트와 서버 간 통신을 위한 프로토콜로 TCP/IP위에서 작동한다. 즉, 인터넷에서 하이퍼텍스트를 교환하기 위한 통신 규약으로, 80번 포트를 사용한다. HTTP통신은 텍스트, 이미지, 영상, JSON등 거의 모든 형태의 데이터 전송이 가능하다.</p>
+
+<p>HTTP는 1997년 만들어진 HTTP/1.1이 가장 보편화 되어있으며, 현재는 HTTP/2, HTTP/3까지 개발된 상태이다.</p>
+
+<blockquote>
+  <p><strong>프로토콜?</strong><br />
+컴퓨터 내부에서 또는 컴퓨터 사이에 데이터 교환 방식을 정의하는 규칙 세계이다. 기기 간 통신은 교환되는 데이터의 형식에 대해 상호 합의를 요구하며 이런 형식을 정의하는 규칙의 집합이다.</p>
+</blockquote>
+
+<p>클라이언트는 URL(Uniform Resource Locator)로 된 HTTP를 통해 서버에게 정보 송신을 요청합니다. 서버는 클라이 언트의 요청을 해석하여 데이터를 클라이언트에게 송신 한다.</p>
+
+<p align="center"><img src="https://github.com/gunnu3226/Coding-test/assets/139452702/7d90200a-9a0b-496a-b207-4ac64cd6949e" /></p>
+
+<h2 id="http의-특징">HTTP의 특징</h2>
+
+<h3 id="무상태성stateless">무상태성(Stateless)</h3>
+<p>각각의 요청이 독립적으로 여겨지는 특징으로, 서버는 클라이언트의 상태를 유지하지 않는다. 즉, 각 클라이언터에 맞게 리소스를 응답하는 것은 불가능하다. 이를 해결하기 위해, 쿠키나 세션 또는 토큰 방식의 JWT가 사용된다.</p>
+
+<h2 id="http의-구조">HTTP의 구조</h2>
+<p>HTTP는 Method, Path, Version, Headers, Body 등으로 구성된다.
+<img src="https://github.com/gunnu3226/Coding-test/assets/139452702/6952f8a2-b057-4434-a164-c92836995401" alt="다운로드" /></p>
+
+<h3 id="method">Method</h3>
+<ul>
+  <li>GET : 서버에 조회할 리소스를 요청한다. (READ)</li>
+  <li>POST : 서버에 생성할 데이터를 body에 삽입하여 전송한다. (CREATE)</li>
+  <li>PUT : 서버에 body에 수정할 데이터를 삽입하여 전송한다. (UPDATE)</li>
+  <li>DELETE : 서버에 삭제할 리소스를 요청한다. (DELETE)</li>
+  <li>PATCH : PUT과 비슷하지만 이부만 수정한다는 점이 다르다.</li>
+</ul>
+
+<h2 id="http의-문제점">HTTP의 문제점</h2>
+<p>HTTP는 암호화가 되지 않은 평문 데이터를 전송하는 프로토콜이기 때문에, 개인정보나 비밀을 취급하는 서비스에서는 정보가 유출될 수 있다. 이 문제를 해결하기위해 암호화가 추가된 HTTPS가 등장하게 되었다.
+<br />
+<br />
+<br /></p>
+
+<h1 id="https란">HTTPS란?</h1>
+
+<h2 id="httpshyper-text-transfer-protocol-secure">HTTPS(Hyper Text Transfer Protocol Secure)</h2>
+<p><strong>HTTPS(Hyper Text Transfer Protocol Secure)</strong> 란 HTTP에 데이터 암호화가 추가된 프로토콜이다. HTTPS는 443번 포트를 사용하며, 네트워크 상에서 중간에 제 3자가 정보를 볼 수 없도록 암호화를 지원한다.</p>
+
+<h2 id="대칭키-암호화와-비대칭키-암호화">대칭키 암호화와 비대칭키 암호화</h2>
+<ul>
+  <li>대칭키 암호화
+    <ul>
+      <li>클라이언트와 서버가 동일한 키를 사용해 암호화/복호화를 진행함</li>
+      <li>키가 노출되면 매우 위험하지만 연산 속도가 빠름</li>
+    </ul>
+  </li>
+  <li>비대칭키 암호화
+    <ul>
+      <li>1개의 쌍으로 구성된 공개키와 개인키를 암호화/복호화 하는데 사용함</li>
+      <li>키가 노출되어도 비교적 안전하지만 연산 속도가 느림</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="https의-동작-과정">HTTPS의 동작 과정</h2>
+<p>HTTPS는 대칭키 암호화와 비대칭키 암호화를 모두 사용하여 빠른 연산 속도와 안정성을 모두 얻고 있다. HTTPS 연결 과정(Hand-Shaking)에서는 먼저 서버와 클라이언트 간에 세션키를 교환한다. 여기서 세션키는 주고 받는 데이터를 암호화하기 위해 사용되는 대칭키이며, 데이터 간의 교환에는 빠른 연산 속도가 필요하므로 세션키는 대칭키로 만들어진다.</p>
+
+<p>문제는 이 세션키를 클라이언트와 서버가 어떻게 교환할 것이냐 인데, 이 과정에서 비대칭키가 사용된다.
+즉, 처음 연결을 성립하여 안전하게 세션키를 공유하는 과정에서 비대칭키가 사용되는 것이고, 이후에 데이터를 교환하는 과정에서 빠른 연산 속도를 위해 대칭키가 사용되는 것이다.</p>
+
+<p align="center"><img src="https://github.com/gunnu3226/Coding-test/assets/139452702/e13f046c-953f-4268-b0ae-2aed87fc43ad" height="800px" width="500px" /></p>
+
+<p>실제 HTTPS연결 과정이 성립되는 흐름은 다음과 같다.</p>
+<ol>
+  <li>클라이언트(브라우저)가 서버로 최초 연결 시도를 함</li>
+  <li>서버는 공개키(SSL인증서)를 브라우저에게 넘겨줌</li>
+  <li>브라우저에서 SSL인증서가 인증되면 세션키를 보유하고 공개키를 사용해 세션키를 암호화 하여 서버에 전송함</li>
+  <li>서버는 개인키를 사용해 복호화하여 세션키를 얻음</li>
+  <li>클라이언트와 서버는 동일한 세션키를 사용하여 암호화/복호화를 통한 안전한 메세지를 전달함</li>
+</ol>
+
+<p>2번 과정을 보면 서버의 공개키는 인증서라고 되어있는데 이는 일반적으로 CA(Certificate Authority)에 공개키를 전송하여 받은 인증서이다. 브라우저에는 인증된 CA 기관의 정보들이 사전 등록되어 있어 인증된 CA기관의 인증서가 아닐 경우 브라우저에 빨간 줄 혹은 경고가 보여진다.
+<br />
+<br />
+<br /></p>
+<h1 id="http와-https의-차이점">HTTP와 HTTPS의 차이점</h1>
+<p>HTTP는 암호화 과정이 없기 때문에 속도가 더 빠르고 인증서를 사용하는 비용이 들지 않는다. 이렇기 때문에 보안이 필요없는 간단한 혹은 공개 가능한 일부 서비스는 HTTP를 이용할 수 있다. 하지만 보안이 필요한 경우는 HTTPS를 이용하여 사용해야 한다.
+<br />
+<br />
+<br /></p>
+
+<p>Reference<br />
+<a href="https://mangkyu.tistory.com/98">https://mangkyu.tistory.com/98</a><br />
+<a href="https://aws.amazon.com/ko/compare/the-difference-between-https-and-http/">https://aws.amazon.com/ko/compare/the-difference-between-https-and-http/</a><br />
+<a href="https://velog.io/@rlaclgns321/HTTP">https://velog.io/@rlaclgns321/HTTP</a></p>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-14">January 14, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BWEB%5D+HTTP%EC%99%80+HTTPS%EC%9D%98+%EA%B0%9C%EB%85%90%EA%B3%BC+%EC%B0%A8%EC%9D%B4%EC%A0%90%20http%3A%2F%2Flocalhost%3A4000%2Fnetwork%2FHTTP%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnetwork%2FHTTP%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnetwork%2FHTTP%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a id="kakao-link-btn" href="javascript:sendLink()" class="btn btn--comment">
+    <i class="fa-fw fas fa-comment" aria-hidden="true"></i>
+    <span>KakaoTalk</span>
+  </a>
+</section>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script>
+      Kakao.init("e5171e42a3efb8f8a8f6271c7c84e62c"); 
+      function sendLink() {
+        Kakao.Link.sendCustom({
+          templateId: 67195,   // 복사해둔 템플릿 ID
+          templateArgs: {
+            title: "[WEB] HTTP와 HTTPS의 개념과 차이점",
+            description: "HTTP VS HTTPS",
+            url : "/network/HTTP/",
+          },
+        });
+      }
+  </script>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/TIL12/" class="pagination--pager" title="[TIL]2024.01.09 TIL
+">이전</a>
     
     
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
@@ -621,8 +869,13 @@
   </article>
 </div>
 
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
@@ -654,12 +907,55 @@
   </article>
 </div>
 
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/TIL10/" rel="permalink">[TIL]2024.01.05 TIL
+        <a href="/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/" rel="permalink">[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-06T00:00:00+09:00">January 6, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">객체지향 5원칙 SOLID
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/1%EC%B0%A8-%EC%BA%90%EC%8B%9C/" rel="permalink">[프로그래머스] LV.2 [1차] 캐시 Java
 </a>
       
     </h2>
@@ -682,310 +978,16 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">2024.01.05 TIL
+    <p class="archive__item-excerpt" itemprop="description">2018 KAKAO BLIND RECRUITMENT
 </p>
   </article>
 </div>
 
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL9/" rel="permalink">[TIL]2024.01.04 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
         
-        <time datetime="2024-01-04T00:00:00+09:00">January 4, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2024.01.04 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL8/" rel="permalink">[TIL]2024.01.03 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-03T00:00:00+09:00">January 3, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2024.01.03 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL7/" rel="permalink">[TIL]2024.01.02 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-02T00:00:00+09:00">January 2, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2024.01.02 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL6/" rel="permalink">[TIL]2023.12.30 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-30T00:00:00+09:00">December 30, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.30 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL5/" rel="permalink">[TIL]2023.12.29 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-29T00:00:00+09:00">December 29, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.29 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL4/" rel="permalink">[TIL]2023.12.29 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-28T00:00:00+09:00">December 28, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.29 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL3/" rel="permalink">[TIL]2023.12.27 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-27T00:00:00+09:00">December 27, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.27 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL2/" rel="permalink">[TIL]2023.12.27 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-26T00:00:00+09:00">December 26, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.27 TIL
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/TIL1/" rel="permalink">[TIL]2023.12.27 TIL
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2023-12-22T00:00:00+09:00">December 22, 2023</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">2023.12.27 TIL
-</p>
-  </article>
-</div>
-
-
-  </div>
+      </div>
+    </div>
+  
+  
 </div>
     </div>
 
@@ -1038,6 +1040,31 @@
 
 
 
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'gunnu3226/gunnu3226.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('label', '✨comment✨');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
 
 
 

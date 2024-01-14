@@ -1,11 +1,11 @@
 ---
-title: "개발지식"
+title: "개발공부"
 layout: archive
-permalink: categories/개발지식
+permalink: categories/study
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.개발지식 %}
+{% assign posts = site.categories.Study %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

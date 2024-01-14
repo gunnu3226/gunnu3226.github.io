@@ -42,7 +42,7 @@
             <ul>
                 {% for category in site.categories %}
                 {% if category[0] == "Spring" %}
-                <li><a href="categories/spring" class="">Spring ({{category[1].size}})</a></li>
+                <li><a href="/categories/spring" class="">Spring ({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -50,7 +50,7 @@
             <ul>
                 {% for category in site.categories %}
                 {% if category[0] == "Algorithm" %}
-                <li><a href="categories/algorithm" class="">알고리즘 ({{category[1].size}})</a></li>
+                <li><a href="/categories/algorithm" class="">알고리즘 ({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -63,8 +63,15 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                {% if category[0] == "개발지식" %}
-                <li><a href="/categories/개발지식" class="">개발지식 ({{category[1].size}})</a></li>
+                {% if category[0] == "Network" %}
+                <li><a href="/categories/network" class="">네트워크 ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "Study" %}
+                <li><a href="/categories/study" class="">개발공부 ({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>

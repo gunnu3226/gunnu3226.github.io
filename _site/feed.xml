@@ -5,9 +5,175 @@
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Jan 2024 14:22:10 +0900</pubDate>
-    <lastBuildDate>Sun, 07 Jan 2024 14:22:10 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Jan 2024 01:22:23 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Jan 2024 01:22:23 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>[WEB] HTTP와 HTTPS의 개념과 차이점</title>
+        <description>&lt;h1 id=&quot;http란&quot;&gt;HTTP란?&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;HTTP(Hyper Text Transfer Protocol)&lt;/strong&gt; 란 클라이언트와 서버 간 통신을 위한 프로토콜로 TCP/IP위에서 작동한다. 즉, 인터넷에서 하이퍼텍스트를 교환하기 위한 통신 규약으로, 80번 포트를 사용한다. HTTP통신은 텍스트, 이미지, 영상, JSON등 거의 모든 형태의 데이터 전송이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;HTTP는 1997년 만들어진 HTTP/1.1이 가장 보편화 되어있으며, 현재는 HTTP/2, HTTP/3까지 개발된 상태이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;프로토콜?&lt;/strong&gt;&lt;br /&gt;
+컴퓨터 내부에서 또는 컴퓨터 사이에 데이터 교환 방식을 정의하는 규칙 세계이다. 기기 간 통신은 교환되는 데이터의 형식에 대해 상호 합의를 요구하며 이런 형식을 정의하는 규칙의 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;클라이언트는 URL(Uniform Resource Locator)로 된 HTTP를 통해 서버에게 정보 송신을 요청합니다. 서버는 클라이 언트의 요청을 해석하여 데이터를 클라이언트에게 송신 한다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/7d90200a-9a0b-496a-b207-4ac64cd6949e&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;http의-특징&quot;&gt;HTTP의 특징&lt;/h2&gt;
+
+&lt;h3 id=&quot;무상태성stateless&quot;&gt;무상태성(Stateless)&lt;/h3&gt;
+&lt;p&gt;각각의 요청이 독립적으로 여겨지는 특징으로, 서버는 클라이언트의 상태를 유지하지 않는다. 즉, 각 클라이언터에 맞게 리소스를 응답하는 것은 불가능하다. 이를 해결하기 위해, 쿠키나 세션 또는 토큰 방식의 JWT가 사용된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;http의-구조&quot;&gt;HTTP의 구조&lt;/h2&gt;
+&lt;p&gt;HTTP는 Method, Path, Version, Headers, Body 등으로 구성된다.
+&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/6952f8a2-b057-4434-a164-c92836995401&quot; alt=&quot;다운로드&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;GET : 서버에 조회할 리소스를 요청한다. (READ)&lt;/li&gt;
+  &lt;li&gt;POST : 서버에 생성할 데이터를 body에 삽입하여 전송한다. (CREATE)&lt;/li&gt;
+  &lt;li&gt;PUT : 서버에 body에 수정할 데이터를 삽입하여 전송한다. (UPDATE)&lt;/li&gt;
+  &lt;li&gt;DELETE : 서버에 삭제할 리소스를 요청한다. (DELETE)&lt;/li&gt;
+  &lt;li&gt;PATCH : PUT과 비슷하지만 이부만 수정한다는 점이 다르다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;http의-문제점&quot;&gt;HTTP의 문제점&lt;/h2&gt;
+&lt;p&gt;HTTP는 암호화가 되지 않은 평문 데이터를 전송하는 프로토콜이기 때문에, 개인정보나 비밀을 취급하는 서비스에서는 정보가 유출될 수 있다. 이 문제를 해결하기위해 암호화가 추가된 HTTPS가 등장하게 되었다.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;https란&quot;&gt;HTTPS란?&lt;/h1&gt;
+
+&lt;h2 id=&quot;httpshyper-text-transfer-protocol-secure&quot;&gt;HTTPS(Hyper Text Transfer Protocol Secure)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;HTTPS(Hyper Text Transfer Protocol Secure)&lt;/strong&gt; 란 HTTP에 데이터 암호화가 추가된 프로토콜이다. HTTPS는 443번 포트를 사용하며, 네트워크 상에서 중간에 제 3자가 정보를 볼 수 없도록 암호화를 지원한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;대칭키-암호화와-비대칭키-암호화&quot;&gt;대칭키 암호화와 비대칭키 암호화&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;대칭키 암호화
+    &lt;ul&gt;
+      &lt;li&gt;클라이언트와 서버가 동일한 키를 사용해 암호화/복호화를 진행함&lt;/li&gt;
+      &lt;li&gt;키가 노출되면 매우 위험하지만 연산 속도가 빠름&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비대칭키 암호화
+    &lt;ul&gt;
+      &lt;li&gt;1개의 쌍으로 구성된 공개키와 개인키를 암호화/복호화 하는데 사용함&lt;/li&gt;
+      &lt;li&gt;키가 노출되어도 비교적 안전하지만 연산 속도가 느림&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;https의-동작-과정&quot;&gt;HTTPS의 동작 과정&lt;/h2&gt;
+&lt;p&gt;HTTPS는 대칭키 암호화와 비대칭키 암호화를 모두 사용하여 빠른 연산 속도와 안정성을 모두 얻고 있다. HTTPS 연결 과정(Hand-Shaking)에서는 먼저 서버와 클라이언트 간에 세션키를 교환한다. 여기서 세션키는 주고 받는 데이터를 암호화하기 위해 사용되는 대칭키이며, 데이터 간의 교환에는 빠른 연산 속도가 필요하므로 세션키는 대칭키로 만들어진다.&lt;/p&gt;
+
+&lt;p&gt;문제는 이 세션키를 클라이언트와 서버가 어떻게 교환할 것이냐 인데, 이 과정에서 비대칭키가 사용된다.
+즉, 처음 연결을 성립하여 안전하게 세션키를 공유하는 과정에서 비대칭키가 사용되는 것이고, 이후에 데이터를 교환하는 과정에서 빠른 연산 속도를 위해 대칭키가 사용되는 것이다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/e13f046c-953f-4268-b0ae-2aed87fc43ad&quot; height=&quot;800px&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;실제 HTTPS연결 과정이 성립되는 흐름은 다음과 같다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;클라이언트(브라우저)가 서버로 최초 연결 시도를 함&lt;/li&gt;
+  &lt;li&gt;서버는 공개키(SSL인증서)를 브라우저에게 넘겨줌&lt;/li&gt;
+  &lt;li&gt;브라우저에서 SSL인증서가 인증되면 세션키를 보유하고 공개키를 사용해 세션키를 암호화 하여 서버에 전송함&lt;/li&gt;
+  &lt;li&gt;서버는 개인키를 사용해 복호화하여 세션키를 얻음&lt;/li&gt;
+  &lt;li&gt;클라이언트와 서버는 동일한 세션키를 사용하여 암호화/복호화를 통한 안전한 메세지를 전달함&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2번 과정을 보면 서버의 공개키는 인증서라고 되어있는데 이는 일반적으로 CA(Certificate Authority)에 공개키를 전송하여 받은 인증서이다. 브라우저에는 인증된 CA 기관의 정보들이 사전 등록되어 있어 인증된 CA기관의 인증서가 아닐 경우 브라우저에 빨간 줄 혹은 경고가 보여진다.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;http와-https의-차이점&quot;&gt;HTTP와 HTTPS의 차이점&lt;/h1&gt;
+&lt;p&gt;HTTP는 암호화 과정이 없기 때문에 속도가 더 빠르고 인증서를 사용하는 비용이 들지 않는다. 이렇기 때문에 보안이 필요없는 간단한 혹은 공개 가능한 일부 서비스는 HTTP를 이용할 수 있다. 하지만 보안이 필요한 경우는 HTTPS를 이용하여 사용해야 한다.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reference&lt;br /&gt;
+&lt;a href=&quot;https://mangkyu.tistory.com/98&quot;&gt;https://mangkyu.tistory.com/98&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://aws.amazon.com/ko/compare/the-difference-between-https-and-http/&quot;&gt;https://aws.amazon.com/ko/compare/the-difference-between-https-and-http/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@rlaclgns321/HTTP&quot;&gt;https://velog.io/@rlaclgns321/HTTP&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 14 Jan 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/network/HTTP/</link>
+        <guid isPermaLink="true">http://localhost:4000/network/HTTP/</guid>
+        
+        <category>개발공부</category>
+        
+        <category>네트워크</category>
+        
+        
+        <category>Network</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL]2024.01.09 TIL</title>
+        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로그래머스 2문제 풀이
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/118667&quot;&gt;두 큐 합 같게 만들기&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42883&quot;&gt;큰 수 만들기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;스프링 mvc 1편 - 백앤드 웹 개발 핵심 기술 수강
+    &lt;ul&gt;
+      &lt;li&gt;스프링 Annotation기반의 mvc구조를 사용해보고 전날 구현해 보았던 mvc프레임워크와 작동 원리를 비교해보았다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 09 Jan 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/TIL12/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/TIL12/</guid>
+        
+        <category>TIL</category>
+        
+        <category>Java</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL]2024.01.08 TIL</title>
+        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로그래머스 2문제 풀이
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/154540&quot;&gt;무인도 여행&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/77485&quot;&gt;행렬 테두리 회전하기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;스프링 mvc 1편 - 백앤드 웹 개발 핵심 기술 수강
+    &lt;ul&gt;
+      &lt;li&gt;mvc프레임 워크를 직접 만들어보면서 서버에서 mvc구조가 작동하는 로직을 배웠다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 08 Jan 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/TIL11/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/TIL11/</guid>
+        
+        <category>TIL</category>
+        
+        <category>Java</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>[개발공부] 좋은 객체지향 설계의 5가지 원칙, SOLID</title>
@@ -56,13 +222,11 @@
 8
 9
 10
-11
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SHA256PasswordEncoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;encryptPassword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
 
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
@@ -87,12 +251,9 @@
 13
 14
 15
-16
-17
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PasswordEncoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;encrptPassword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
 
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SHA256PasswordEncoder&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PasswordEnCoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
@@ -100,7 +261,6 @@
         &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
 
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
@@ -268,15 +428,15 @@
 &lt;p&gt;&lt;a href=&quot;https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8#&quot;&gt;스프링 핵심원리 - 기본편(김영한)&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 06 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</link>
-        <guid isPermaLink="true">http://localhost:4000/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</guid>
+        <link>http://localhost:4000/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</guid>
         
         <category>개발공부</category>
         
         <category>Java</category>
         
         
-        <category>개발공부</category>
+        <category>Study</category>
         
       </item>
     
