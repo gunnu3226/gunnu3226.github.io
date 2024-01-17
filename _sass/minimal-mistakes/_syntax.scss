@@ -35,7 +35,7 @@
        &.rouge-gutter {
          padding-right: 1em;
          width: 1em;
-         color: $base04;
+         color: $base05;
          border-right: 1px solid $base04;
          text-align: right;
        }
@@ -78,7 +78,7 @@
      }
      .n {
        /* Name */ //변수명
-       color: $base05;
+       color: #ffffff;
      }
      .o {
        /* Operator */
@@ -98,7 +98,7 @@
      }
      .c1 {
        /* Comment.Single */
-       color: $base04;
+       color: $base05;
      }
      .cs {
        /* Comment.Special */
@@ -157,7 +157,7 @@
      }
      .kt {
        /* Keyword.Type */
-       color: $base0a;
+       color: #f78c6c;
      }
      .ld {
        /* Literal.Date */
@@ -173,7 +173,7 @@
      }
      .na {
        /* Name.Attribute */
-       color: $base0d;
+       color: #d776f7;
      }
      .nb {
        /* Name.Builtin */
@@ -201,7 +201,7 @@
      }
      .nf {
        /* Name.Function */
-       color: #14c3fd;
+       color: #1ec7ff;
      }
      .nl {
        /* Name.Label */
@@ -261,7 +261,7 @@
      }
      .sd {
        /* Literal.String.Doc */
-       color: $base04;
+       color: $base05;
      }
      .s2 {
        /* Literal.String.Double */
