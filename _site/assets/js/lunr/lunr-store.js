@@ -162,8 +162,14 @@ var store = [{
         "teaser": null
       },{
         "title": "[알고리즘] 삽입 정렬(Insertion Sort)",
-        "excerpt":"[삽입 정렬(Insertion Sort)] 손 안의 카드를 정렬하는 방법과 유사하다. 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 부분과 비교하며, 자신의 위치를 찾아 삽입하여 정렬한다. [삽입 정렬의 작동 순서] 현재 타겟이 되는 숫자와 이전에 위치에 있는 원소들을 비교한다.(첫번째 타켓은 두 번째 원소) 타겟이 되는 숫자가 이전 위치에 있던 원소보다 작다면 위치를...","categories": ["Algorithm"],
+        "excerpt":"[삽입 정렬(Insertion Sort)] 손 안의 카드를 정렬하는 방법과 유사하다. 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 부분과 비교하며, 자신의 위치를 찾아 삽입하여 정렬한다. 최선의 경우 O(n), 최악의 경우 O(n^2)의 시간 복잡도를 가진다. [삽입 정렬의 작동 순서] 현재 타겟이 되는 숫자와 이전에 위치에 있는 원소들을 비교한다.(첫번째 타켓은 두 번째 원소)...","categories": ["Algorithm"],
         "tags": ["알고리즘","Java"],
         "url": "/algorithm/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/",
+        "teaser": null
+      },{
+        "title": "[Spring] 테스트 코드에서 생긴 의문점 해결과 Transactional 전파",
+        "excerpt":"테스트 코드를 작성하면서 생긴 문제 Spring Data Jpa를 활용해 간단한 CRUD기능을 넣은 일정관리 프로젝트에서 update기능을 만들고 테스트 코드를 짜던 중 의문점이 발생했다. 컴파일시점에서의 문제는 아니었고, 해결하고나니 @Transactional을 사용하는 부분에서 전파 범위를 고려하지 못했고 발생한 문제였다. 문제가 발생한 순간부터 해결 과정과 해결에 필요했던 개념들을 정리해 보겠다. 문제 발생 ScheduleService에서 update메서드를 아래와...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%94%EB%84%90%EC%A0%84%ED%8C%8C/",
         "teaser": null
       }]
