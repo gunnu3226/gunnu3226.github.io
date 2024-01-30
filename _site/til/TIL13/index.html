@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[프로그래머스] LV.2 소수 찾기 Java - CodeGun</title>
-<meta name="description" content="소수 찾기">
+<!-- begin _includes/seo.html --><title>[TIL]2024.01.23 TIL - CodeGun</title>
+<meta name="description" content="2024.01.23 TIL">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="[프로그래머스] LV.2 소수 찾기 Java">
-<meta property="og:url" content="http://localhost:4000/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/">
+<meta property="og:title" content="[TIL]2024.01.23 TIL">
+<meta property="og:url" content="http://localhost:4000/til/TIL13/">
 
 
-  <meta property="og:description" content="소수 찾기">
-
-
-
+  <meta property="og:description" content="2024.01.23 TIL">
 
 
 
 
-  <meta property="article:published_time" content="2024-01-03T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-01-03T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-01-23T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2024-01-23T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/">
+
+<link rel="canonical" href="http://localhost:4000/til/TIL13/">
 
 
 
@@ -590,16 +590,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[프로그래머스] LV.2 소수 찾기 Java">
-    <meta itemprop="description" content="소수 찾기">
-    <meta itemprop="datePublished" content="2024-01-03T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-01-03T00:00:00+09:00">
+    <meta itemprop="headline" content="[TIL]2024.01.23 TIL">
+    <meta itemprop="description" content="2024.01.23 TIL">
+    <meta itemprop="datePublished" content="2024-01-23T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-23T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/" class="u-url" itemprop="url">[프로그래머스] LV.2 소수 찾기 Java
+            <a href="http://localhost:4000/til/TIL13/" class="u-url" itemprop="url">[TIL]2024.01.23 TIL
 </a>
           </h1>
           <!-- 업로드 날짜 -->
@@ -612,7 +612,7 @@
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         Publish:
         
-        <time datetime="2024-01-03T00:00:00+09:00">January 3, 2024</time>
+        <time datetime="2024-01-23T00:00:00+09:00">January 23, 2024</time>
       </span>
     
 
@@ -630,162 +630,25 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#문제">문제</a></li><li><a href="#풀이">풀이</a><ul><li><a href="#전체-코드">전체 코드</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#오늘의-학습">오늘의 학습</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="문제">문제</h2>
-<p><img src="https://github.com/gunnu3226/Coding-test/assets/139452702/d6156063-821e-4868-bba4-9315a5619f8b" alt="스크린샷 2024-01-03 오전 10 54 03" /></p>
-
-<h2 id="풀이">풀이</h2>
-<p>문제를 먼저 보고 든 생각은 <a href="https://gunnu3226.github.io/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/">소수를 판별하는 로직</a>이 필요하니 일단 소수 판별 메서드를 만들고 시작하자였다.</p>
-
-<p>그런데 문제에서 문자열로 입력이 들어와서 문자열을 바꾸어 처리하는 로직도 넣었다. 메서드는 하나의 기능만 가져야 한다고 하는데 우선 문제풀이니까…</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">checkPrime</span><span class="o">(</span><span class="nc">String</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">number</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>이 후 순서도 고려하여 모든 조합을 검사해야하니 순열을 사용하여 매 시행마다 소수인지 검사하여 set에 담아 중복 숫자를 세는 것을 방지하였다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span> <span class="n">depth</span><span class="o">,</span> <span class="nc">String</span> <span class="n">numbers</span><span class="o">,</span> <span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">str</span><span class="o">!=</span><span class="s">""</span><span class="o">){</span>
-            <span class="c1">//소수판별</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">checkPrime</span><span class="o">(</span><span class="n">str</span><span class="o">))</span> <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">str</span><span class="o">));</span>
-        <span class="o">}</span>
-        <span class="c1">//주어진 문자열을 끝까지 돌면 리턴</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">depth</span> <span class="o">==</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="k">return</span><span class="o">;</span>
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]){</span>
-                <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                <span class="n">dfs</span><span class="o">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">numbers</span><span class="o">,</span> <span class="n">str</span> <span class="o">+</span> <span class="n">numbers</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
-                <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>문제에서 문자열의 길이가 7까지라고 해서 위 코드를 썼지만 길이가 길어진다면 짝수는 제외하거나, 중복체크를 위한 set을 하나 더 만들어서 검사해본 문자열은continue처리 할 수 있을 것 같다.</p>
-
-<h3 id="전체-코드">전체 코드</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
-
-<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">static</span> <span class="kt">boolean</span><span class="o">[]</span> <span class="n">check</span><span class="o">;</span>
-    <span class="kd">static</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">set</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">numbers</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">String</span><span class="o">[]</span> <span class="n">numArr</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
-        <span class="n">check</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">numArr</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
-        <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
-        <span class="n">dfs</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="n">numbers</span><span class="o">,</span><span class="s">""</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span> <span class="n">depth</span><span class="o">,</span> <span class="nc">String</span> <span class="n">numbers</span><span class="o">,</span> <span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">str</span><span class="o">!=</span><span class="s">""</span><span class="o">){</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">checkPrime</span><span class="o">(</span><span class="n">str</span><span class="o">))</span> <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">str</span><span class="o">));</span>
-        <span class="o">}</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">depth</span> <span class="o">==</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="k">return</span><span class="o">;</span>
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]){</span>
-                <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                <span class="n">dfs</span><span class="o">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">numbers</span><span class="o">,</span> <span class="n">str</span> <span class="o">+</span> <span class="n">numbers</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
-                <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">checkPrime</span><span class="o">(</span><span class="nc">String</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">number</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
+        <h2 id="오늘의-학습">오늘의 학습</h2>
+<ul>
+  <li>JPA 강의
+    <ul>
+      <li>jpa를 사용하면서 테이블 연관관계 매핑에 관한 내용을 학습하였다. 자세한 내용은 포스팅으로 정리할 예정이다.</li>
+      <li>쿼리에 관한 내용도 학습하였다. jpql의 필요성과 사용 방법을 알 수 있었다. 하지만 쿼리를 실습하는 연습을 해야 와 닿을것 같아서 다음 과제때는 spring jpa와 jpql을 사용한 쿼리도 함께 사용해려고 한다.</li>
+    </ul>
+  </li>
+  <li>MVC 2편 강의
+    <ul>
+      <li>타임리프에 관한 내용을 학습하였는데 타입리프를 이용해서 간단한 화면을 구성하고 띄워보는 경험도 과제를 통해 하려고 한다.</li>
+    </ul>
+  </li>
+</ul>
 
         
         
@@ -798,7 +661,7 @@
         <!-- 업데이트 날짜 -->
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-03">January 3, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-23">January 23, 2024</time></p>
 
         <br>
         <!-- 카테고리,테그 -->
@@ -814,9 +677,7 @@
     
       <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">코딩테스트</a><span class="sep">, </span>
-    
-      <a href="/tags/#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">프로그래머스</a>
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -833,7 +694,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#programmers" class="page__taxonomy-item p-category" rel="tag">Programmers</a>
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -974,7 +835,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/TIL13/" rel="permalink">[TIL]2024.01.23 TIL
+        <a href="/spring/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%94%EB%84%90%EC%A0%84%ED%8C%8C/" rel="permalink">[Spring] Transaction 전파와 flush()(feat.테스트 코드에서 생긴 의문점)
 </a>
       
     </h2>
@@ -987,7 +848,7 @@
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         Publish:
         
-        <time datetime="2024-01-23T00:00:00+09:00">January 23, 2024</time>
+        <time datetime="2024-01-22T00:00:00+09:00">January 22, 2024</time>
       </span>
     
 
@@ -997,7 +858,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">2024.01.23 TIL
+    <p class="archive__item-excerpt" itemprop="description">Transaction 전파, flush()
 </p>
   </article>
 </div>

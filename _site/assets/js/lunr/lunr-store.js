@@ -167,9 +167,33 @@ var store = [{
         "url": "/algorithm/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/",
         "teaser": null
       },{
-        "title": "[Spring] 테스트 코드에서 생긴 의문점 해결과 Transactional 전파",
+        "title": "[Spring] Transaction 전파와 flush()(feat.테스트 코드에서 생긴 의문점)",
         "excerpt":"테스트 코드를 작성하면서 생긴 문제 Spring Data Jpa를 활용해 간단한 CRUD기능을 넣은 일정관리 프로젝트에서 update기능을 만들고 테스트 코드를 짜던 중 의문점이 발생했다. 컴파일시점에서의 문제는 아니었고, 해결하고나니 @Transactional을 사용하는 부분에서 전파 범위를 고려하지 못했고 발생한 문제였다. 문제가 발생한 순간부터 해결 과정과 해결에 필요했던 개념들을 정리해 보겠다. 문제 발생 ScheduleService에서 update메서드를 아래와...","categories": ["Spring"],
         "tags": ["Spring","Java"],
         "url": "/spring/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%94%EB%84%90%EC%A0%84%ED%8C%8C/",
+        "teaser": null
+      },{
+        "title": "[TIL]2024.01.23 TIL",
+        "excerpt":"오늘의 학습 JPA 강의 jpa를 사용하면서 테이블 연관관계 매핑에 관한 내용을 학습하였다. 자세한 내용은 포스팅으로 정리할 예정이다. 쿼리에 관한 내용도 학습하였다. jpql의 필요성과 사용 방법을 알 수 있었다. 하지만 쿼리를 실습하는 연습을 해야 와 닿을것 같아서 다음 과제때는 spring jpa와 jpql을 사용한 쿼리도 함께 사용해려고 한다. MVC 2편 강의 타임리프에...","categories": ["TIL"],
+        "tags": ["TIL","Java"],
+        "url": "/til/TIL13/",
+        "teaser": null
+      },{
+        "title": "[TIL]2024.01.25 TIL",
+        "excerpt":"오늘의 학습     Spring 숙련 완강            Security는 내용을 잘 모르겠어서 다시 공부해야함. 큰 주제로 나눠서 정리필요.           AWS RDS, EC2 설정하고 서버 띄워보기            설정하는 방법과 자세한 내용 정리해둬야함.           오늘의 회고     이제는 모르는 내용이 더 많은 강의를 듣고있어서 개인과제를 진행하면서 부족한 부분이 찾아 공부하는 시간이 필요하다.  ","categories": ["TIL"],
+        "tags": ["TIL","Java"],
+        "url": "/til/TIL14/",
+        "teaser": null
+      },{
+        "title": "[SpringSecurity] Spring Security + Jwt과 로그인",
+        "excerpt":"[ 인증(Authentication)과 인가 (Authorization) ] 인증(Authentication) 보호된 리소스에 접근하는 대상에게 적절한 접근 권한이 있는지 확인하는 일련의 과정을 의미한다. 이때 보호된 리소스에 접근하는 대상(사용자)를 접근 주체(Principal)이라고 한다. 인가(Authorization) 인증절차가 끝난 접근 주체가 보호된 특정 리소스에 접근 가능한지를 결정하는 것을 의미한다. 쉽게 이해해보자면 로그인을 하는 행위는 인증 절차라고 볼 수 있고, 회원과...","categories": ["Spring"],
+        "tags": ["Spring","Java","SpringSecurity","Jwt"],
+        "url": "/spring/SpringSecurity+JWT%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/",
+        "teaser": null
+      },{
+        "title": "[Spring] 의존성 주입(Dependency Injection, DI)과 제어의 역전(Inversion of Control, IoC)",
+        "excerpt":"의존성 주입(Dependency Injection) 이란? DI란 외부에서 두 객체 간의 관계를 결정해주는 디자인 패턴으로, 인터페이스를 사이에 둬서 클래스 레벨에서는 의존관계가 고정되지 않드록 하고 런타임 시에 관계를 동적으로 주입하여 유연성을 확보하고 결합도를 낮출 수 있게 해준다. 의존성이랑 한 객체가 다른 객체를 사용할 때 의존성이 있다고 한다. 예를 들어 Consumer객체가 Chicken객체를 사용하는 경우...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/ioc,di/",
         "teaser": null
       }]
