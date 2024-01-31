@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[OOP] 좋은 객체지향 설계의 5가지 원칙, SOLID - CodeGun</title>
-<meta name="description" content="객체지향 5원칙 SOLID">
+<!-- begin _includes/seo.html --><title>[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component - CodeGun</title>
+<meta name="description" content="Bean등록">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="[OOP] 좋은 객체지향 설계의 5가지 원칙, SOLID">
-<meta property="og:url" content="http://localhost:4000/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/">
+<meta property="og:title" content="[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component">
+<meta property="og:url" content="http://localhost:4000/spring/springbean/">
 
 
-  <meta property="og:description" content="객체지향 5원칙 SOLID">
-
-
-
+  <meta property="og:description" content="Bean등록">
 
 
 
 
-  <meta property="article:published_time" content="2024-01-06T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-01-06T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-01-31T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2024-01-31T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/">
+
+<link rel="canonical" href="http://localhost:4000/spring/springbean/">
 
 
 
@@ -590,377 +590,20 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[OOP] 좋은 객체지향 설계의 5가지 원칙, SOLID">
-    <meta itemprop="description" content="객체지향 5원칙 SOLID">
-    <meta itemprop="datePublished" content="2024-01-06T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-01-06T00:00:00+09:00">
+    <meta itemprop="headline" content="[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component">
+    <meta itemprop="description" content="Bean등록">
+    <meta itemprop="datePublished" content="2024-01-31T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-31T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/" class="u-url" itemprop="url">[OOP] 좋은 객체지향 설계의 5가지 원칙, SOLID
+            <a href="http://localhost:4000/spring/springbean/" class="u-url" itemprop="url">[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component
 </a>
           </h1>
           <!-- 업로드 날짜 -->
         
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-06T00:00:00+09:00">January 6, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#객체-지향-프로그래밍">객체 지향 프로그래밍?</a></li><li><a href="#좋은-객체-지향-설계의-5가지-원칙solid">좋은 객체 지향 설계의 5가지 원칙(SOLID)</a><ul><li><a href="#srp단일-책임-원칙">SRP(단일 책임 원칙)</a></li><li><a href="#ocp개방-폐쇄-원칙">OCP(개방-폐쇄 원칙)</a></li><li><a href="#lsp리스코프-치환-원칙">LSP(리스코프 치환 원칙)</a></li><li><a href="#isp인터페이스-분리-원칙">ISP(인터페이스 분리 원칙)</a></li><li><a href="#dip의존관계-역전-원칙">DIP(의존관계 역전 원칙)</a><ul><li><a href="#참고자료">참고자료</a></li></ul></li></ul></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h2 id="객체-지향-프로그래밍">객체 지향 프로그래밍?</h2>
-<ul>
-  <li>컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 여러개의 독립된 단위, 즉 <strong>객체</strong>들의 모임으로 파악하고자 하는것이다.</li>
-  <li>각각의 객체는 메시지를 주고받고, 데이터를 처리할 수 있다.(<strong>협력</strong>)</li>
-  <li>객체 지향 프로그래밍 프로그램은 <strong>유연</strong>하고 <strong>변경이 용이</strong>하게 만들기 때문에 대규모 소프트웨어 개발에 많이 사용된다.</li>
-</ul>
-
-<h2 id="좋은-객체-지향-설계의-5가지-원칙solid">좋은 객체 지향 설계의 5가지 원칙(SOLID)</h2>
-<p>클린코드로 유명한 로버트 마틴이 좋은 객체 지향 설계의 5가지 원칙을 정리했다. 이 원칙들을 지키면 변경이 용이하고, 유지보수와 확장이 쉬운 소프트웨어를 개발하는데 도움이 되는 것으로 알려져있다.</p>
-
-<ul>
-  <li>SRP : 단일 책임 원칙(Single responsibility principle)</li>
-  <li>OCP : 개방-폐쇄 원칙 (Open/closed principle)</li>
-  <li>LSP :리스코프 치환 원칙 (Liskov substitution principle)</li>
-  <li>ISP : 인터페이스 분리 원칙 (Interface segregation principle)</li>
-  <li>DIP : 의존관계 역전 원칙 (Dependency inversion principle)</li>
-</ul>
-
-<h3 id="srp단일-책임-원칙">SRP(단일 책임 원칙)</h3>
-<ul>
-  <li>한 클래스는 하나의 책임만 가져야 한다.</li>
-  <li>문맥과 상황에 따라 다르다.</li>
-  <li><strong>중요한 기준은 변경</strong>이다. 변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따른 것.</li>
-</ul>
-
-<h3 id="ocp개방-폐쇄-원칙">OCP(개방-폐쇄 원칙)</h3>
-<ul>
-  <li>소프트웨어 요소는 <strong>확장에는 열려</strong> 있으나 <strong>변경에는 닫혀</strong> 있어야 한다.</li>
-  <li>확장에 대해 열려 있다 -&gt; 요구사항이 변경될 때 새로운 동작을 추가하여 애플리케이션의 기능을 확장할 수 있다.</li>
-  <li>변경에 대해 닫혀 있다 -&gt; 기존의 코드를 수정하지 않고 애플리케이션의 동작을 추가하거나 변경할 수 있다.</li>
-  <li>개방 폐쇄 원칙을 지키기 위해서는 추상화에 의존해야 한다.</li>
-</ul>
-
-<p>예시를 보고 확인해 본다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SHA256PasswordEncoder</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">encryptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">)</span>  <span class="o">{</span>
-        <span class="o">...</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
-
-  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">SHA256PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">;</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>유저 서비스에서 비밀번호 암호와 알고리즘을 사용하기위해 SHA256PasswordEncoder를 사용한다. 이때 비밀번호 암호화 정책을 수정하거나 바꾸려고 시도하면 UserService를 수정해야한다. 이는 개방-폐쇄 원칙에 위배된 것이다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PasswordEncoder</span> <span class="o">{</span>
-  <span class="nc">String</span> <span class="nf">encrptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">);</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SHA256PasswordEncoder</span> <span class="kd">implements</span> <span class="nc">PasswordEnCoder</span><span class="o">{</span>
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">encryptPassword</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">pw</span><span class="o">)</span>  <span class="o">{</span>
-        <span class="o">...</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
-
-  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">;</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>위 코드는 추상화를 사용해 UserService가 구현체에 의존하지 않고 추상화된 PasswordEncoder에 의존하고 있다. 그렇다면 추후 비밀번호 암호와 정책이 변한다 해도 UserService에서는 수정이 필요 없고, 이는 개방-폐쇄 원칙을 충족한다.</p>
-
-<h3 id="lsp리스코프-치환-원칙">LSP(리스코프 치환 원칙)</h3>
-<ul>
-  <li>프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다</li>
-  <li>다형성에서 하위 클래스는 인터페이스 규약을 다 지켜야 한다.</li>
-  <li>다형성을 지원하기 위한 원칙으로, 인터페이스를 구현한 구현체를 믿고 사용하려면, 이 원칙이 필요하다.</li>
-  <li>단순히 컴파일을 성공하는 것이 문제가 아님.</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Car</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>예를 들면 자동차 인터페이스의 엑셀은 앞으로 가라는 기능이다. 이때 어떤 구현체에서 엑셀을 뒤로 가게 구현한다면 LSP 위반이다. 
-<br />
-<br /></p>
-
-<h3 id="isp인터페이스-분리-원칙">ISP(인터페이스 분리 원칙)</h3>
-<ul>
-  <li>목적과 관심이 각기 다른 클라이언트가 있다면 인터페이스를 통해 적적히 분리해 줘야한다.</li>
-  <li>특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.</li>
-  <li>자동차 인터페이스
-    <ul>
-      <li>운전 인터페이스</li>
-      <li>정비 인터페이스</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Car</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">repair</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"수리 기능"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>위 코드에서 Repair로직을 추가한다고 했을 때, 정비사 클라이언트가 repair()에 접근하려면 구현체 클래스인 K3를 주입 받아야 한다. 그러면 필요하지 않은 accelerate에도 접근이 가능해지고 인터페이스 분리원칙을 위배하게 된다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Drive</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Repair</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">K3</span> <span class="kd">implements</span> <span class="nc">Car</span><span class="o">,</span> <span class="nc">Repair</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"뒤로 이동 구현"</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">repair</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"수리 기능"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>위 처럼 분리한다면 운전자 클라이언트와 정비사 클라이언트가 각 필요한 기능의 인터페이스만 주입받아 사용하면 된다. 이렇게 클라이언트에 따라 인터페이스를 분리하여 변경에 의한 영향을 제어할 수 있다. 이것을 인터페이스 분리 원칙이라고 부른다.</p>
-
-<h3 id="dip의존관계-역전-원칙">DIP(의존관계 역전 원칙)</h3>
-<ul>
-  <li>고수준 모듈은 저수준 모듈의 구현에 의존해서는 안되며, 저수준 모듈이 고수준 모듈에 의존해야 한다.
-    <ul>
-      <li>고수준 모듈 : 입력과 출력으로부터 먼 추상화된 모듈</li>
-      <li>저서준 모듈 : 입력과 출력으로부터 가까운 구현 모듈</li>
-    </ul>
-  </li>
-  <li>쉽게 이야기하면 구현클래스에 의존하지 말고, 인터페이스에 의존하라는 뜻이다.</li>
-  <li>의존관계 역전 원칙에서 의존성이 역전되는 시점은 컴파일 시점이다.</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberService</span> <span class="o">{</span>
-<span class="kd">private</span> <span class="nc">MemberRepository</span> <span class="n">memberRepository</span><span class="o">;</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>MemberService는 코드에서는 MemberRepository라는 인터페이스에 의존하고 이는 DIP를 만족한다. 이 때 자바에서는 객체를 생성하고, 연관 관계를 맺어주는 설정자를 만들어 사용한다.
-<br />
-<br />
-<br />
-<br /></p>
-
-<p>위 원칙들을 SOLID 원칙의 핵심은 추상화와 다형성이다. 스프링은 DI(Dependency Injection)과 컨테이너로 다형성과, OCP, DIP를 가능하게 지원해준다.</p>
-
-<h4 id="참고자료">참고자료</h4>
-<p><a href="https://mangkyu.tistory.com/194">망나니개발자[OOP] 객체지향 프로그래밍의 5가지 설계 원칙, 실무 코드로 살펴보는 SOLID</a></p>
-
-<p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8#">스프링 핵심원리 - 기본편(김영한)</a></p>
-
-        
-        
-        <br>
-
-      </section>
-
-      <footer class="page__meta">
-        
-        <!-- 업데이트 날짜 -->
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-06">January 6, 2024</time></p>
-
-        <br>
-        <!-- 카테고리,테그 -->
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80" class="page__taxonomy-item p-category" rel="tag">개발공부</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
-    
-    </span>
-  </p>
-
-
-      </footer>
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/springbean/" rel="permalink">[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -979,11 +622,181 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Bean등록
-</p>
-  </article>
-</div>
+        </header>
+      
 
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#spring-bean이란">Spring Bean이란?</a><ul><li><a href="#srping-bean이란">Srping Bean이란?</a></li><li><a href="#spring-bean의-구성-요소">Spring Bean의 구성 요소</a></li></ul></li><li><a href="#spring-bean-등록방법">Spring Bean 등록방법</a><ul><li><a href="#component">@Component</a></li><li><a href="#configuration과-bean">@Configuration과 @Bean</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="spring-bean이란">Spring Bean이란?</h2>
+
+<h3 id="srping-bean이란">Srping Bean이란?</h3>
+<p>Spring Bean은 <strong>Spring에 의하여 생성되고, 컨테이너에 의해 생명주기가 관리되는 자바 객체</strong>(Plain Old Java Object, POJO)이다. 객체가 필요할 때면 IoC 컨테이너에서 가져와서 사용한다. 컨테이너에 등록할 객체를 스프링에게 알려줘야 하는데 이것을 등록한다고 하며, <strong>xml설정을 통해 객체를 등록</strong>하거나 <strong>어노테이션을 활용해 등록</strong>할 수 있다. 이 포스팅에서는 어노테이션 기반 등록만 알아보도록 한다.</p>
+
+<p><br /></p>
+
+<h3 id="spring-bean의-구성-요소">Spring Bean의 구성 요소</h3>
+<ul>
+  <li>class : Bean으로 등록할 자바 클래스</li>
+  <li>id : Bean의 고유 식별자(클래스 이름에서 첫번째 글자만 소문자로 바꾼 형태)</li>
+  <li>scope : Bean을 생성하기 위한 방법(sigleton, prototype 등)</li>
+  <li>constructor-arg : Bean 생성 시 생성자에 전달할 파라미터</li>
+  <li>property : Bean 생성 시 setter에 전달할 인수</li>
+</ul>
+
+<p>scope에 관한 설명을 간략하게 더하자면 Bean Scope는 빈이 존재하는 범위를 뜻한다. <strong>Bean은 기본적으로 singleton, 즉 하나의 객체만을 생성하여 사용하는 방식을 택하고 있다.</strong> 하지만 필요에 따라 prototype을 사용하면 객체는 매번 새롭게 생셩되며 하나의 Bean정의에 대해 다수의 객체가 존재할 수 있게된다. 또한 request, session, global session은 일반 spring어플리케이션이 아닌 Spring MVC WebApplication에서만 사용된다. 이름에 해당하는 하나의 작업에서만 생명주기를 가지는 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="spring-bean-등록방법">Spring Bean 등록방법</h2>
+<h3 id="component">@Component</h3>
+<p>스프링은 <strong>@Component 어노테이션이 있는 클래스들을 찾아서 자동으로 빈 등록</strong>을 해주는 컴포넌트 스캔을 지원한다. 그래서 우리는 손 쉽에 등록을 원하는 클래스에 @Componenet 어노테이션을 붙여 Bean으로 등록해 줄 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nf">Gunnu</span><span class="o">()</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 우리가 자주 사용하는 <strong>@Controller, @Service, @Repository, @Configuration 같은 어노테이션에도 내부를 들여다 보면 @Componenet를 가지고 있다.</strong> 그래서 우리가 개발을 할 때, 손쉽게 빈 등록과 기능 구분까지 할 수 있는것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nd">@Target</span><span class="o">({</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">})</span>
+<span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+<span class="nd">@Documented</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">Repository</span> <span class="o">{</span>
+    <span class="nd">@AliasFor</span><span class="o">(</span>
+        <span class="n">annotation</span> <span class="o">=</span> <span class="nc">Component</span><span class="o">.</span><span class="na">class</span>
+    <span class="o">)</span>
+    <span class="nc">String</span> <span class="nf">value</span><span class="o">()</span> <span class="k">default</span> <span class="s">""</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>스프링은 기본적으로 <strong>컴포넌트 스캔을 이용한 자동 빈 등록 방식을 권장</strong>한다. 또한 <strong>@Componenet를 붙여 빈으로 등록함을 노출하면 다른 개발자가 보더라도 Bean으로 등록되어 사용되는 것임을 쉽게 알 수 있다.</strong> @Component를 이용하면 Main 또는 Application 클래스에서 @ComponentScan으로 컴포넌트를 탐색하는 범위를 지정해 주어야한다. 하지만 SpringBoot를 이용한다면 @SpringBootConfiguration 하위에 기본적으로 포함되어 있어 설정이 필요 없다.</p>
+
+<p><br /></p>
+
+<h3 id="configuration과-bean">@Configuration과 @Bean</h3>
+<p>원하는 클래스를 설정 클래스에서 @Bean 어노테이션을 사용해 수동으로 스프링 컨터이너에 빈을 등록하는 방법도 있다. 설정클래스는 위에서 본 @Configuration을 클래스에 붙여주면 된다. 그리고 원하는 메소드에 @Bean을 붙여주어 수동 등록하는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nf">Config</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">Gunnu</span> <span class="nf">gunnu</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Gunnu</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>이때 아무 클래스에서나 @Bean을 쓰면 안된다. 꼭 <strong>클래스에 @Configuration을 사용해 Bean을 등록할 것을 명시하고 @Bean을 사용해 등록해 주어야 한다.</strong> 이미 빈으로 등록된 클래스라면 내부에서 @Bean을 사용할 수 있다. 하지만 <strong>@Configuration 내부에서 @Bean을 사용해야 싱글톤을 보장 받을 수 있으므로</strong> 꼭 함께 사용해주어야 한다. 거의 쓸 일은 없지만 <code class="language-plaintext highlighter-rouge">@Configuration(proxyBeanMethods = false)</code>로 매번 새로운 객체가 생성되도록 할 수도 있다.</p>
+
+<p>간단하게 설명하자면 @Configuration이 있는 클래스를 객체로 생성할 때는 <strong>CGLIB 라이브러리를 사용해 프록시 패턴을 적용</strong>한다. 그래서 @Bean이 있는 메소드를 여러번 호출해도 항상 동일한 객체를 반환하여 싱글톤을 보장하는 것이다. 이를 자세히 알고 싶다면 CGLIB 라이브러리와 프록시 패턴을 공부해보자.</p>
+
+<p>수동등록은 주로 다음과 같을 때 사용한다.</p>
+<ul>
+  <li>개발자가 직접 제어가 불가능한 라이브러리를 활용할 때</li>
+  <li>애플리케이션 전범위적으로 사용되는 클래스를 등록할 때</li>
+  <li>다형성을 활용하여 여러 구현체를 등록해주어야 할 때</li>
+</ul>
+
+<p>이제 빈을 등록하고 어떤 어노테이션을 왜 붙이는지, 종류별로 어떤 차이가 있는지 이해하고 코드를 짤 수 있을 것이다.</p>
+
+<p><br />
+<br />
+reference<br />
+<a href="https://mangkyu.tistory.com/75">https://mangkyu.tistory.com/75</a>
+<a href="https://steady-coding.tistory.com/594">https://steady-coding.tistory.com/594</a></p>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-31">January 31, 2024</time></p>
+
+        <br>
+        <!-- 카테고리,테그 -->
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -1094,6 +907,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">2024.01.25 TIL
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL13/" rel="permalink">[TIL]2024.01.23 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-23T00:00:00+09:00">January 23, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2024.01.23 TIL
 </p>
   </article>
 </div>

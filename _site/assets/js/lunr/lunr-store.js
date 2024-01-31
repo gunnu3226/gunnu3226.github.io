@@ -196,4 +196,10 @@ var store = [{
         "tags": ["Spring","Java"],
         "url": "/spring/ioc,di/",
         "teaser": null
+      },{
+        "title": "[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component",
+        "excerpt":"Spring Bean이란? Srping Bean이란? Spring Bean은 Spring에 의하여 생성되고, 컨테이너에 의해 생명주기가 관리되는 자바 객체(Plain Old Java Object, POJO)이다. 객체가 필요할 때면 IoC 컨테이너에서 가져와서 사용한다. 컨테이너에 등록할 객체를 스프링에게 알려줘야 하는데 이것을 등록한다고 하며, xml설정을 통해 객체를 등록하거나 어노테이션을 활용해 등록할 수 있다. 이 포스팅에서는 어노테이션 기반 등록만 알아보도록...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/springbean/",
+        "teaser": null
       }]

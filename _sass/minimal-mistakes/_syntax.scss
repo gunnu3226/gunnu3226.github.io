@@ -6,7 +6,7 @@
    figure.highlight {
      position: relative;
      margin-bottom: 1em;
-     background: #1e1e1e;
+     background: #2a2a2a;
      color: $base05;
      font-family: $monospace;
      font-size: $type-size-6;
@@ -78,15 +78,15 @@
      }
      .n {
        /* Name */ //변수명
-       color: #ffffff;
+       color: #edebeb;
      }
      .o {
        /* Operator */
-       color: #ffffff;
+       color: #edebeb;
      }
      .p {
        /* Punctuation */
-       color: #ffffff;
+       color: #edebeb;
      }
      .cm {
        /* Comment.Multiline */
@@ -173,7 +173,7 @@
      }
      .na {
        /* Name.Attribute */
-       color: #d776f7;
+       color: #be66dc;
      }
      .nb {
        /* Name.Builtin */
@@ -189,7 +189,7 @@
      }
      .nd {
        /* Name.Decorator */
-       color: yellow;
+       color: rgb(215, 215, 0);
      }
      .ni {
        /* Name.Entity */
@@ -201,7 +201,7 @@
      }
      .nf {
        /* Name.Function */
-       color: #1ec7ff;
+       color: #1ab0e1;
      }
      .nl {
        /* Name.Label */

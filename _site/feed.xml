@@ -5,9 +5,125 @@
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 31 Jan 2024 00:52:00 +0900</pubDate>
-    <lastBuildDate>Wed, 31 Jan 2024 00:52:00 +0900</lastBuildDate>
+    <pubDate>Thu, 01 Feb 2024 02:27:23 +0900</pubDate>
+    <lastBuildDate>Thu, 01 Feb 2024 02:27:23 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component</title>
+        <description>&lt;h2 id=&quot;spring-bean이란&quot;&gt;Spring Bean이란?&lt;/h2&gt;
+
+&lt;h3 id=&quot;srping-bean이란&quot;&gt;Srping Bean이란?&lt;/h3&gt;
+&lt;p&gt;Spring Bean은 &lt;strong&gt;Spring에 의하여 생성되고, 컨테이너에 의해 생명주기가 관리되는 자바 객체&lt;/strong&gt;(Plain Old Java Object, POJO)이다. 객체가 필요할 때면 IoC 컨테이너에서 가져와서 사용한다. 컨테이너에 등록할 객체를 스프링에게 알려줘야 하는데 이것을 등록한다고 하며, &lt;strong&gt;xml설정을 통해 객체를 등록&lt;/strong&gt;하거나 &lt;strong&gt;어노테이션을 활용해 등록&lt;/strong&gt;할 수 있다. 이 포스팅에서는 어노테이션 기반 등록만 알아보도록 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;spring-bean의-구성-요소&quot;&gt;Spring Bean의 구성 요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;class : Bean으로 등록할 자바 클래스&lt;/li&gt;
+  &lt;li&gt;id : Bean의 고유 식별자(클래스 이름에서 첫번째 글자만 소문자로 바꾼 형태)&lt;/li&gt;
+  &lt;li&gt;scope : Bean을 생성하기 위한 방법(sigleton, prototype 등)&lt;/li&gt;
+  &lt;li&gt;constructor-arg : Bean 생성 시 생성자에 전달할 파라미터&lt;/li&gt;
+  &lt;li&gt;property : Bean 생성 시 setter에 전달할 인수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;scope에 관한 설명을 간략하게 더하자면 Bean Scope는 빈이 존재하는 범위를 뜻한다. &lt;strong&gt;Bean은 기본적으로 singleton, 즉 하나의 객체만을 생성하여 사용하는 방식을 택하고 있다.&lt;/strong&gt; 하지만 필요에 따라 prototype을 사용하면 객체는 매번 새롭게 생셩되며 하나의 Bean정의에 대해 다수의 객체가 존재할 수 있게된다. 또한 request, session, global session은 일반 spring어플리케이션이 아닌 Spring MVC WebApplication에서만 사용된다. 이름에 해당하는 하나의 작업에서만 생명주기를 가지는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;spring-bean-등록방법&quot;&gt;Spring Bean 등록방법&lt;/h2&gt;
+&lt;h3 id=&quot;component&quot;&gt;@Component&lt;/h3&gt;
+&lt;p&gt;스프링은 &lt;strong&gt;@Component 어노테이션이 있는 클래스들을 찾아서 자동으로 빈 등록&lt;/strong&gt;을 해주는 컴포넌트 스캔을 지원한다. 그래서 우리는 손 쉽에 등록을 원하는 클래스에 @Componenet 어노테이션을 붙여 Bean으로 등록해 줄 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;@Component&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Gunnu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그리고 우리가 자주 사용하는 &lt;strong&gt;@Controller, @Service, @Repository, @Configuration 같은 어노테이션에도 내부를 들여다 보면 @Componenet를 가지고 있다.&lt;/strong&gt; 그래서 우리가 개발을 할 때, 손쉽게 빈 등록과 기능 구분까지 할 수 있는것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;@Target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ElementType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Retention&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RetentionPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RUNTIME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Documented&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Component&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Repository&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@AliasFor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;스프링은 기본적으로 &lt;strong&gt;컴포넌트 스캔을 이용한 자동 빈 등록 방식을 권장&lt;/strong&gt;한다. 또한 &lt;strong&gt;@Componenet를 붙여 빈으로 등록함을 노출하면 다른 개발자가 보더라도 Bean으로 등록되어 사용되는 것임을 쉽게 알 수 있다.&lt;/strong&gt; @Component를 이용하면 Main 또는 Application 클래스에서 @ComponentScan으로 컴포넌트를 탐색하는 범위를 지정해 주어야한다. 하지만 SpringBoot를 이용한다면 @SpringBootConfiguration 하위에 기본적으로 포함되어 있어 설정이 필요 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;configuration과-bean&quot;&gt;@Configuration과 @Bean&lt;/h3&gt;
+&lt;p&gt;원하는 클래스를 설정 클래스에서 @Bean 어노테이션을 사용해 수동으로 스프링 컨터이너에 빈을 등록하는 방법도 있다. 설정클래스는 위에서 본 @Configuration을 클래스에 붙여주면 된다. 그리고 원하는 메소드에 @Bean을 붙여주어 수동 등록하는 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Bean&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Gunnu&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gunnu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Gunnu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이때 아무 클래스에서나 @Bean을 쓰면 안된다. 꼭 &lt;strong&gt;클래스에 @Configuration을 사용해 Bean을 등록할 것을 명시하고 @Bean을 사용해 등록해 주어야 한다.&lt;/strong&gt; 이미 빈으로 등록된 클래스라면 내부에서 @Bean을 사용할 수 있다. 하지만 &lt;strong&gt;@Configuration 내부에서 @Bean을 사용해야 싱글톤을 보장 받을 수 있으므로&lt;/strong&gt; 꼭 함께 사용해주어야 한다. 거의 쓸 일은 없지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Configuration(proxyBeanMethods = false)&lt;/code&gt;로 매번 새로운 객체가 생성되도록 할 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;간단하게 설명하자면 @Configuration이 있는 클래스를 객체로 생성할 때는 &lt;strong&gt;CGLIB 라이브러리를 사용해 프록시 패턴을 적용&lt;/strong&gt;한다. 그래서 @Bean이 있는 메소드를 여러번 호출해도 항상 동일한 객체를 반환하여 싱글톤을 보장하는 것이다. 이를 자세히 알고 싶다면 CGLIB 라이브러리와 프록시 패턴을 공부해보자.&lt;/p&gt;
+
+&lt;p&gt;수동등록은 주로 다음과 같을 때 사용한다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;개발자가 직접 제어가 불가능한 라이브러리를 활용할 때&lt;/li&gt;
+  &lt;li&gt;애플리케이션 전범위적으로 사용되는 클래스를 등록할 때&lt;/li&gt;
+  &lt;li&gt;다형성을 활용하여 여러 구현체를 등록해주어야 할 때&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이제 빈을 등록하고 어떤 어노테이션을 왜 붙이는지, 종류별로 어떤 차이가 있는지 이해하고 코드를 짤 수 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+reference&lt;br /&gt;
+&lt;a href=&quot;https://mangkyu.tistory.com/75&quot;&gt;https://mangkyu.tistory.com/75&lt;/a&gt;
+&lt;a href=&quot;https://steady-coding.tistory.com/594&quot;&gt;https://steady-coding.tistory.com/594&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/spring/springbean/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring/springbean/</guid>
+        
+        <category>Spring</category>
+        
+        <category>Java</category>
+        
+        
+        <category>Spring</category>
+        
+      </item>
     
       <item>
         <title>[Spring] 의존성 주입(Dependency Injection, DI)과 제어의 역전(Inversion of Control, IoC)</title>
@@ -296,9 +412,11 @@
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;reference
-(https://mangkyu.tistory.com/125)[https://mangkyu.tistory.com/125]
-(https://devmango.tistory.com/174)[https://devmango.tistory.com/174]&lt;/p&gt;
+&lt;p&gt;reference&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;(https://mangkyu.tistory.com/125)[https://mangkyu.tistory.com/125]&lt;/li&gt;
+  &lt;li&gt;(https://devmango.tistory.com/174)[https://devmango.tistory.com/174]&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Tue, 30 Jan 2024 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/spring/ioc,di/</link>
@@ -2598,23 +2716,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java] Primitive Type(원시타입)과 Reference Type(참조타입)</title>
-        <description>
-</description>
-        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/java/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/</link>
-        <guid isPermaLink="true">http://localhost:4000/java/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/</guid>
-        
-        <category>CS</category>
-        
-        <category>Java</category>
-        
-        
-        <category>Java</category>
         
       </item>
     
