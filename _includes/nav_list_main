@@ -46,6 +46,14 @@
                 {% endif %}
                 {% endfor %}
             </ul>
+            <span class="nav__sub-title">인프라</span>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "AWS" %}
+                <li><a href="/categories/aws" class="">AWS ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
             <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}

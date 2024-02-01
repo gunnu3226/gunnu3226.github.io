@@ -17,12 +17,6 @@ var store = [{
         "url": "/datastructure/Queue/",
         "teaser": null
       },{
-        "title": "[Java] Primitive Type(원시타입)과 Reference Type(참조타입)",
-        "excerpt":" ","categories": ["Java"],
-        "tags": ["CS","Java"],
-        "url": "/java/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/",
-        "teaser": null
-      },{
         "title": "[TIL]2023.12.27 TIL",
         "excerpt":"오늘의 학습 프로그래머스 문제풀이 성격유형검사하기 바탕화면정리 개인정보수집유효기간 달리기경주 신고결과 받기 JadenCase 문자열만들기 이진변환 반복하기 피보나치수 카펫 예상대진표 N개의 최소공배수 멀리뛰기 귤 고르기 괄호 회전하기 연속 부분 수열 합의 개수 새로 공부한 내용 문자열을 이진문자열로 바꾸는 메소드 binary = Integer.toBinaryString(str) 나머지 연산의 성질 피보나치 문제를 풀면서 알게된 사실이다. 1 (a +...","categories": ["TIL"],
         "tags": ["TIL","Java"],
@@ -201,5 +195,17 @@ var store = [{
         "excerpt":"Spring Bean이란? Srping Bean이란? Spring Bean은 Spring에 의하여 생성되고, 컨테이너에 의해 생명주기가 관리되는 자바 객체(Plain Old Java Object, POJO)이다. 객체가 필요할 때면 IoC 컨테이너에서 가져와서 사용한다. 컨테이너에 등록할 객체를 스프링에게 알려줘야 하는데 이것을 등록한다고 하며, xml설정을 통해 객체를 등록하거나 어노테이션을 활용해 등록할 수 있다. 이 포스팅에서는 어노테이션 기반 등록만 알아보도록...","categories": ["Spring"],
         "tags": ["Spring","Java"],
         "url": "/spring/springbean/",
+        "teaser": null
+      },{
+        "title": "[AWS] EC2와 깃허브를 사용한 배포",
+        "excerpt":" ","categories": ["AWS"],
+        "tags": ["AWS","EC2","Github"],
+        "url": "/aws/Ec2%EC%99%80%EA%B9%83%ED%97%88%EB%B8%8C/",
+        "teaser": null
+      },{
+        "title": "[AWS] RDS로 MySQL 구축하기",
+        "excerpt":"RDS란? Amazon RDS는 AWS 클라우드에서 관계형 데이터베이스를 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스이다. 자세한 내용은 추가적인 포스팅으로 공부하도록 하고 이번엔 구축하는 방법을 알아보겠다. RDS 구축하기 데이터베이스 생성 우선 AWS에 가입하여 로그인을 마치고 검색창에 RDS를 검색하여 들어간다. 데이터베이스 생성을 클릭한다. 표준 생성과 MySQL을 선택한다. 프리티어로 설정하여 요금부과를 방지한다....","categories": ["AWS"],
+        "tags": ["AWS","RDS","MySQL"],
+        "url": "/aws/RDS/",
         "teaser": null
       }]

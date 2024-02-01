@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[알고리즘] 캐시 교체 알고리즘 - CodeGun</title>
-<meta name="description" content="캐시 교체 알고리즘">
+<!-- begin _includes/seo.html --><title>[AWS] RDS로 MySQL 구축하기 - CodeGun</title>
+<meta name="description" content="RDS와 MySQL">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="CodeGun">
-<meta property="og:title" content="[알고리즘] 캐시 교체 알고리즘">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EC%BA%90%EC%8B%9C%EA%B5%90%EC%B2%B4%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
+<meta property="og:title" content="[AWS] RDS로 MySQL 구축하기">
+<meta property="og:url" content="http://localhost:4000/aws/RDS/">
 
 
-  <meta property="og:description" content="캐시 교체 알고리즘">
-
-
-
+  <meta property="og:description" content="RDS와 MySQL">
 
 
 
 
-  <meta property="article:published_time" content="2024-01-05T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-01-05T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-02-01T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2024-02-01T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EC%BA%90%EC%8B%9C%EA%B5%90%EC%B2%B4%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
+
+<link rel="canonical" href="http://localhost:4000/aws/RDS/">
 
 
 
@@ -612,168 +612,20 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[알고리즘] 캐시 교체 알고리즘">
-    <meta itemprop="description" content="캐시 교체 알고리즘">
-    <meta itemprop="datePublished" content="2024-01-05T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-01-05T00:00:00+09:00">
+    <meta itemprop="headline" content="[AWS] RDS로 MySQL 구축하기">
+    <meta itemprop="description" content="RDS와 MySQL">
+    <meta itemprop="datePublished" content="2024-02-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-01T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/algorithm/%EC%BA%90%EC%8B%9C%EA%B5%90%EC%B2%B4%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" class="u-url" itemprop="url">[알고리즘] 캐시 교체 알고리즘
+            <a href="http://localhost:4000/aws/RDS/" class="u-url" itemprop="url">[AWS] RDS로 MySQL 구축하기
 </a>
           </h1>
           <!-- 업로드 날짜 -->
         
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-05T00:00:00+09:00">January 5, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#캐시cache란">캐시(Cache)란?</a></li><li><a href="#캐시-교체-알고리즘">캐시 교체 알고리즘</a><ul><li><a href="#fifo">FIFO</a></li><li><a href="#lru">LRU</a></li><li><a href="#lfu">LFU</a></li></ul></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h3 id="캐시cache란">캐시(Cache)란?</h3>
-<p>알고리즘을 이해하기 위해 캐시가 무엇인지 알아야 한다.</p>
-
-<p>Cache란 자주 사용하는 데이터나 값을 미리 복사해 놓는 임시 장소를 가리킨다. Cache에 데이터를 미리 복사해 놓으면 접근시간 없이 빠르게 데이터에 접근할 수 있다.</p>
-
-<p>결국 Cache는 반복적으로 데이터를 불러오는 경우, Memory에 데이터를 저장하여 불러다 쓰는 것을 의미한다.</p>
-
-<p>이때 원하는 데이터가 Cache에 존재할 경우<code class="language-plaintext highlighter-rouge">Cache Hit</code>, 존재하지 않을 경우는 <code class="language-plaintext highlighter-rouge">Cache Miss</code>라고 한다. Miss일 경우는 다시 서버 혹은 DB에 데이터를 요청해야 한다.</p>
-
-<p>캐시는 빠르지만 저장공간이 작고 비용이 비싸다. 따라서 캐시를 잘 관해 주어야 한다.
-<img src="https://github.com/gunnu3226/kiosk_sparta/assets/139452702/688c6fb1-897b-4c91-8563-009c1914efac" alt="다운로드" /></p>
-
-<p><br /></p>
-
-<h3 id="캐시-교체-알고리즘">캐시 교체 알고리즘</h3>
-
-<ul>
-  <li>캐시 교체 알고리즘의 종류
-    <ol>
-      <li>FIFO(First In First Out) - 가장 먼저 들어간 캐시를 교체</li>
-      <li>LRU(Least Recently Used) - 가장 오랫동안 사용되지 않은 캐시를 교체</li>
-      <li>LFU(Least Frequently Used) - 사용 횟수가 가장 적은 캐시를 교체</li>
-    </ol>
-  </li>
-</ul>
-
-<h4 id="fifo">FIFO</h4>
-<ul>
-  <li>큐로 단순히 구현 가능 함으로 생략한다.</li>
-</ul>
-
-<h4 id="lru">LRU</h4>
-<ul>
-  <li><a href="https://gunnu3226.github.io/programmers/1%EC%B0%A8-%EC%BA%90%EC%8B%9C/">2018 KaKao Blind Recruitment [1차] 캐시</a></li>
-</ul>
-
-<h4 id="lfu">LFU</h4>
-<ul>
-  <li>추후 구현하기로 한다…</li>
-</ul>
-
-        
-        
-        <br>
-
-      </section>
-
-      <footer class="page__meta">
-        
-        <!-- 업데이트 날짜 -->
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-05">January 5, 2024</time></p>
-
-        <br>
-        <!-- 카테고리,테그 -->
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="page__taxonomy-item p-category" rel="tag">알고리즘</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
-    
-    </span>
-  </p>
-
-
-      </footer>
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/aws/RDS/" rel="permalink">[AWS] RDS로 MySQL 구축하기
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -792,11 +644,186 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">RDS와 MySQL
-</p>
-  </article>
-</div>
+        </header>
+      
 
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#rds란">RDS란?</a></li><li><a href="#rds-구축하기">RDS 구축하기</a><ul><li><a href="#데이터베이스-생성">데이터베이스 생성</a></li><li><a href="#rds포트-열어주기">RDS포트 열어주기</a></li><li><a href="#spring-원격-db설정하여-연결하기">Spring 원격 DB설정하여 연결하기</a></li><li><a href="#mysql-workbench에서-연결하기">MySQL Workbench에서 연결하기</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="rds란">RDS란?</h2>
+<p>Amazon RDS는 AWS 클라우드에서 관계형 데이터베이스를 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스이다. 자세한 내용은 추가적인 포스팅으로 공부하도록 하고 이번엔 구축하는 방법을 알아보겠다.</p>
+
+<p><br /></p>
+
+<h2 id="rds-구축하기">RDS 구축하기</h2>
+<h3 id="데이터베이스-생성">데이터베이스 생성</h3>
+<ul>
+  <li>
+    <p>우선 AWS에 가입하여 로그인을 마치고 검색창에 RDS를 검색하여 들어간다.
+<img width="1000" alt="image" src="https://github.com/gunnu3226/todo/assets/139452702/ab13f3d9-cf8a-4c78-92ff-1651be2f48d5" /></p>
+  </li>
+  <li>
+    <p>데이터베이스 생성을 클릭한다.
+<img width="1000" alt="image (1)" src="https://github.com/gunnu3226/todo/assets/139452702/24ea3351-e9b8-476e-84af-d980f167857c" /></p>
+  </li>
+  <li>
+    <p>표준 생성과 MySQL을 선택한다.
+<img width="1000" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/dbebcaa9-4289-465d-8b1c-c73cd264352d" /></p>
+  </li>
+  <li>
+    <p>프리티어로 설정하여 요금부과를 방지한다. 무료 사용 조건은 페이지에서 확인할 수 있다.
+<img width="1000" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/e534690e-a099-4600-9583-bbcc21e9bd56" /></p>
+  </li>
+  <li>DB인스턴스 식별자에 원하는 DB식별자 이름을 적는다.</li>
+  <li>
+    <p>마스터 사용자의 이름과 암호에는 로컬에서 사용하던 root계정과 같은 개념이니 원하는 아이디와 암호를 넣으면 된다.
+<img width="1000" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/83a28d13-c161-4664-abda-a44c358f1cd4" /></p>
+  </li>
+  <li>
+    <p>DB인스턴스 크기와 스토리지 설정은 그대로 둔다.</p>
+  </li>
+  <li>연결설정에서 퍼블릭 액세스 기능을 “예”로 선택하여 컴퓨터에서 연결을 가능하게 만들어준다.</li>
+  <li>VPC 보안 그룹 : “새로 생성” 선택</li>
+  <li>새 VPC 보안그룹 이름 : spring-db-security</li>
+  <li>가용 영역: 옵션 중 아무거나 괜찮다.</li>
+</ul>
+
+<p align="center">
+<img width="650" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/42fb2218-8032-40a2-96db-bcb4a0f011b9" />
+</p>
+
+<ul>
+  <li>추가 구성에서 원하는 초기 데이터 베이스가 있다면 이름을 지정하여 생성해주도록 한다. 이름을 지정하지 않으면 데이터베이스를 생성하지 않는다.</li>
+</ul>
+<p align="center">
+<img width="650" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/d5540191-f682-4da3-b630-afcbc65ee93a" />
+</p>
+<ul>
+  <li>데이터 베이스 생성을 클릭하여 생성해준다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="rds포트-열어주기">RDS포트 열어주기</h3>
+<ul>
+  <li>홈페이지 RDS -&gt; 데이터 베이스 화면에 들어가서 원하는 설정을 원하는 DB식별자를 클릭해준다.</li>
+</ul>
+<p align="center">
+<img width="800" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/368ae140-5095-4944-9110-a3bd059118d2" />
+</p>
+
+<ul>
+  <li>
+    <p>연결 및 보안 탭에서 보안 영역에 VPC보안 그룹을 클릭한다.
+<img width="1000" alt="image (6)" src="https://github.com/gunnu3226/todo/assets/139452702/56437c71-634f-4526-8ebf-8c3e78f3a15c" /></p>
+  </li>
+  <li>
+    <p>보안그룹ID를 클릭한다.
+<img width="1000" alt="image (7)" src="https://github.com/gunnu3226/todo/assets/139452702/a27ffc8c-c833-4b76-ac3e-0455489abb4f" /></p>
+  </li>
+  <li>
+    <p>인바운드 규칙편집 클릭
+<img width="1000" alt="image (8)" src="https://github.com/gunnu3226/todo/assets/139452702/5df4824f-4acd-4ac3-9ab7-eb8ff6567f99" /></p>
+  </li>
+  <li>
+    <p>소스 &gt; Anywhere로 설정하고 규칙저장
+<img width="1000" alt="image (9)" src="https://github.com/gunnu3226/todo/assets/139452702/beb16d99-fcdc-4c71-9a26-6173516f8bc9" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="spring-원격-db설정하여-연결하기">Spring 원격 DB설정하여 연결하기</h3>
+<p>우선 RDS &gt; 데이터베이스 &gt; 원하는 데이터페이스 화면으로 들어와서 연결 및 보안 탭을 확인하면 엔드포인트를 확인할 수 있다.
+<img width="1000" alt="image (10)" src="https://github.com/gunnu3226/todo/assets/139452702/df479b81-4d74-4233-b6f6-23c5b2f54138" /></p>
+
+<p>엔드포인트를 복사하여 application.propertis에 로컬DB가 연결되어 있던 설정에서 경로와 아이디, 비밀번호만 수정해주면 된다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>spring.datasource.url=jdbc:mysql://나의엔드포인트:3306/shop
+spring.datasource.username=나의USERNAME
+spring.datasource.password=나의패스워드
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><br /></p>
+
+<h3 id="mysql-workbench에서-연결하기">MySQL Workbench에서 연결하기</h3>
+<p>나는 현재 MySQL Workbench도 사용하고 있기 때문에 워크벤치에서 접속하는 방법도 적어두겠다. 워크벤치에서 +버튼을 눌러 아래 창에서 해당 데이터를 넣어주고 연결하면 된다. 비밀번호는 store in Keychain에서 입력해주면 된다.</p>
+
+<p><img width="1000" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/eb4ccbb0-b8a8-46ed-ba42-fd03e9fc5089" /></p>
+
+<p>이렇게 하면 서버에 올라가있는 DB를 사용할 수 있다.</p>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-02-01">February 1, 2024</time></p>
+
+        <br>
+        <!-- 카테고리,테그 -->
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aws" class="page__taxonomy-item p-category" rel="tag">AWS</a><span class="sep">, </span>
+    
+      <a href="/tags/#mysql" class="page__taxonomy-item p-category" rel="tag">MySQL</a><span class="sep">, </span>
+    
+      <a href="/tags/#rds" class="page__taxonomy-item p-category" rel="tag">RDS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#aws" class="page__taxonomy-item p-category" rel="tag">AWS</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -907,6 +934,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">스프링이 DI를 지원하는 이유
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/SpringSecurity+JWT%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/" rel="permalink">[SpringSecurity] Spring Security + Jwt과 로그인
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-01-29T00:00:00+09:00">January 29, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">회원가입과 로그인
 </p>
   </article>
 </div>
