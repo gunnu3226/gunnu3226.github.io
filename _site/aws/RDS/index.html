@@ -318,7 +318,7 @@
         <!--전체 글 수-->
         <li>
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span
-                    style="font-family:'Coming Soon';">35</style> <span
+                    style="font-family:'Coming Soon';">36</style> <span
                         style="font-family:'Cafe24Oneprettynight';">개</style>
         </li>
         <li>
@@ -526,7 +526,7 @@
                 
                 
                 
-                <li><a href="/categories/study" class="">개발공부 (1)</a></li>
+                <li><a href="/categories/study" class="">개발공부 (2)</a></li>
                 
                 
                 
@@ -652,7 +652,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#rds란">RDS란?</a></li><li><a href="#rds-구축하기">RDS 구축하기</a><ul><li><a href="#데이터베이스-생성">데이터베이스 생성</a></li><li><a href="#rds포트-열어주기">RDS포트 열어주기</a></li><li><a href="#spring-원격-db설정하여-연결하기">Spring 원격 DB설정하여 연결하기</a></li><li><a href="#mysql-workbench에서-연결하기">MySQL Workbench에서 연결하기</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#rds란">RDS란?</a></li><li><a href="#rds-구축하기">RDS 구축하기</a><ul><li><a href="#데이터베이스-생성">데이터베이스 생성</a></li><li><a href="#rds포트-열어주기">RDS포트 열어주기</a></li><li><a href="#spring-원격-db설정하여-연결하기">Spring 원격 DB설정하여 연결하기</a></li><li><a href="#mysql-workbench에서-연결하기">MySQL Workbench에서 연결하기</a></li></ul></li><li><a href="#스프링에서-rds사용시-주의점️">스프링에서 RDS사용시 주의점‼️</a></li></ul>
 
             </nav>
           </aside>
@@ -716,7 +716,7 @@
   <li>홈페이지 RDS -&gt; 데이터 베이스 화면에 들어가서 원하는 설정을 원하는 DB식별자를 클릭해준다.</li>
 </ul>
 <p align="center">
-<img width="800" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/368ae140-5095-4944-9110-a3bd059118d2" />
+<img width="650" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/368ae140-5095-4944-9110-a3bd059118d2" />
 </p>
 
 <ul>
@@ -732,10 +732,9 @@
     <p>인바운드 규칙편집 클릭
 <img width="1000" alt="image (8)" src="https://github.com/gunnu3226/todo/assets/139452702/5df4824f-4acd-4ac3-9ab7-eb8ff6567f99" /></p>
   </li>
-  <li>
-    <p>소스 &gt; Anywhere로 설정하고 규칙저장
-<img width="1000" alt="image (9)" src="https://github.com/gunnu3226/todo/assets/139452702/beb16d99-fcdc-4c71-9a26-6173516f8bc9" /></p>
-  </li>
+  <li>소스 &gt; Anywhere로 설정하고 규칙저장</li>
+  <li>학습단계라 지금처럼 설정하지만 나중에는 정해진 ip만 접근 가능하도록 해야한다.
+<img width="1000" alt="image (9)" src="https://github.com/gunnu3226/todo/assets/139452702/beb16d99-fcdc-4c71-9a26-6173516f8bc9" /></li>
 </ul>
 
 <p><br /></p>
@@ -744,7 +743,7 @@
 <p>우선 RDS &gt; 데이터베이스 &gt; 원하는 데이터페이스 화면으로 들어와서 연결 및 보안 탭을 확인하면 엔드포인트를 확인할 수 있다.
 <img width="1000" alt="image (10)" src="https://github.com/gunnu3226/todo/assets/139452702/df479b81-4d74-4233-b6f6-23c5b2f54138" /></p>
 
-<p>엔드포인트를 복사하여 application.propertis에 로컬DB가 연결되어 있던 설정에서 경로와 아이디, 비밀번호만 수정해주면 된다.</p>
+<p>엔드포인트를 복사하여 application.propertis에 로컬DB가 연결되어 있던 설정에서 경로와 아이디, 비밀번호만 수정해주면 된다. 깃허브에 올라가있는 레포지토리와 연결되어 있다면 절대!절대! 파일에 정보를 직접 넣으면 안된다. 아래 부분에서 환경변수로 설정하는 방법을 설명하겠다.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -760,6 +759,40 @@ spring.datasource.password=나의패스워드
 <p><img width="1000" alt="image (5)" src="https://github.com/gunnu3226/todo/assets/139452702/eb4ccbb0-b8a8-46ed-ba42-fd03e9fc5089" /></p>
 
 <p>이렇게 하면 서버에 올라가있는 DB를 사용할 수 있다.</p>
+
+<p><br /></p>
+
+<h2 id="스프링에서-rds사용시-주의점️">스프링에서 RDS사용시 주의점‼️</h2>
+<p>스프링 설정파일 application.properties 혹은 application.yml에서 데이터베이스 주소, 아이디, 비밀번호를 설정했을것이다. 하지만 이게 그대로 깃허브에 올라간다면 매우 위험하기 때문에 환경변수로 처리해준다.</p>
+
+<p>나는 .properties를 사용하기에 여기에 맞추어 설명해보겠다.
+우선 EC2에 아래 명령어를 입력하고 .bashrc에 환경변수 설정을 해준다.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">ls</span> <span class="nt">-a</span>
+
+vim .bashrc
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>파일 마지막줄에 아래와 같이 넣어준다.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">export </span><span class="nv">MYSQL_URL</span><span class="o">=</span>jdbc:mysql://엔드포인트:포트번호/데이터베이스
+<span class="nb">export </span><span class="nv">MYSQL_USERNAME</span><span class="o">=</span>RDS에서 설정한 userName
+<span class="nb">export </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>RDS에서 설정한 password
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>:wq로 저장하고 나와 변경사항을 적용시켜준다.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">source</span> .bashrc
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>적용시켜주지 않으면 변경사항이 파일엔 적용되지만 서버를 실행시킬때 적용되지 않으니 꼭! source해야한다.</p>
+
+<p>아래 명령어를 입력하여 설정값이 잘 출력되는지 확인해본다.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nv">$MYSQL_URL</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
 
         
         
@@ -824,6 +857,44 @@ spring.datasource.password=나의패스워드
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/%EC%84%9C%EB%B8%94%EB%A6%BF/" rel="permalink">[Servlet] 서블릿(Servlet) 이란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-02-05T00:00:00+09:00">February 5, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Servlet
+</p>
+  </article>
+</div>
+
         
           
 
@@ -934,44 +1005,6 @@ spring.datasource.password=나의패스워드
 
 
     <p class="archive__item-excerpt" itemprop="description">스프링이 DI를 지원하는 이유
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/SpringSecurity+JWT%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/" rel="permalink">[SpringSecurity] Spring Security + Jwt과 로그인
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-29T00:00:00+09:00">January 29, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">회원가입과 로그인
 </p>
   </article>
 </div>

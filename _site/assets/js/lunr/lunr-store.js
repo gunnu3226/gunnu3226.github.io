@@ -198,7 +198,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[AWS] EC2와 깃허브를 사용한 배포",
-        "excerpt":" ","categories": ["AWS"],
+        "excerpt":"EC2 인스턴스 생성 EC2에 들어가서 인스턴스 시작을 클릭합니다. Name에 인스턴스 이름을 원하는 이름으로적고 OS image는 Ubuntu로 해줍니다. 프리티어가 가능한 버젼으로 진행해줍니다. 인스턴스유형은 t2.micro가 프리티어로 사용 가능합니다. KEY생성하기를 클릭 후, key를 발급 받습니다.(매우 중요함) 발급받은 키는 재발급이 되지 않기 때문에 안전한 장소에 보관해야 한다. 나머지 체크리스트를 확인하고 인스턴스를 시작해준다. EC2 접속하기...","categories": ["AWS"],
         "tags": ["AWS","EC2","Github"],
         "url": "/aws/Ec2%EC%99%80%EA%B9%83%ED%97%88%EB%B8%8C/",
         "teaser": null
@@ -207,5 +207,11 @@ var store = [{
         "excerpt":"RDS란? Amazon RDS는 AWS 클라우드에서 관계형 데이터베이스를 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스이다. 자세한 내용은 추가적인 포스팅으로 공부하도록 하고 이번엔 구축하는 방법을 알아보겠다. RDS 구축하기 데이터베이스 생성 우선 AWS에 가입하여 로그인을 마치고 검색창에 RDS를 검색하여 들어간다. 데이터베이스 생성을 클릭한다. 표준 생성과 MySQL을 선택한다. 프리티어로 설정하여 요금부과를 방지한다....","categories": ["AWS"],
         "tags": ["AWS","RDS","MySQL"],
         "url": "/aws/RDS/",
+        "teaser": null
+      },{
+        "title": "[Servlet] 서블릿(Servlet) 이란?",
+        "excerpt":"서블릿(Servlet) 이란? 서블릿(Serverlt)의 정의 서블릿이란 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술입니다. 간단히 말해, 서블릿이란 자바를 사용하여 웹을 만들기 위해 필요한 기술입니다. 클라이언트가 어떠한 요청을 하면 그에 대한 결과를 다시 전송해 주어야 하는데, 이러한 역할을 하는 자바 프로그램 입니다. 서블릿 요청 흐름...","categories": ["Study"],
+        "tags": ["Spring","Java"],
+        "url": "/study/%EC%84%9C%EB%B8%94%EB%A6%BF/",
         "teaser": null
       }]

@@ -5,9 +5,73 @@
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2024 13:23:58 +0900</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2024 13:23:58 +0900</lastBuildDate>
+    <pubDate>Mon, 05 Feb 2024 11:41:26 +0900</pubDate>
+    <lastBuildDate>Mon, 05 Feb 2024 11:41:26 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>[Servlet] 서블릿(Servlet) 이란?</title>
+        <description>&lt;h2 id=&quot;서블릿servlet-이란&quot;&gt;서블릿(Servlet) 이란?&lt;/h2&gt;
+&lt;h3 id=&quot;서블릿serverlt의-정의&quot;&gt;서블릿(Serverlt)의 정의&lt;/h3&gt;
+&lt;p&gt;서블릿이란 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술입니다. 간단히 말해, 서블릿이란 자바를 사용하여 웹을 만들기 위해 필요한 기술입니다. 클라이언트가 어떠한 요청을 하면 그에 대한 결과를 다시 전송해 주어야 하는데, 이러한 역할을 하는 자바 프로그램 입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;서블릿-요청-흐름&quot;&gt;서블릿 요청 흐름&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/f2632617-4ff9-4166-8df2-852cffd9bbea&quot; alt=&quot;스크린샷 2024-02-05 오전 11 06 23&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클라이언트가 URL로 HTTP Reuqest 요청&lt;/li&gt;
+  &lt;li&gt;WAS는 Request, Response 객체를 새로 만들어서 서블릿 객체 호출&lt;/li&gt;
+  &lt;li&gt;해당 서블릿에서 service메서드를 호출한 후 로직 실행 후 Response 객체에 응답을 반환&lt;/li&gt;
+  &lt;li&gt;WAS는 Response 객체에 담겨있는 내용으로 HTTP 응답 정보를 생성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;## 서블릿 컨테이너(Servlet Container)
+ 위 요청 흐름 그림을 보면 서블릿 컨테이너 안에 서블릿 객체가 들어있다. 서블릿 컨테이너는 서블릿 객체를 관리해주는 역할을 한다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;톰캣처럼 서블릿을 지원하는 WAS를 서블릿 컨테이너라고 한다.&lt;/li&gt;
+  &lt;li&gt;서블릿 컨테이너는 서블릿 객체를 &lt;strong&gt;생성, 초기화, 호출, 종료하는 생명주기를 관리&lt;/strong&gt;한다.&lt;/li&gt;
+  &lt;li&gt;서블릿 객체는 &lt;strong&gt;싱글톤&lt;/strong&gt;으로 관리된다.
+    &lt;ul&gt;
+      &lt;li&gt;공유 변수 사용 주의&lt;/li&gt;
+      &lt;li&gt;서블릿 컨테이너 종료시 함께 종료&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JSP도 서블릿으로 변환되어 사용&lt;/li&gt;
+  &lt;li&gt;동시 요청을 위한 &lt;strong&gt;멀티 쓰레드 처리 지원&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;서블릿의-생명-주기&quot;&gt;서블릿의 생명 주기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/b5baa874-ccd3-488f-b5df-7b396bb5277a&quot; alt=&quot;스크린샷 2024-02-05 오전 11 18 52&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클라이언트의 요청이 들어오면 WAS는 해당 요청에 맞는 Servlet이 서블릿 컨테이너에 있는지 확인한다.
+    &lt;ul&gt;
+      &lt;li&gt;만약 없으면 해당 서블릿 객체를 컨테이너에 생성하고 init() 메서드를 실행 후 service()메서드 실행. init 메서드는 처음 한번만 실행되며, 쓰레드에서 공통적으로 사용해야하는 것이 있다면 오버라이딩해 구현하면 된다.&lt;/li&gt;
+      &lt;li&gt;있으면 바로 service메서드 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;service에서는 request의 타입에 따라 응답이 doGet, doPost로 나뉜다. 메서드가 return되면 thread는 제거된다.&lt;/li&gt;
+  &lt;li&gt;컨테이너가 서블릿에 종료 요청을 하면 destroy() 메서드가 호출되고, 종료시 처리해야하는 작업을 detroy() 메서드를 오버라이딩하여 구현하면 된다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 05 Feb 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/%EC%84%9C%EB%B8%94%EB%A6%BF/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/%EC%84%9C%EB%B8%94%EB%A6%BF/</guid>
+        
+        <category>Spring</category>
+        
+        <category>Java</category>
+        
+        
+        <category>Study</category>
+        
+      </item>
     
       <item>
         <title>[AWS] RDS로 MySQL 구축하기</title>
@@ -70,7 +134,7 @@
   &lt;li&gt;홈페이지 RDS -&amp;gt; 데이터 베이스 화면에 들어가서 원하는 설정을 원하는 DB식별자를 클릭해준다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p align=&quot;center&quot;&gt;
-&lt;img width=&quot;800&quot; alt=&quot;image (5)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/368ae140-5095-4944-9110-a3bd059118d2&quot; /&gt;
+&lt;img width=&quot;650&quot; alt=&quot;image (5)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/368ae140-5095-4944-9110-a3bd059118d2&quot; /&gt;
 &lt;/p&gt;
 
 &lt;ul&gt;
@@ -86,10 +150,9 @@
     &lt;p&gt;인바운드 규칙편집 클릭
 &lt;img width=&quot;1000&quot; alt=&quot;image (8)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/5df4824f-4acd-4ac3-9ab7-eb8ff6567f99&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;소스 &amp;gt; Anywhere로 설정하고 규칙저장
-&lt;img width=&quot;1000&quot; alt=&quot;image (9)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/beb16d99-fcdc-4c71-9a26-6173516f8bc9&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;소스 &amp;gt; Anywhere로 설정하고 규칙저장&lt;/li&gt;
+  &lt;li&gt;학습단계라 지금처럼 설정하지만 나중에는 정해진 ip만 접근 가능하도록 해야한다.
+&lt;img width=&quot;1000&quot; alt=&quot;image (9)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/beb16d99-fcdc-4c71-9a26-6173516f8bc9&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -98,7 +161,7 @@
 &lt;p&gt;우선 RDS &amp;gt; 데이터베이스 &amp;gt; 원하는 데이터페이스 화면으로 들어와서 연결 및 보안 탭을 확인하면 엔드포인트를 확인할 수 있다.
 &lt;img width=&quot;1000&quot; alt=&quot;image (10)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/df479b81-4d74-4233-b6f6-23c5b2f54138&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;엔드포인트를 복사하여 application.propertis에 로컬DB가 연결되어 있던 설정에서 경로와 아이디, 비밀번호만 수정해주면 된다.&lt;/p&gt;
+&lt;p&gt;엔드포인트를 복사하여 application.propertis에 로컬DB가 연결되어 있던 설정에서 경로와 아이디, 비밀번호만 수정해주면 된다. 깃허브에 올라가있는 레포지토리와 연결되어 있다면 절대!절대! 파일에 정보를 직접 넣으면 안된다. 아래 부분에서 환경변수로 설정하는 방법을 설명하겠다.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
@@ -114,6 +177,40 @@ spring.datasource.password=나의패스워드
 &lt;p&gt;&lt;img width=&quot;1000&quot; alt=&quot;image (5)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/eb4ccbb0-b8a8-46ed-ba42-fd03e9fc5089&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이렇게 하면 서버에 올라가있는 DB를 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;스프링에서-rds사용시-주의점️&quot;&gt;스프링에서 RDS사용시 주의점‼️&lt;/h2&gt;
+&lt;p&gt;스프링 설정파일 application.properties 혹은 application.yml에서 데이터베이스 주소, 아이디, 비밀번호를 설정했을것이다. 하지만 이게 그대로 깃허브에 올라간다면 매우 위험하기 때문에 환경변수로 처리해준다.&lt;/p&gt;
+
+&lt;p&gt;나는 .properties를 사용하기에 여기에 맞추어 설명해보겠다.
+우선 EC2에 아래 명령어를 입력하고 .bashrc에 환경변수 설정을 해준다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+vim .bashrc
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;파일 마지막줄에 아래와 같이 넣어준다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MYSQL_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;jdbc:mysql://엔드포인트:포트번호/데이터베이스
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MYSQL_USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;RDS에서 설정한 userName
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MYSQL_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;RDS에서 설정한 password
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;:wq로 저장하고 나와 변경사항을 적용시켜준다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; .bashrc
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;적용시켜주지 않으면 변경사항이 파일엔 적용되지만 서버를 실행시킬때 적용되지 않으니 꼭! source해야한다.&lt;/p&gt;
+
+&lt;p&gt;아래 명령어를 입력하여 설정값이 잘 출력되는지 확인해본다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$MYSQL_URL&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 </description>
         <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/aws/RDS/</link>
@@ -132,7 +229,196 @@ spring.datasource.password=나의패스워드
     
       <item>
         <title>[AWS] EC2와 깃허브를 사용한 배포</title>
-        <description>
+        <description>&lt;h2 id=&quot;ec2-인스턴스-생성&quot;&gt;EC2 인스턴스 생성&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;EC2에 들어가서 인스턴스 시작을 클릭합니다.&lt;/li&gt;
+  &lt;li&gt;Name에 인스턴스 이름을 원하는 이름으로적고 OS image는 Ubuntu로 해줍니다. 프리티어가 가능한 버젼으로 진행해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;650&quot; alt=&quot;image (5)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/b9aa9556-9565-49c2-b0df-0a562dee1f2c&quot; /&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;인스턴스유형은 t2.micro가 프리티어로 사용 가능합니다.
+&lt;img width=&quot;1000&quot; alt=&quot;image (11)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/f534ebbc-bba7-4045-b4ed-d16eafba9e5d&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;KEY생성하기를 클릭 후, key를 발급 받습니다.(매우 중요함)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;발급받은 키는 재발급이 되지 않기 때문에 안전한 장소에 보관해야 한다.
+&lt;img width=&quot;1000&quot; alt=&quot;image (12)&quot; src=&quot;https://github.com/gunnu3226/todo/assets/139452702/fe23e193-07c2-4e6b-9113-c0466673c4aa&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;나머지 체크리스트를 확인하고 인스턴스를 시작해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ec2-접속하기&quot;&gt;EC2 접속하기&lt;/h2&gt;
+&lt;p&gt;SSH(Secure Shell Protocol)을 사용해 접속한다. Mac OS는 터미널에서 바로 적속이 가능하다. 접속할 컴퓨터가 22번 포트가 열려있어야 접속이 가능하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;터미널에서 발급받은 Keypari의 접근 권한을 바꾸어준다.&lt;/li&gt;
+  &lt;li&gt;chmod 400: 파일 권한을 변경하는 명령으로, 여기서 400은 파일 소유자에 대해 읽기만 허용하는 권한을 부여합니다. 숫자 4는 읽기 권한을 나타냅니다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo chmod &lt;/span&gt;400 받은키페어를끌어다놓기 
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ssh로 접속하기
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; 받은키페어를끌어다놓기 ubuntu@AWS에적힌퍼블릭IPv4주소
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이렇게 하면 터미널로 ssh를 사용해 ec2에 접속한것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;탄력적-ip고정ip-할당필수는-아님&quot;&gt;탄력적 IP(고정IP) 할당(필수는 아님)&lt;/h3&gt;
+&lt;p&gt;인스턴스 정보에서 확인할 수 있는 퍼블릭 IPv4 주소는 인스턴스를 재시작 하거나, 중지 후 다시 실행하면 바뀌게 된다. 그러면 설정도 다시해줘야하고 SSH접속시 ip도 수정해주어야 하는 번거로움이 있다. 이를 해결하기 위해 탄력적 Ip를 발급받고 인스턴스에 적용시켜주면 고정된 IP를 가질 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;인스턴스 -&amp;gt; 네트워크 및 보안 -&amp;gt; 탄력적IP 클릭 -&amp;gt; 탄력적 IP 주소할당 클릭&lt;br /&gt;
+&lt;img src=&quot;https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/070717f3-51db-4048-ad13-e66e35d180cf&quot; alt=&quot;스크린샷 2024-02-01 오후 8 33 44&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;탄력적 IP 주소할당 클릭 -&amp;gt; 할당&lt;br /&gt;
+&lt;img width=&quot;400&quot; alt=&quot;image (12)&quot; src=&quot;https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/c281bbd0-a43d-483c-a641-6057d9e6455c&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;해당IP 체크 -&amp;gt; 작업클릭 -&amp;gt; 탄력적IP 주소연결 클릭&lt;br /&gt;
+&lt;img src=&quot;https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/5ac28630-4185-4960-8a14-b4410c059c16&quot; alt=&quot;스크린샷 2024-02-01 오후 8 39 03&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;인스턴스 선택 -&amp;gt; 프라이빗IP 선택 후 연결&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이제 인스턴스 정보에 돌아가 확인해보면 탄력적 IP로 퍼블릭 IPv4 주소가 바뀐것을 확인 할 수 있다. 인스턴스를 재시작 하거나 중지 후 실행시켜도 IP가 바뀌지 않을것이다.&lt;/p&gt;
+
+&lt;p&gt;24.02.01부로 AWS과금 정책이 바뀌어서 탄력적 IP를 할당받으면 무조건 요금이 결제된다 시간당 0.005달러 한달로 계산하면 3.6달러정도, 원화로 4500원? 정도 되는것 같다. 이를 알고 사용하자.&lt;br /&gt;
+&lt;a href=&quot;https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/&quot;&gt;AWS 과금정책 변경 공지&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ec2-ubuntu에-git설치-후-연동&quot;&gt;EC2 Ubuntu에 git설치 후 연동&lt;/h2&gt;
+&lt;p&gt;이후 접속한 ubuntu에 git을 설치하고 연결해보겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;git-설치&quot;&gt;Git 설치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;먼저 설치되어있는 패키지들의 새로운 버전을 확인하고, 버전을 업그레이드 시켜준다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update  &lt;span class=&quot;c&quot;&gt;# 현재 사용 가능한 패키지와 버전 목록만 업데이트&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get upgrade &lt;span class=&quot;c&quot;&gt;# 목록에 있는 패키지에 대해서 최신 버전으로 재설치&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;깃을 설치해준다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;버젼확인으로 설치를 확인해준다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssh-key-생성&quot;&gt;SSH KEY 생성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;.ssh 폴더로 이동해서 key를 생성한다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/.ssh
+ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; github계정 메일&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;example@github.com&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;아래 명령어를 입력하여 key를 복사한다.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;id_rsa.pub
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Github의 [Setting] - [SSH and GPG keys] - [New SSH Key] 에서 키를 붙여넣고 등록해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;git-clone&quot;&gt;git clone&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;깃허브에 클론을 원하는 레포지토리에서 주소 복사하기&lt;/li&gt;
+  &lt;li&gt;SSH로 해야함!!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;400&quot; alt=&quot;image (5)&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/6d8a436f-18e3-4bf3-84af-9a16e8dba001&quot; /&gt;
+&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;public repository인 경우
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git clone &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;git@github:~~~&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;private repository인 경우
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git clone https://아이디:비밀번호@github.com/아이디/저장소명.git
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로젝트-빌드-후-서버실행&quot;&gt;프로젝트 빌드 후 서버실행&lt;/h2&gt;
+&lt;p&gt;클론한 프로젝트 파일에 들어가보면 아래와 같은 파일이 있는 경로에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./gradlew build&lt;/code&gt; 명령어를 입력해 build해준다.&lt;br /&gt;
+&lt;img width=&quot;521&quot; alt=&quot;스크린샷 2024-02-01 오후 3 26 57&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/502e554f-7a3a-48fd-a962-0f3e11944cd6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;혹시 파일을 수정하였다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt; 을 사용해 다시 받아오면 된다.&lt;/p&gt;
+
+&lt;p&gt;문제없이 빌드가 성공되었다면 아래사진과 같이 나오게 된다.
+&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/f296f1d2-85c1-4501-85fc-8ecc9b290c02&quot; alt=&quot;스크린샷 2024-02-01 오후 3 50 01&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 build/libs 경로로 들어가서 .jar파일을 실행시켜주면 된다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;build/libs
+java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; todo-0.0.1-SNAPSHOT.jar
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;AWS에서 80, 8080 포트를 열어준다.&lt;/li&gt;
+  &lt;li&gt;인스턴스 보안그룹 설정에 들어가서 인바운드 규칙편집에 들어가준다.&lt;/li&gt;
+  &lt;li&gt;80포트 : HTTP 접속을 위한 포트&lt;/li&gt;
+  &lt;li&gt;8080포트 : 스프링 부트 기본포트
+&lt;img width=&quot;1000&quot; alt=&quot;image (13)&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/dc806b63-f7f2-4840-9708-fe2cc55b34ec&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현재는 퍼블릭ip:8080으로 접속해야 하고 뒤에 uri를 호출하여 api를 사용할 수 있다. 포트포워딩을 사용해서 80포트로 오는 요청을 8080포트로 전달하게하여 :8080을 안쓰고 사용할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;iptables &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; nat &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; PREROUTING &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; eth0 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; tcp &lt;span class=&quot;nt&quot;&gt;--dport&lt;/span&gt; 80 &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt; REDIRECT &lt;span class=&quot;nt&quot;&gt;--to-port&lt;/span&gt; 8080
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssh접속을-끊어도-서버가-계속-돌게하기&quot;&gt;SSH접속을 끊어도 서버가 계속 돌게하기&lt;/h3&gt;
+&lt;p&gt;현재는 터미널에서 SSH접속을 끊으면 프로세스가 종료되고 서버도 내려가게 된다. 우리가 접속을 끊어도 서버가 돌아가게 하려면 서버 작동시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nohub&lt;/code&gt;을 붙이면 된다.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;nohup &lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; JAR파일명.jar &amp;amp;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;돌고있는-서버-강제종료-하기&quot;&gt;돌고있는 서버 강제종료 하기&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 아래 명령어로 미리 pid 값(프로세스 번호)을 본다&lt;/span&gt;
+ps &lt;span class=&quot;nt&quot;&gt;-ef&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;java
+
+&lt;span class=&quot;c&quot;&gt;# 아래 명령어로 특정 프로세스를 죽인다&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;pid값]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;스크립트를 통한 git pull, build, 실행까지 설정할 수 있는데 그 방법은 다른 포스팅에서 다루겠다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/aws/Ec2%EC%99%80%EA%B9%83%ED%97%88%EB%B8%8C/</link>
@@ -2701,70 +2987,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
         
         
         <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL]2023.12.29 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;프로그래머스 문제풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42747&quot;&gt;H-Index&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/87390&quot;&gt;n^2배열 자르기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/12949&quot;&gt;행렬의 곱셈&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/131127&quot;&gt;할인 행사&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42578&quot;&gt;의상&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42586&quot;&gt;기능개발&lt;/a&gt; -큐&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42587&quot;&gt;프로세스&lt;/a&gt; -큐&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/87946&quot;&gt;피로도&lt;/a&gt; -dfs&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/43165&quot;&gt;타겟넘버&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;새로-공부한-내용&quot;&gt;새로 공부한 내용&lt;/h2&gt;
-&lt;h3 id=&quot;조건을-and로-걸어-줄-때-순서&quot;&gt;조건을 and(&amp;amp;&amp;amp;)로 걸어 줄 때 순서&lt;/h3&gt;
-&lt;p&gt;if 혹은 while문 등 조건문을 걸어주는 상황에서 &amp;amp;&amp;amp;(and)로 조건을 여러개 사용하는 경우 조건을 앞부터 순서대로 검증하기 때문에 순서를 유의해서 사용해야 한다.&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;큐가 비어있으면 첫번째 코드는 먼저 비어있음을 감지하고 두번째 조건을 검증하지 않는다. 하지만 두번째 코드는 먼저 큐에서 값을 꺼내오려 시도하다가 예외가 발생된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;큐-내부-값-확인&quot;&gt;큐 내부 값 확인&lt;/h3&gt;
-&lt;p&gt;반복문을 돌려서 큐 내부값도 확인해 볼 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//수행할 기능&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 하면 큐를 앞 순서부터 반복하며 수행하게 된다.&lt;/p&gt;
-
-&lt;p&gt;###n진수 변환&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;바꾸고싶은n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Thu, 28 Dec 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL4/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL4/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
         
       </item>
     
