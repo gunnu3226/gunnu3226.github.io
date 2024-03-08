@@ -71,12 +71,6 @@ var store = [{
         "url": "/til/TIL8/",
         "teaser": null
       },{
-        "title": "[Spring] 스프링에 대해서",
-        "excerpt":"스프링의 핵심     스프링은 자바 언어 기반의 프레임워크   자바 언어의 가장 큰 특징 - 객체지향 언어   스프링은 객체 지향 언어가 가진 강력한 특징을 살려내는 프레임워크   스프링은 좋은 객체 지향 애플리케이션을 개발할 수 있게 도와주는 프레임워크   ## 스프링과 스프링 부트     스프링 부트는 스프링을 편리하게 사용할 수 있도록 지원해주는 것   ##  ","categories": ["Spring"],
-        "tags": ["Spring","Java"],
-        "url": "/spring/spring%EC%9D%B4%EB%9E%80/",
-        "teaser": null
-      },{
         "title": "[프로그래머스] LV.2 소수 찾기 Java",
         "excerpt":"문제 풀이 문제를 먼저 보고 든 생각은 소수를 판별하는 로직이 필요하니 일단 소수 판별 메서드를 만들고 시작하자였다. 그런데 문제에서 문자열로 입력이 들어와서 문자열을 바꾸어 처리하는 로직도 넣었다. 메서드는 하나의 기능만 가져야 한다고 하는데 우선 문제풀이니까… 1 2 3 4 5 6 7 8 9 10 public static boolean checkPrime(String num)...","categories": ["Programmers"],
         "tags": ["코딩테스트","프로그래머스","Java"],
@@ -185,12 +179,6 @@ var store = [{
         "url": "/spring/SpringSecurity+JWT%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/",
         "teaser": null
       },{
-        "title": "[Spring] 의존성 주입(Dependency Injection, DI)과 제어의 역전(Inversion of Control, IoC)",
-        "excerpt":"의존성 주입(Dependency Injection) 이란? DI란 외부에서 두 객체 간의 관계를 결정해주는 디자인 패턴으로, 인터페이스를 사이에 둬서 클래스 레벨에서는 의존관계가 고정되지 않드록 하고 런타임 시에 관계를 동적으로 주입하여 유연성을 확보하고 결합도를 낮출 수 있게 해준다. 의존성이랑 한 객체가 다른 객체를 사용할 때 의존성이 있다고 한다. 예를 들어 Consumer객체가 Chicken객체를 사용하는 경우...","categories": ["Spring"],
-        "tags": ["Spring","Java"],
-        "url": "/spring/ioc,di/",
-        "teaser": null
-      },{
         "title": "[Spring] Bean의 개념과 등록을 위한 어노테이션 @Bean, @Configuration, @Component",
         "excerpt":"Spring Bean이란? Srping Bean이란? Spring Bean은 Spring에 의하여 생성되고, 컨테이너에 의해 생명주기가 관리되는 자바 객체(Plain Old Java Object, POJO)이다. 객체가 필요할 때면 IoC 컨테이너에서 가져와서 사용한다. 컨테이너에 등록할 객체를 스프링에게 알려줘야 하는데 이것을 등록한다고 하며, xml설정을 통해 객체를 등록하거나 어노테이션을 활용해 등록할 수 있다. 이 포스팅에서는 어노테이션 기반 등록만 알아보도록...","categories": ["Spring"],
         "tags": ["Spring","Java"],
@@ -210,8 +198,26 @@ var store = [{
         "teaser": null
       },{
         "title": "[Servlet] 서블릿(Servlet) 이란?",
-        "excerpt":"서블릿(Servlet) 이란? 서블릿(Serverlt)의 정의 서블릿이란 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술입니다. 간단히 말해, 서블릿이란 자바를 사용하여 웹을 만들기 위해 필요한 기술입니다. 클라이언트가 어떠한 요청을 하면 그에 대한 결과를 다시 전송해 주어야 하는데, 이러한 역할을 하는 자바 프로그램 입니다. 서블릿 요청 흐름...","categories": ["Study"],
+        "excerpt":"서블릿(Servlet) 이란? 서블릿(Serverlt)의 정의 서블릿이란 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술입니다. 간단히 말해, 서블릿이란 자바를 사용하여 웹을 만들기 위해 필요한 기술입니다. 클라이언트가 어떠한 요청을 하면 그에 대한 결과를 다시 전송해 주어야 하는데, 이러한 역할을 하는 자바 프로그램 입니다. 서블릿 클래스는 jakarta.servlet.http.HttpServlet...","categories": ["Study"],
         "tags": ["Spring","Java"],
-        "url": "/study/%EC%84%9C%EB%B8%94%EB%A6%BF/",
+        "url": "/study/%EC%84%9C%EB%B8%94%EB%A6%BF-copy/",
+        "teaser": null
+      },{
+        "title": "[Spring] Spring과 SpringBoot",
+        "excerpt":"Spring 이란? 스프링 프레임워크(Spring Framework)는 Java 기반 애플리케이션 개발을 지원하는 오픈소스 애플리케이션 프레임워크로 스프링(Spring)이라고도 불립니다. 스프링은 순수 자바 객체(POJO)만을 사용하여 복잡성을 제거하고, 단순하고 가벼운 코드로 기업용 애플리케이션을 개발하기 위한 목적으로 개발된 프레임워크 입니다. POJO(Plain Old Java Object)는 특정한 규약이나 프레임워크에 종속되지 않는 간단하고 순수한 자바 객체를 의미합니다. 객체 지향 개발...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/spring%EC%9D%B4%EB%9E%80/",
+        "teaser": null
+      },{
+        "title": "[Redis] 좋아요 기능에 Redis도입기 및 Redis설정(1)",
+        "excerpt":"Redis를 도입하게된 계기 공부를 하며 만들던 프로젝트에서 Store 좋아요 기능을 구현하였다. 처음 구현은 단순하게 Post,Delete를 매핑하여 각 요청마다 생성 삭제를 하도록 하였다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 @Transactional public StoreLikeResponse doStoreLike(User user, Long storeId) { if...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/redis%EB%8F%84%EC%9E%85/",
+        "teaser": null
+      },{
+        "title": "[Spring] 의존성 주입(Dependency Injection, DI)과 제어의 역전(Inversion of Control, IoC)",
+        "excerpt":"의존성 주입(Dependency Injection) 이란? DI란 외부에서 두 객체 간의 관계를 결정해주는 디자인 패턴으로, 인터페이스를 사이에 둬서 클래스 레벨에서는 의존관계가 고정되지 않드록 하고 런타임 시에 관계를 동적으로 주입하여 유연성을 확보하고 결합도를 낮출 수 있게 해준다. 의존성이랑 한 객체가 다른 객체를 사용할 때 의존성이 있다고 한다. 예를 들어 Consumer객체가 Chicken객체를 사용하는 경우...","categories": ["Spring"],
+        "tags": ["Spring","Java"],
+        "url": "/spring/ioc,di/",
         "teaser": null
       }]

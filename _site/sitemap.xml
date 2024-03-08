@@ -4,7 +4,55 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>http://localhost:4000/study/%EC%84%9C%EB%B8%94%EB%A6%BF/</loc>
+        <loc>http://localhost:4000/spring/ioc,di/</loc>
+        
+        <lastmod>2024-03-09T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/spring/redis%EB%8F%84%EC%9E%85/</loc>
+        
+        <lastmod>2024-03-09T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/spring/spring%EC%9D%B4%EB%9E%80/</loc>
+        
+        <lastmod>2024-03-07T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/study/%EC%84%9C%EB%B8%94%EB%A6%BF-copy/</loc>
         
         <lastmod>2024-02-05T00:00:00+09:00</lastmod>
         
@@ -55,22 +103,6 @@
         <loc>http://localhost:4000/spring/springbean/</loc>
         
         <lastmod>2024-01-31T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/spring/ioc,di/</loc>
-        
-        <lastmod>2024-01-30T00:00:00+09:00</lastmod>
         
 
         
@@ -357,22 +389,6 @@
     
     <url>
         <loc>http://localhost:4000/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/</loc>
-        
-        <lastmod>2024-01-03T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/spring/spring%EC%9D%B4%EB%9E%80/</loc>
         
         <lastmod>2024-01-03T00:00:00+09:00</lastmod>
         
