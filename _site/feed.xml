@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>개발하는 개발자</title>
+    <title>궁금한 개발자</title>
     <description>공부하고 기록하는 블로그 입니다🧑🏻‍💻</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Mar 2024 01:24:32 +0900</pubDate>
-    <lastBuildDate>Thu, 28 Mar 2024 01:24:32 +0900</lastBuildDate>
+    <pubDate>Sun, 26 May 2024 23:56:05 +0900</pubDate>
+    <lastBuildDate>Sun, 26 May 2024 23:56:05 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -16,7 +16,15 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;이증화를-하는-이유&quot;&gt;이증화를 하는 이유&lt;/h3&gt;
+&lt;h3 id=&quot;이중화를-하는-이유&quot;&gt;이중화를 하는 이유&lt;/h3&gt;
+&lt;p&gt;이번 프로젝트에서 대용량 트래픽과 동시에 몰리는 트래픽을 해결하는 것을 주 목적으로 하였기에 트래픽을 분산시킬 수 있는 방법이 필요했다.그래서 Master DB가 쓰기 작업을 담당하고, 하위에 여러 Slave DB를 두어 조회 트래픽을 분산시키기로 했다.&lt;/p&gt;
+
+&lt;p&gt;현재 DB는 MySQL을 사용중이기 때문에 MySQL Replication을 먼저 알고 있어야 Slave DB를 만들 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mysql-replication&quot;&gt;MySQL Replication&lt;/h3&gt;
+&lt;p&gt;MySQL의 Master 서버의 데이터를 n개의 Slave 서버와 동기화 시켜주는 작업이다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 28 Mar 2024 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/</link>
@@ -1326,70 +1334,6 @@ reference&lt;br /&gt;
       </item>
     
       <item>
-        <title>[TIL]2024.01.25 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring 숙련 완강
-    &lt;ul&gt;
-      &lt;li&gt;Security는 내용을 잘 모르겠어서 다시 공부해야함. 큰 주제로 나눠서 정리필요.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AWS RDS, EC2 설정하고 서버 띄워보기
-    &lt;ul&gt;
-      &lt;li&gt;설정하는 방법과 자세한 내용 정리해둬야함.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;오늘의-회고&quot;&gt;오늘의 회고&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;이제는 모르는 내용이 더 많은 강의를 듣고있어서 개인과제를 진행하면서 부족한 부분이 찾아 공부하는 시간이 필요하다.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 25 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL14/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL14/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL]2024.01.23 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;JPA 강의
-    &lt;ul&gt;
-      &lt;li&gt;jpa를 사용하면서 테이블 연관관계 매핑에 관한 내용을 학습하였다. 자세한 내용은 포스팅으로 정리할 예정이다.&lt;/li&gt;
-      &lt;li&gt;쿼리에 관한 내용도 학습하였다. jpql의 필요성과 사용 방법을 알 수 있었다. 하지만 쿼리를 실습하는 연습을 해야 와 닿을것 같아서 다음 과제때는 spring jpa와 jpql을 사용한 쿼리도 함께 사용해려고 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;MVC 2편 강의
-    &lt;ul&gt;
-      &lt;li&gt;타임리프에 관한 내용을 학습하였는데 타입리프를 이용해서 간단한 화면을 구성하고 띄워보는 경험도 과제를 통해 하려고 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 23 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL13/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL13/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
         <title>[Spring] Transaction 전파와 flush()(feat.테스트 코드에서 생긴 의문점)</title>
         <description>&lt;h2 id=&quot;테스트-코드를-작성하면서-생긴-문제&quot;&gt;테스트 코드를 작성하면서 생긴 문제&lt;/h2&gt;
 &lt;p&gt;Spring Data Jpa를 활용해 간단한 CRUD기능을 넣은 일정관리 프로젝트에서 update기능을 만들고 테스트 코드를 짜던 중 의문점이 발생했다. 컴파일시점에서의 문제는 아니었고, 해결하고나니 @Transactional을 사용하는 부분에서 전파 범위를 고려하지 못했고  발생한 문제였다. 문제가 발생한 순간부터 해결 과정과 해결에 필요했던 개념들을 정리해 보겠다.&lt;/p&gt;
@@ -1920,66 +1864,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
       </item>
     
       <item>
-        <title>[TIL]2024.01.09 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그래머스 2문제 풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/118667&quot;&gt;두 큐 합 같게 만들기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42883&quot;&gt;큰 수 만들기&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;스프링 mvc 1편 - 백앤드 웹 개발 핵심 기술 수강
-    &lt;ul&gt;
-      &lt;li&gt;스프링 Annotation기반의 mvc구조를 사용해보고 전날 구현해 보았던 mvc프레임워크와 작동 원리를 비교해보았다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 09 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL12/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL12/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL]2024.01.08 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그래머스 2문제 풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/154540&quot;&gt;무인도 여행&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/77485&quot;&gt;행렬 테두리 회전하기&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;스프링 mvc 1편 - 백앤드 웹 개발 핵심 기술 수강
-    &lt;ul&gt;
-      &lt;li&gt;mvc프레임 워크를 직접 만들어보면서 서버에서 mvc구조가 작동하는 로직을 배웠다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 08 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL11/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL11/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
         <title>[OOP] 좋은 객체지향 설계의 5가지 원칙, SOLID</title>
         <description>&lt;h2 id=&quot;객체-지향-프로그래밍&quot;&gt;객체 지향 프로그래밍?&lt;/h2&gt;
 &lt;ul&gt;
@@ -2339,40 +2223,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
         
         
         <category>Programmers</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL]2024.01.05 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그래머스 2문제 풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/17680&quot;&gt;[1차] 캐시&lt;/a&gt; - &lt;a href=&quot;https://gunnu3226.github.io/programmers/1%EC%B0%A8-%EC%BA%90%EC%8B%9C/&quot;&gt;풀이&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/64065&quot;&gt;튜플&lt;/a&gt; - &lt;a href=&quot;&quot;&gt;풀이&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;문제를 풀며 알게된 캐시, 캐시교체 알고리즘에 대해 정리해 보았다.  &lt;br /&gt;
-&lt;a href=&quot;https://gunnu3226.github.io/algorithm/%EC%BA%90%EC%8B%9C%EA%B5%90%EC%B2%B4%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/&quot;&gt;캐시 교체 알고리즘&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;스프링 핵심원리 - 기본편 완강
-    &lt;ul&gt;
-      &lt;li&gt;완벽하게 내용을 숙지하기 보다는 흐름을 이해하고 기본적인 스프링의 내용을 가져가는 첫 수강. 이 후 필요한 부분을 찾아보며 다시 공부할 계획.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 05 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL10/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL10/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
         
       </item>
     
@@ -2737,40 +2587,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
       </item>
     
       <item>
-        <title>[TIL]2024.01.04 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;프로그래머스 2문제 풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/68645&quot;&gt;삼각 달팽이&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://gunnu3226.github.io/programmers/%EC%82%BC%EA%B0%81-%EB%8B%AC%ED%8C%BD%EC%9D%B4/&quot;&gt;풀이&lt;/a&gt;
-      - &lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/178870&quot;&gt;연속된 부분 수열의 합&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://gunnu3226.github.io/programmers/%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9/&quot;&gt;풀이&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;키오스크 옵션 선택 코드 구현 완료
-    &lt;ul&gt;
-      &lt;li&gt;이후 메뉴랑 상품 싱글톤으로 생성자 계속 호출 안되게 시도 -&amp;gt; 실패&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Thu, 04 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL9/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL9/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
         <title>[프로그래머스] LV.2 택배상자 Java</title>
         <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
 
@@ -3024,36 +2840,6 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
       </item>
     
       <item>
-        <title>[TIL]2024.01.03 TIL</title>
-        <description>&lt;h2 id=&quot;오늘의-학습&quot;&gt;오늘의 학습&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;프로그래머스 2문제 풀이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42839&quot;&gt;소수 찾기&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://gunnu3226.github.io/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/&quot;&gt;풀이&lt;/a&gt;
-      - &lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/131704&quot;&gt;택배상자&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://gunnu3226.github.io/programmers/%ED%83%9D%EB%B0%B0%EC%83%81%EC%9E%90/&quot;&gt;풀이&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;스프링 핵심 원리 - 기본편 수강&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/TIL8/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/TIL8/</guid>
-        
-        <category>TIL</category>
-        
-        <category>Java</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
         <title>[프로그래머스] LV.2 가장 큰 수 Java</title>
         <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/17dcd5fd-563e-4cd9-98ad-5d2083108fc5&quot; alt=&quot;스크린샷 2024-01-02 오전 9 25 59&quot; /&gt;&lt;/p&gt;
@@ -3130,6 +2916,390 @@ update메서드에 걸려있는 트랜잭션이 끝났을 텐데..왜 로그에 
         
         
         <category>Programmers</category>
+        
+      </item>
+    
+      <item>
+        <title>[알고리즘]소수 판별, 구하기</title>
+        <description>&lt;h2 id=&quot;소수-판별&quot;&gt;소수 판별&lt;/h2&gt;
+&lt;p&gt;소수를 판별하는 알고리즘은 크게 3가지로 구현할 수 있다. 포스팅의 순서대로 마지막이 시간복잡도 기준에서 유리한 알고리즘이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;N이하 수 나누기 - O(n)&lt;/li&gt;
+  &lt;li&gt;$\sqrt N$ 이하 수 나누기 - O($\sqrt n$)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;그리고 n까지의 수 중 소수를 구하고 싶을 때는 에라토스테네스의 체를 사용할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;n이하-수-나누기on--&quot;&gt;N이하 수 나누기(O(n)) -&lt;/h2&gt;
+&lt;p&gt;소수인지 판별할 때 2부터 n-1까지 모든 수를 나누어 보고 나누어 지지 않으면 소수로 판별할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isPrime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;하지만 시간 복잡도O(n)이므로 n이 큰수라고 가정하면 처리 시간이 기하급수적으로 커진다.&lt;/p&gt;
+
+&lt;h2 id=&quot;sqrt-n-이하-수-나누기osqrt-n&quot;&gt;$\sqrt N$ 이하 수 나누기(O($\sqrt n$))&lt;/h2&gt;
+&lt;p&gt;n의 약수를 보면 $\sqrt n$을 기준으로 양쪽에 대칭하여 존재하게 된다. 그렇기 때문에 2부터 $\sqrt n$까지만 나누어 확인해 본다면 소수를 판별할 수 있게된다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isPrime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;에라토스테네스의-체&quot;&gt;에라토스테네스의 체&lt;/h2&gt;
+&lt;p&gt;에라토스테네스의 체는 소수를 구하는 대표적 방법 중 하나이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“소수가 되는 수의 배수를 지우면 남는 건 소수가 된다.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;2부터 소수를 구하고자 하는 구간의 모든 수를 나열한다.&lt;/li&gt;
+  &lt;li&gt;2의 배수를 지운다.&lt;/li&gt;
+  &lt;li&gt;남는 수 중 가장 작은 수(3)는 소수이다.&lt;/li&gt;
+  &lt;li&gt;3의 배수를 지운다.&lt;br /&gt;
+…&lt;/li&gt;
+  &lt;li&gt;위 과정을 $\sqrt n$까지 반복한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/7c5967aa-facf-4d6d-a13e-9ac0bb6b80c8&quot; alt=&quot;Sieve_of_Eratosthenes_animation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 과정이 끝나게 되면 n까지의 수 중 소수를 구해낼 수 있다.
+코드로 구현하면 아래와 같다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Prime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isPrime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//n까지 만들기 위해 n+1개 생성&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//소수는 false&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//prime[i]가 소수인 경우&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//해당 수의 배수 지우기&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 prime[i] = false인 수가 n까지의 수 중 소수가 된다.&lt;/p&gt;
+
+&lt;p&gt;이 코드의 시간 복잡도는 $O(nlog(log(n)))$이다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 29 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/</link>
+        <guid isPermaLink="true">http://localhost:4000/algorithm/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/</guid>
+        
+        <category>알고리즘</category>
+        
+        <category>Java</category>
+        
+        
+        <category>Algorithm</category>
+        
+      </item>
+    
+      <item>
+        <title>[2023-12-27]Github Blog 설정 방법</title>
+        <description>&lt;h2 id=&quot;카테고리-설정&quot;&gt;카테고리 설정&lt;/h2&gt;
+
+&lt;h3 id=&quot;_pagescategoreis-내부-파일&quot;&gt;_pages&amp;gt;categoreis 내부 파일&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;458&quot; alt=&quot;스크린샷 2023-12-27 오전 2 06 19&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/6360c2e2-64c8-4962-a0fc-1d15b925bd45&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드에서 10번줄 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.categories.TIL&lt;/code&gt;이 부분의 마지막 부분(TIL)이 글을 작성할 때 카테고리에 들어갈 카테고리 이름이 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;nav_list_mian&quot;&gt;nav_list_mian&lt;/h3&gt;
+&lt;p&gt;이 부분은 왼쪽 네비게이션의 카테고리를 관리하는 부분이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;796&quot; alt=&quot;스크린샷 2023-12-27 오전 2 08 28&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/8d553e0a-8e70-4ee9-bee8-fa13766e4967&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 부분에선 44번줄의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if category[0] == &quot;Datastructure&quot;&lt;/code&gt; 이 부분에 글작성에서 썼던 카테고리 명이 들어가면 된다. 그리고 a태그의 링크는 카테고리 정의 페이지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink: categories/datastructure&lt;/code&gt;가 들어가고 자료구조라고 쓰여있는 부분이 블로그에 노출되는 이름이 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;글씨-크기-설정&quot;&gt;글씨 크기 설정&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt; 폴더의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistake&lt;/code&gt; 폴더 내의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_reset.scss&lt;/code&gt;파일에 들어가서 아래 부분을 수정하면 된다. 사이트 크기에 따라 조절할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;430&quot; alt=&quot;스크린샷 2023-12-27 오전 2 17 56&quot; src=&quot;https://github.com/gunnu3226/Coding-test/assets/139452702/f4445cc0-6937-484a-81d6-23fbc037e0ae&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</link>
+        <guid isPermaLink="true">http://localhost:4000/github%20blog/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</guid>
+        
+        <category>Blog</category>
+        
+        <category>Github</category>
+        
+        
+        <category>Github Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>[자료구조] 큐(Queue)의 정의와 java에서 사용법</title>
+        <description>&lt;h1 id=&quot;큐queue&quot;&gt;큐(Queue)?&lt;/h1&gt;
+&lt;p&gt;기본적인 자료구조의 한가지로, 먼저 집어 넣은 데이터가 먼저 나오는 FIFO(First In First Out)구조로 저장하는 자료구조이다.&lt;/p&gt;
+
+&lt;p&gt;나중에 넣은 데이터가 먼저 나오는 스택(Stack)과 반대되는 개념이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/gunnu3226/gunnu3226.github.io/assets/139452702/2e34c0f1-f3d9-4c33-b57c-5e448a28c7bf&quot; alt=&quot;다운로드 (1)&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;큐queue의-특징&quot;&gt;큐(Queue)의 특징&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;FIFO(First In First Out)선입선출 구조이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;한쪽 끝(rear)에서는 삽입(enQueue)만 이루어지고 한쪽 끝(front)에서는 삭제(deQueue)만 이루어 진다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그래프의 넓이 우선 탐색(BFS)에서 사용된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴퓨터 버퍼에서 주로 사용된다. 여러 개가 한꺼번에 입력이 들어올 때, 큐를 만들어 순처적으로 처리한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;java에서의-큐queue&quot;&gt;Java에서의 큐(Queue)&lt;/h2&gt;
+
+&lt;h3 id=&quot;queue선언&quot;&gt;Queue선언&lt;/h3&gt;
+&lt;p&gt;Java에서 큐는 LinkedList클래스가 구현하고 있기 때문에 사용할 때 두가지를 import 해주어야 한다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;코테를 볼 때 IDE를 사용하면 자동 임포트 해주지만 그렇지 않은경우 아래와 같이 util패키지를 전부 import하는 것이 편하다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//제네릭 사용시 뒤는 생략 가능&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//큐 크기 5&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위 코드와 같이 제너릭을 명시하여 선언하도록 권장하고 있다. 제너릭에 대한 학습은 추후에 포스팅으로 하도록 하겠다.&lt;/p&gt;
+
+&lt;p&gt;제너릭 사용시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Primitive Type&lt;/code&gt;이 아니라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wrapper Class&lt;/code&gt;을 사용해야 한다. 왜냐하면 큐는 객체(Object)를 다루기 때문이다. 즉, 숫자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integer&lt;/code&gt;, 문자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Character&lt;/code&gt;를 사용해야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터-삽입enqueue&quot;&gt;데이터 삽입(Enqueue)&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//실패 시 IllegalStateException 발생&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;offer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//실패 시 false반환&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;add(1)는 삽입 성공시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;를 반환, 여유 공간이 없어 삽입에 실패하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IllegalStateException&lt;/code&gt; 발생.&lt;/li&gt;
+  &lt;li&gt;offer(1)는 삽입 성공시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;를 반환, 여유 공간이 없어 삽입에 실패하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 반환.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;즉 값 삽입 실패시 add()메서드는 예외를 발생시키고 offer()메서드는 false를 반환하는 차이가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터-삭제dequeue&quot;&gt;데이터 삭제(Dequeue)&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//비어있을 때 Null exception 발생&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//비어있을 때 Null반환&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//저장도 가능&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;remove()메서드는 맨 앞 원소를 제거. 큐가 비어있을 때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Null exception&lt;/code&gt; 발생.&lt;/li&gt;
+  &lt;li&gt;poll()메서드는 맨 앞 원소를 반환하고 제거. 큐가 비어있을 때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Null&lt;/code&gt;을 반환.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;remove는 값을 제거만 하고 비어있을 때 예외를 발생시키고, poll()은 제거하는 값을 반환해 주고 큐가 비어 있을 때 Null을 반환해준다.&lt;/p&gt;
+
+&lt;h3 id=&quot;추가-메서드&quot;&gt;추가 메서드&lt;/h3&gt;
+&lt;h4 id=&quot;큐-크기-확인&quot;&gt;큐 크기 확인&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;큐가-비었는지-확인&quot;&gt;큐가 비었는지 확인&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//큐가 비었으면 true, 아니면 false&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;삭제-없이-값-확인&quot;&gt;삭제 없이 값 확인&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; 
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;element()는 큐가 비어있을 때 예외 발생&lt;/li&gt;
+  &lt;li&gt;peek()는 큐가 비어있을 때 null 반환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;모든-값-삭제&quot;&gt;모든 값 삭제&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;우선순위-큐priorityqueue&quot;&gt;우선순위 큐(PriorityQueue)?&lt;/h2&gt;
+&lt;p&gt;우선순위 큐(PriorityQueue)란 일반적인 큐 구조를 가지면서, 데이터가 들어온 순서대로 나가는 것이 아닌 &lt;strong&gt;우선순위&lt;/strong&gt;를 먼저 결정하고 &lt;strong&gt;우선순위가 높은 데이터가 먼저 나가는&lt;/strong&gt; 자료구조이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;우선순위-큐priorityqueue-특징&quot;&gt;우선순위 큐(PriorityQueue) 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;값을 비교해야 하므로 null을 허용하지 않는다.&lt;/li&gt;
+  &lt;li&gt;내부구조는 이진트리 힙으로 구성되어 있다.&lt;/li&gt;
+  &lt;li&gt;내부구조가 이진트리로 되어 있어 add() 및 poll()메서드는 O(log(n))의 시간이 걸린다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;우선순위-큐priorityqueue-선언&quot;&gt;우선순위 큐(PriorityQueue) 선언&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기본형 : 우선순위가 낮은 숫자가 먼저 나온다. 즉 &lt;strong&gt;작은 숫자(사전순 앞 문자)가 먼저&lt;/strong&gt; 나온다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;우선순위가 높은 숫자가 먼저 나오는 우선선위 큐. &lt;strong&gt;큰 숫자(사전순 뒷 문자)가 먼저&lt;/strong&gt; 나온다.(Collections.reverseOrder()활용)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reverseOrder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;메서드의 사용은 일반적인 큐와 동일하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;우선순위-큐-예시&quot;&gt;우선순위 큐 예시&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strpq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;offer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;offer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;offer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//1 삭제&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2 삭제&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;intpq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//3 삭제&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;일반적인 큐라면 2 - 3 - 1 순으로 삭제되었겠지만 우선순위 큐는 정렬되어 우선순위에 맞게 삭제가 일어난다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Dec 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/datastructure/Queue/</link>
+        <guid isPermaLink="true">http://localhost:4000/datastructure/Queue/</guid>
+        
+        <category>자료구조</category>
+        
+        <category>CS</category>
+        
+        <category>Java</category>
+        
+        
+        <category>Datastructure</category>
         
       </item>
     
