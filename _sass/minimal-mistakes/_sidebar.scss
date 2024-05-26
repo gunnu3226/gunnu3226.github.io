@@ -91,6 +91,8 @@
       float: right;
 
       .toc {
+        position: fixed;
+        right: 10em;
         .toc__menu {
           overflow-y: auto;
           max-height: calc(100vh - 7em);

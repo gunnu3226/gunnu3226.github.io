@@ -220,4 +220,22 @@ var store = [{
         "tags": ["Spring","Java"],
         "url": "/spring/ioc,di/",
         "teaser": null
+      },{
+        "title": "[Github Actions] Github Actions, Docker를 활용한 CI/CD 구축",
+        "excerpt":"Github Actions으로 CI/CD 구축하기(feat. Docker, Ec2, RDS, SpringBoot) Github Actions으로 CI/CD를 구축해보기로 했다. 우선 내 개발 환경은 아래와 같다. Github Actions AWS EC2 AWS RDS Docker SpringBoot v3.2.3 Gradle Java 17 기본적인 Ec2 인스턴스 구성과, RDS 생성은 이전 포스팅이 있으니 링크를 참고하여 진행하면 될것 같다. [AWS] RDS로 MySQL 구축하기 [AWS]...","categories": ["GithubActions"],
+        "tags": ["Ec2","RDS","MySQL","GithubActions","Docker"],
+        "url": "/githubactions/%EA%B9%83%ED%97%99%EC%95%A1%EC%85%98%EA%B3%BC%EB%8F%84%EC%BB%A4/",
+        "teaser": null
+      },{
+        "title": "[QueryDsl] 쿼리의 개수를 줄이기 VS 조인 개수 늘리기",
+        "excerpt":"문제의 시작 현재 진행하고 있는 프로젝트는 협업 툴인 Trello를 보고 클론코딩을 하는 것이다. 프로젝트 내에서 파일의 계층 구조는 Board &gt; Column &gt; Card 순서이다. 그러니까 하나의 Board안에 여러개의 Column이 있고, 하나의 Column안에 Card가 있는 구조이다. 여기서 문제의 시작은 위 사진과 같은 하나의 Board를 상세 조회하는 API를 만들며 발생했다. 문제는 응답객체...","categories": ["Study"],
+        "tags": ["개발공부","Java"],
+        "url": "/study/%EC%BF%BC%EB%A6%AC%EC%B5%9C%EC%A0%81%ED%99%94/",
+        "teaser": null
+      },{
+        "title": "[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화",
+        "excerpt":"Master / Slave DB 이중화를 하는 이유? 지금까지 학습을 위한 프로젝트를 진행하면서는 로컬 환경에서는 DB서버 1개를 띄워서 사용했고, RDS를 사용하는 경우도 한개의 인스턴스를 서버에서 접속해 사용하였다. 새로운 프로젝트를 진행하면서 대용량 트래픽을 간접 경험하고자 안정적인 DB운영 방법을 찾게 되었고, Query와 Command를 분기하여 DB를 사용하기 위하여 Master / Slave 이중화 공부를 시작하게...","categories": ["Database"],
+        "tags": ["개발공부","Java","Database"],
+        "url": "/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/",
+        "teaser": null
       }]

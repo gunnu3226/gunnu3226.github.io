@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[TIL]2024.01.03 TIL - 개발하는 개발자</title>
-<meta name="description" content="2024.01.03 TIL">
+<!-- begin _includes/seo.html --><title>[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화 - 개발하는 개발자</title>
+<meta name="description" content="DB이중화">
 
 
   <meta name="author" content="Gunnu LEE">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="개발하는 개발자">
-<meta property="og:title" content="[TIL]2024.01.03 TIL">
-<meta property="og:url" content="http://localhost:4000/til/TIL8/">
+<meta property="og:title" content="[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화">
+<meta property="og:url" content="http://localhost:4000/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/">
 
 
-  <meta property="og:description" content="2024.01.03 TIL">
-
-
-
+  <meta property="og:description" content="DB이중화">
 
 
 
 
-  <meta property="article:published_time" content="2024-01-03T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-01-03T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-03-28T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2024-03-28T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/til/TIL8/">
+
+<link rel="canonical" href="http://localhost:4000/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/">
 
 
 
@@ -713,142 +713,20 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[TIL]2024.01.03 TIL">
-    <meta itemprop="description" content="2024.01.03 TIL">
-    <meta itemprop="datePublished" content="2024-01-03T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-01-03T00:00:00+09:00">
+    <meta itemprop="headline" content="[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화">
+    <meta itemprop="description" content="DB이중화">
+    <meta itemprop="datePublished" content="2024-03-28T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-03-28T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/TIL8/" class="u-url" itemprop="url">[TIL]2024.01.03 TIL
+            <a href="http://localhost:4000/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/" class="u-url" itemprop="url">[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화
 </a>
           </h1>
           <!-- 업로드 날짜 -->
         
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Publish:
-        
-        <time datetime="2024-01-03T00:00:00+09:00">January 3, 2024</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오늘의-학습">오늘의 학습</a></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h2 id="오늘의-학습">오늘의 학습</h2>
-<ol>
-  <li>프로그래머스 2문제 풀이
-    <ul>
-      <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42839">소수 찾기</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://gunnu3226.github.io/programmers/%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0/">풀이</a>
-      - <a href="https://school.programmers.co.kr/learn/courses/30/lessons/131704">택배상자</a></li>
-      <li><a href="https://gunnu3226.github.io/programmers/%ED%83%9D%EB%B0%B0%EC%83%81%EC%9E%90/">풀이</a></li>
-    </ul>
-  </li>
-  <li>스프링 핵심 원리 - 기본편 수강</li>
-</ol>
-
-        
-        
-        <br>
-
-      </section>
-
-      <footer class="page__meta">
-        
-        <!-- 업데이트 날짜 -->
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-01-03">January 3, 2024</time></p>
-
-        <br>
-        <!-- 카테고리,테그 -->
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
-    
-      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
-    
-    </span>
-  </p>
-
-
-      </footer>
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/" rel="permalink">[Database] MySQL, Docker로 구축한 Master/Slave DB 이중화
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -867,11 +745,89 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">DB이중화
-</p>
-  </article>
-</div>
+        </header>
+      
 
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#master--slave-db-이중화를-하는-이유">Master / Slave DB 이중화를 하는 이유?</a><ul><li><a href="#이증화를-하는-이유">이증화를 하는 이유</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="master--slave-db-이중화를-하는-이유">Master / Slave DB 이중화를 하는 이유?</h2>
+<p>지금까지 학습을 위한 프로젝트를 진행하면서는 로컬 환경에서는 DB서버 1개를 띄워서 사용했고, RDS를 사용하는 경우도 한개의 인스턴스를 서버에서 접속해 사용하였다. 새로운 프로젝트를 진행하면서 대용량 트래픽을 간접 경험하고자 안정적인 DB운영 방법을 찾게 되었고, Query와 Command를 분기하여 DB를 사용하기 위하여 Master / Slave 이중화 공부를 시작하게 되었다.</p>
+
+<p><br /></p>
+
+<h3 id="이증화를-하는-이유">이증화를 하는 이유</h3>
+
+        
+        
+        <br>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        <!-- 업데이트 날짜 -->
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Update:</strong> <time class="dt-published" datetime="2024-03-28">March 28, 2024</time></p>
+
+        <br>
+        <!-- 카테고리,테그 -->
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#database" class="page__taxonomy-item p-category" rel="tag">Database</a><span class="sep">, </span>
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80" class="page__taxonomy-item p-category" rel="tag">개발공부</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#database" class="page__taxonomy-item p-category" rel="tag">Database</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -982,6 +938,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">스프링이 DI를 지원하는 이유
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/redis%EB%8F%84%EC%9E%85/" rel="permalink">[Redis] 좋아요 기능에 Redis도입기 및 Redis설정(1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        Publish:
+        
+        <time datetime="2024-03-09T00:00:00+09:00">March 9, 2024</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Redis시작
 </p>
   </article>
 </div>

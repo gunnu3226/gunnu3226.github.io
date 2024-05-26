@@ -4,6 +4,54 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/database/DB%EC%9D%B4%EC%A4%91%ED%99%94/</loc>
+        
+        <lastmod>2024-03-28T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/study/%EC%BF%BC%EB%A6%AC%EC%B5%9C%EC%A0%81%ED%99%94/</loc>
+        
+        <lastmod>2024-03-19T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/githubactions/%EA%B9%83%ED%97%99%EC%95%A1%EC%85%98%EA%B3%BC%EB%8F%84%EC%BB%A4/</loc>
+        
+        <lastmod>2024-03-15T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/spring/ioc,di/</loc>
         
         <lastmod>2024-03-09T00:00:00+09:00</lastmod>
